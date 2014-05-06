@@ -121,7 +121,17 @@
     <ol>
     
         <li>
+            <a href="readme.html#front-end-coding-standards">Front-end Coding Standards</a>
+            
+        </li>
+    
+        <li>
             <a href="readme.html#how-to-compile">How to compile</a>
+            
+        </li>
+    
+        <li>
+            <a href="readme.html#how-to-push-to-gh-pages">How to push to gh-pages</a>
             
         </li>
     
@@ -299,10 +309,21 @@ nested selectors
 </ul>
 
 <h1 id="readme">README</h1>
+<h2 id="front-end-coding-standards">Front-end Coding Standards</h2>
+<p>The standards by which the dev team at BarkleyREI in Pittsburgh codes every project.</p>
+<p>Uses <a href="http://beautifuldocs.com">beautifuldocs</a></p>
 <h2 id="how-to-compile">How to compile</h2>
 <p><code>npm install -g beautifuldocs</code></p>
 <p>Navigate to directory in terminal</p>
 <p><code>bfdocs manifest.json</code></p>
+<h2 id="how-to-push-to-gh-pages">How to push to gh-pages</h2>
+<p><code>git add .</code></p>
+<p><code>git commit -m &quot;blah blah commit message&quot;</code></p>
+<p><code>git push origin master</code></p>
+<p>At this point you have pushed it to the github repository (hopefully your forked version)</p>
+<p>Now to subtree into the pages branch</p>
+<p><code>git subtree push --prefix out origin gh-pages</code></p>
+<p>No futher steps, this pushes it to the branch and up to the repo</p>
 
 
 
