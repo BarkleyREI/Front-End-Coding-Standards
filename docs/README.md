@@ -12,7 +12,7 @@ Uses [beautifuldocs](http://beautifuldocs.com)
 
 Navigate to directory in terminal
 
-`bfdocs manifest.json`
+`bfdocs --theme=./themes/rei manifest.json`
 
 ## How to push to gh-pages
 
@@ -28,4 +28,8 @@ Now to subtree into the pages branch
 
 `git subtree push --prefix out origin gh-pages`
 
-No futher steps, this pushes it to the branch and up to the repo
+No further steps, this pushes it to the branch and up to the repo
+
+## Code reviews
+
+All recommendations in this documentation should be adhered to during code reviews. Exceptions can be discussed but should be avoided.

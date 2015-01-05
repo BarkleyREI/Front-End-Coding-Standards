@@ -1,12 +1,17 @@
 {
 	"title": "BarkleyREI Coding Documentation",
 	"rootDir": "docs",
+	"codeHighlightTheme": "monokai",
+	"links": [
+		["GitHub", "https://github.com/BarkleyREI"]
+	],
     "files": [
+		"README.md",
+		"projects.md",
 		"layout.md",
     	"css.md",
 		"javascript.md",
-		"xslt.md",
-		"README.md"
+		"xslt.md"
 	],
 	"disqus": "reidev"
 }

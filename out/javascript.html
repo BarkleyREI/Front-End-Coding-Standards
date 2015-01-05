@@ -5,7 +5,7 @@
     <title>BarkleyREI Coding Documentation</title>
 
     <link type="text/css" rel="stylesheet" href="assets/css/reset.css">
-    <link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/sunburst.min.css">
+    <link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/monokai.min.css">
     <link type="text/css" rel="stylesheet" href="assets/css/docs.css">
     <link type="text/css" rel="stylesheet" href="assets/css/print.css" media="print">
     
@@ -36,6 +36,58 @@
     <ol>
     
         <li>
+            <a href="readme.html#readme">README</a>
+            
+                
+    <ol>
+    
+        <li>
+            <a href="readme.html#front-end-coding-standards">Front-end Coding Standards</a>
+            
+        </li>
+    
+        <li>
+            <a href="readme.html#how-to-compile">How to compile</a>
+            
+        </li>
+    
+        <li>
+            <a href="readme.html#how-to-push-to-gh-pages">How to push to gh-pages</a>
+            
+        </li>
+    
+        <li>
+            <a href="readme.html#code-reviews">Code reviews</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+            <a href="projects.html#project-standards-and-practices">Project Standards and Practices</a>
+            
+                
+    <ol>
+    
+        <li>
+            <a href="projects.html#configuration">Configuration</a>
+            
+        </li>
+    
+        <li>
+            <a href="projects.html#code-reviews">Code Reviews</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
             <a href="layout.html#layout">Layout</a>
             
                 
@@ -48,6 +100,11 @@
     
         <li>
             <a href="layout.html#html">HTML</a>
+            
+        </li>
+    
+        <li>
+            <a href="layout.html#other">Other</a>
             
         </li>
     
@@ -82,6 +139,11 @@
             
         </li>
     
+        <li>
+            <a href="css.html#other">Other</a>
+            
+        </li>
+    
 </ol>
 
             
@@ -92,6 +154,11 @@
             
                 
     <ol>
+    
+        <li>
+            <a href="javascript.html#ids-vs-class-names">IDs vs Class Names</a>
+            
+        </li>
     
         <li>
             <a href="javascript.html#jshint">JSHint</a>
@@ -114,38 +181,14 @@
             
         </li>
     
-        <li>
-            <a href="readme.html#readme">README</a>
-            
-                
-    <ol>
-    
-        <li>
-            <a href="readme.html#front-end-coding-standards">Front-end Coding Standards</a>
-            
-        </li>
-    
-        <li>
-            <a href="readme.html#how-to-compile">How to compile</a>
-            
-        </li>
-    
-        <li>
-            <a href="readme.html#how-to-push-to-gh-pages">How to push to gh-pages</a>
-            
-        </li>
-    
-</ol>
-
-            
-        </li>
-    
 </ol>
 
     </nav>
     
     <nav id="links">
         <ul>
+            
+            <li><a href="https://github.com/BarkleyREI">GitHub</a></li>
             
         </ul>
     </nav>
@@ -165,8 +208,16 @@
 </code></pre>
 <ul>
 <li>Only use jQuery plugins or JavaScript solutions if the problem requires it.</li>
-<li>Do not use JS if CSS is applicable</li>
+<li>Do not use JS if CSS is applicable.</li>
 <li>Do not use polyfills for non-essential features. It is okay if these features are non-existant or degraded on older browsers.</li>
+</ul>
+<h2 id="ids-vs-class-names">IDs vs Class Names</h2>
+<p>Always use IDs for targeting a specific section with jQuery or JavaScript.</p>
+<p>If you must use class names (for repeating elements or large groups of items), use .js- as a naming convention.</p>
+<p>e.g. .js-save-favorite</p>
+<p>Do not use .js- class names in CSS. Create a seperate class name to target with CSS.</p>
+<ul>
+<li>In our example, you could use .save-favorite and .js-save-favorite. This describes your intent to another coder/dev.</li>
 </ul>
 <h2 id="jshint">JSHint</h2>
 <ul>

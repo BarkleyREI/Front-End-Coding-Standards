@@ -5,7 +5,7 @@
     <title>BarkleyREI Coding Documentation</title>
 
     <link type="text/css" rel="stylesheet" href="assets/css/reset.css">
-    <link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/sunburst.min.css">
+    <link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/monokai.min.css">
     <link type="text/css" rel="stylesheet" href="assets/css/docs.css">
     <link type="text/css" rel="stylesheet" href="assets/css/print.css" media="print">
     
@@ -36,6 +36,58 @@
     <ol>
     
         <li>
+            <a href="readme.html#readme">README</a>
+            
+                
+    <ol>
+    
+        <li>
+            <a href="readme.html#front-end-coding-standards">Front-end Coding Standards</a>
+            
+        </li>
+    
+        <li>
+            <a href="readme.html#how-to-compile">How to compile</a>
+            
+        </li>
+    
+        <li>
+            <a href="readme.html#how-to-push-to-gh-pages">How to push to gh-pages</a>
+            
+        </li>
+    
+        <li>
+            <a href="readme.html#code-reviews">Code reviews</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+            <a href="projects.html#project-standards-and-practices">Project Standards and Practices</a>
+            
+                
+    <ol>
+    
+        <li>
+            <a href="projects.html#configuration">Configuration</a>
+            
+        </li>
+    
+        <li>
+            <a href="projects.html#code-reviews">Code Reviews</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
             <a href="layout.html#layout">Layout</a>
             
                 
@@ -48,6 +100,11 @@
     
         <li>
             <a href="layout.html#html">HTML</a>
+            
+        </li>
+    
+        <li>
+            <a href="layout.html#other">Other</a>
             
         </li>
     
@@ -82,6 +139,11 @@
             
         </li>
     
+        <li>
+            <a href="css.html#other">Other</a>
+            
+        </li>
+    
 </ol>
 
             
@@ -92,6 +154,11 @@
             
                 
     <ol>
+    
+        <li>
+            <a href="javascript.html#ids-vs-class-names">IDs vs Class Names</a>
+            
+        </li>
     
         <li>
             <a href="javascript.html#jshint">JSHint</a>
@@ -114,38 +181,14 @@
             
         </li>
     
-        <li>
-            <a href="readme.html#readme">README</a>
-            
-                
-    <ol>
-    
-        <li>
-            <a href="readme.html#front-end-coding-standards">Front-end Coding Standards</a>
-            
-        </li>
-    
-        <li>
-            <a href="readme.html#how-to-compile">How to compile</a>
-            
-        </li>
-    
-        <li>
-            <a href="readme.html#how-to-push-to-gh-pages">How to push to gh-pages</a>
-            
-        </li>
-    
-</ol>
-
-            
-        </li>
-    
 </ol>
 
     </nav>
     
     <nav id="links">
         <ul>
+            
+            <li><a href="https://github.com/BarkleyREI">GitHub</a></li>
             
         </ul>
     </nav>
@@ -160,7 +203,7 @@
 <h2 id="how-to-compile">How to compile</h2>
 <p><code>npm install -g beautifuldocs</code></p>
 <p>Navigate to directory in terminal</p>
-<p><code>bfdocs manifest.json</code></p>
+<p><code>bfdocs --theme=./themes/rei manifest.json</code></p>
 <h2 id="how-to-push-to-gh-pages">How to push to gh-pages</h2>
 <p><code>git add .</code></p>
 <p><code>git commit -m &quot;blah blah commit message&quot;</code></p>
@@ -168,7 +211,9 @@
 <p>At this point you have pushed it to the github repository (hopefully your forked version)</p>
 <p>Now to subtree into the pages branch</p>
 <p><code>git subtree push --prefix out origin gh-pages</code></p>
-<p>No futher steps, this pushes it to the branch and up to the repo</p>
+<p>No further steps, this pushes it to the branch and up to the repo</p>
+<h2 id="code-reviews">Code reviews</h2>
+<p>All recommendations in this documentation should be adhered to during code reviews. Exceptions can be discussed but should be avoided.</p>
 
 
 <div id="disqus_thread"></div>

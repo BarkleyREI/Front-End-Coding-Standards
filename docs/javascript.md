@@ -11,8 +11,19 @@ function functionName() {
 ````
 
 - Only use jQuery plugins or JavaScript solutions if the problem requires it.
-- Do not use JS if CSS is applicable
+- Do not use JS if CSS is applicable.
 - Do not use polyfills for non-essential features. It is okay if these features are non-existant or degraded on older browsers.
+
+## IDs vs Class Names
+
+Always use IDs for targeting a specific section with jQuery or JavaScript.
+
+If you must use class names (for repeating elements or large groups of items), use .js- as a naming convention.
+
+e.g. .js-save-favorite
+
+Do not use .js- class names in CSS. Create a seperate class name to target with CSS.
+- In our example, you could use .save-favorite and .js-save-favorite. This describes your intent to another coder/dev.
 
 ## JSHint
 

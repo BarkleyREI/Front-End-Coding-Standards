@@ -5,7 +5,7 @@
     <title>BarkleyREI Coding Documentation</title>
 
     <link type="text/css" rel="stylesheet" href="assets/css/reset.css">
-    <link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/sunburst.min.css">
+    <link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/monokai.min.css">
     <link type="text/css" rel="stylesheet" href="assets/css/docs.css">
     <link type="text/css" rel="stylesheet" href="assets/css/print.css" media="print">
     
@@ -36,6 +36,58 @@
     <ol>
     
         <li>
+            <a href="readme.html#readme">README</a>
+            
+                
+    <ol>
+    
+        <li>
+            <a href="readme.html#front-end-coding-standards">Front-end Coding Standards</a>
+            
+        </li>
+    
+        <li>
+            <a href="readme.html#how-to-compile">How to compile</a>
+            
+        </li>
+    
+        <li>
+            <a href="readme.html#how-to-push-to-gh-pages">How to push to gh-pages</a>
+            
+        </li>
+    
+        <li>
+            <a href="readme.html#code-reviews">Code reviews</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+            <a href="projects.html#project-standards-and-practices">Project Standards and Practices</a>
+            
+                
+    <ol>
+    
+        <li>
+            <a href="projects.html#configuration">Configuration</a>
+            
+        </li>
+    
+        <li>
+            <a href="projects.html#code-reviews">Code Reviews</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
             <a href="layout.html#layout">Layout</a>
             
                 
@@ -48,6 +100,11 @@
     
         <li>
             <a href="layout.html#html">HTML</a>
+            
+        </li>
+    
+        <li>
+            <a href="layout.html#other">Other</a>
             
         </li>
     
@@ -82,6 +139,11 @@
             
         </li>
     
+        <li>
+            <a href="css.html#other">Other</a>
+            
+        </li>
+    
 </ol>
 
             
@@ -92,6 +154,11 @@
             
                 
     <ol>
+    
+        <li>
+            <a href="javascript.html#ids-vs-class-names">IDs vs Class Names</a>
+            
+        </li>
     
         <li>
             <a href="javascript.html#jshint">JSHint</a>
@@ -114,38 +181,14 @@
             
         </li>
     
-        <li>
-            <a href="readme.html#readme">README</a>
-            
-                
-    <ol>
-    
-        <li>
-            <a href="readme.html#front-end-coding-standards">Front-end Coding Standards</a>
-            
-        </li>
-    
-        <li>
-            <a href="readme.html#how-to-compile">How to compile</a>
-            
-        </li>
-    
-        <li>
-            <a href="readme.html#how-to-push-to-gh-pages">How to push to gh-pages</a>
-            
-        </li>
-    
-</ol>
-
-            
-        </li>
-    
 </ol>
 
     </nav>
     
     <nav id="links">
         <ul>
+            
+            <li><a href="https://github.com/BarkleyREI">GitHub</a></li>
             
         </ul>
     </nav>
@@ -164,18 +207,26 @@
 <p>If editable assets need delivered to a client, be sure to include a README on how to compile the assets.</p>
 <h2 id="naming-conventions">Naming Conventions</h2>
 <p>Use <code>-</code> in class and id names, .global-header, #home-page-gallery, etc</p>
+<p><em>Do not use camel casing.</em></p>
 <p>Use content agnostic naming.</p>
 <blockquote>
-<p><em>e.g. try to avoid <code>.contact-information;</code> Use something like <code>.sidebar-callout</code></em></p>
+<p><em>e.g. try to avoid <code>.contact-information;</code> Use something like <code>.sidebar-callout</code>, or <code>.sidebar</code> and <code>.callout</code></em></p>
 </blockquote>
 <h2 id="modular-coding">Modular coding</h2>
 <p>Using the idea from <a href="http://smacss.com/">SMACSS</a>, we approach front end coding tasks as “modules” where each module can be copied into a new container and it should render.</p>
+<p>Create a SCSS file for the module under the modules directory.</p>
+<p>Do not include layout positioning styles in the module. Add these styles to a file under the layout directory.</p>
+<p>For instance:</p>
+<p>Style a wysiwyg callout module under modules, then add any padding or positioning in _sidebar.scss or _layout.scss</p>
+<p>Use your best judgement for where styles go.</p>
+<blockquote>When in doubt, break it out. -Ryan Sprake</blockquote>
+
 <h2 id="css-guidelines">CSS Guidelines</h2>
 <ul>
-<li>Use SASS if possible.</li>
-<li>All font families must have fallbacks to web safe fonts.</li>
+<li>Use SASS unless not possible.</li>
+<li>All font families must have fallbacks to web safe fonts (e.g. serif, sanserif).</li>
 <li>Split into multiple files as reasonable as possible.</li>
-<li>Rule of 3<pre><code class="lang-markdown">Global site (global)
+<li>Rule of 3 for compiled CSS files<pre><code class="lang-markdown">Global site (global or main.css)
 Specific site section (home, level)
 One-off page
 </code></pre>
@@ -184,6 +235,8 @@ One-off page
 <li>Add styles to deal with no-js situations.</li>
 <li>If possible, do not override existing styles with print styles. Instead, use media queries to style the default unstyled document</li>
 </ul>
+<pre><code class="lang-html">&lt;link rel=&quot;stylesheet&quot; media=&quot;print&quot; href=&quot;print.css&quot; /&gt;
+</code></pre>
 <h2 id="sass-guidelines">SASS Guidelines</h2>
 <ul>
 <li><em>Never</em> use IDs for styling</li>
@@ -195,14 +248,95 @@ regular styles
 nested selectors
 </code></pre>
 </li>
-<li>All vendor prefixes must use mixins.</li>
+<li><p>Selector Ordering:
+````markdown
+Non-layout affecting</p>
+<p>  background-color: green;
+  font-family: Arial, san-serif;
+  color: blue;</p>
+</li>
+</ul>
+<p>Layout affecting</p>
+<pre><code>border: thin solid red;
+margin: 1em;
+padding: 1em;
+</code></pre><p>Layout</p>
+<pre><code>width: 100%
+height: 2px;
+position: absolute;
+left: 0;
+top: 0;
+</code></pre><p>````</p>
+<ul>
+<li>All vendor prefixes must use mixins or autoprefixer.</li>
 <li>Try not to nest more than 3 levels deep.</li>
 <li>Try not to nest more than 50 lines long.</li>
 <li>Do not place styles in main SCSS files, only in included SCSS files.</li>
-<li>All colors must be variables. #fff and #000 are excused.</li>
-<li>All font families must be variables.</li>
-<li>Including the above rules, all numbers with meaning must be variables.</li>
-<li>Nest media queries.</li>
+</ul>
+<h3 id="class-vs-placeholder">Class vs Placeholder</h3>
+<p>Use placeholder when you don&#39;t need the base class name on the element.</p>
+<pre><code class="lang-scss">%icon {
+    display: block;
+}
+
+.menu {
+    @extend %icon;
+}
+
+compiles to:
+.menu { display: block; }
+
+
+.icon {
+    display: block;
+}
+
+.menu {
+    @extend .icon;
+}
+
+compiles to:
+.icon, .menu { display: block; }
+</code></pre>
+<h3 id="theme-variables">Theme Variables</h3>
+<p>Save all theme variables in <code>_theme-variables.scss</code></p>
+<h4 id="colors">Colors</h4>
+<p>All colors must be variables. #fff and #000 are excused.
+Use <a href="http://name-of-color.com/">http://name-of-color.com/</a> or similar website to name the color. Assign the color
+to a semantically named variable if the color is used frequently.</p>
+<h4 id="font-families">Font families</h4>
+<p>Be sure to include at least one fallback for all fonts, even if it is just &#39;sans-serif&#39;.</p>
+<pre><code class="lang-css">font-family: &#39;Lato&#39;, Arial, sans-serif;
+</code></pre>
+<p>Use webfonts as a preference to embedded fonts.</p>
+<ul>
+<li>Google Fonts</li>
+<li>Typekit</li>
+</ul>
+<h4 id="icon-fonts">Icon fonts</h4>
+<p><a href="https://icomoon.io/">Icomoon</a></p>
+<p><a href="http://fontawesome.io/">FontAwesome</a></p>
+<p>Some of these services may include their own files that declare class names or variables.</p>
+<h4 id="numbers">Numbers</h4>
+<p>Save numbers with meaning (such as z-indexes or font sizes) to variables.</p>
+<h3 id="media-queries">Media Queries</h3>
+<p>Embed media queries inline where it is needed, instead of combining them at the end of the file.</p>
+<pre><code class="lang-sass">.module {
+
+    h1 {
+        color: $red;
+
+        @include bp(medium) {
+            color: $green;
+        }
+    }
+
+}
+</code></pre>
+<p>For a one-off media query, it can be embedded directly or with a custom mixin.</p>
+<p>If a media query is needed in more than two places, it should be given a name in <code>_theme-variables.scss</code></p>
+<h2 id="other">Other</h2>
+<ul>
 <li>Include file ordering:<pre><code class="lang-markdown">  Compass
   Authored Dependencies (colors, mixins)
   Sprites

@@ -5,7 +5,7 @@
     <title>BarkleyREI Coding Documentation</title>
 
     <link type="text/css" rel="stylesheet" href="assets/css/reset.css">
-    <link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/sunburst.min.css">
+    <link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/monokai.min.css">
     <link type="text/css" rel="stylesheet" href="assets/css/docs.css">
     <link type="text/css" rel="stylesheet" href="assets/css/print.css" media="print">
     
@@ -36,6 +36,58 @@
     <ol>
     
         <li>
+            <a href="readme.html#readme">README</a>
+            
+                
+    <ol>
+    
+        <li>
+            <a href="readme.html#front-end-coding-standards">Front-end Coding Standards</a>
+            
+        </li>
+    
+        <li>
+            <a href="readme.html#how-to-compile">How to compile</a>
+            
+        </li>
+    
+        <li>
+            <a href="readme.html#how-to-push-to-gh-pages">How to push to gh-pages</a>
+            
+        </li>
+    
+        <li>
+            <a href="readme.html#code-reviews">Code reviews</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+            <a href="projects.html#project-standards-and-practices">Project Standards and Practices</a>
+            
+                
+    <ol>
+    
+        <li>
+            <a href="projects.html#configuration">Configuration</a>
+            
+        </li>
+    
+        <li>
+            <a href="projects.html#code-reviews">Code Reviews</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
             <a href="layout.html#layout">Layout</a>
             
                 
@@ -48,6 +100,11 @@
     
         <li>
             <a href="layout.html#html">HTML</a>
+            
+        </li>
+    
+        <li>
+            <a href="layout.html#other">Other</a>
             
         </li>
     
@@ -82,6 +139,11 @@
             
         </li>
     
+        <li>
+            <a href="css.html#other">Other</a>
+            
+        </li>
+    
 </ol>
 
             
@@ -92,6 +154,11 @@
             
                 
     <ol>
+    
+        <li>
+            <a href="javascript.html#ids-vs-class-names">IDs vs Class Names</a>
+            
+        </li>
     
         <li>
             <a href="javascript.html#jshint">JSHint</a>
@@ -114,32 +181,6 @@
             
         </li>
     
-        <li>
-            <a href="readme.html#readme">README</a>
-            
-                
-    <ol>
-    
-        <li>
-            <a href="readme.html#front-end-coding-standards">Front-end Coding Standards</a>
-            
-        </li>
-    
-        <li>
-            <a href="readme.html#how-to-compile">How to compile</a>
-            
-        </li>
-    
-        <li>
-            <a href="readme.html#how-to-push-to-gh-pages">How to push to gh-pages</a>
-            
-        </li>
-    
-</ol>
-
-            
-        </li>
-    
 </ol>
 
     </nav>
@@ -147,52 +188,32 @@
     <nav id="links">
         <ul>
             
+            <li><a href="https://github.com/BarkleyREI">GitHub</a></li>
+            
         </ul>
     </nav>
     
 </div>
 
         <div id="content">
-            <h1 id="layout">Layout</h1>
-<ul>
-<li>Do not use HTML abstraction languages unless they are shorthand that expands to raw HTML (e.g. Emmet). Never save development files in these formats.</li>
-<li>Create an index.html that is a Table of Contents for the project.<blockquote>
-<p>This is especially useful to QA to know what to test.</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="responsive-web-design">Responsive Web Design</h2>
-<ul>
-<li>Always design mobile first (using min-width media queries)<blockquote>
-<p>&quot;max-width&quot; is used as an exception, never the norm</p>
-<p>Bring any difficulties to the group. It is never acceptable to do desktop-first.</p>
-</blockquote>
-</li>
-<li>If using image sprites, target both small and high-res screens to prevent downloading multiple assets.</li>
-<li>Icon fonts are recommended, but not required.</li>
-</ul>
-<h3 id="resources">Resources</h3>
-<ul>
-<li><a href="http://icomoon.io">Icomoon.io</a></li>
-</ul>
-<h2 id="html">HTML</h2>
-<ul>
-<li>Use build scripts to minify and optimize CSS and JS.</li>
-<li>Place references to all site scripts inside a single markup file, to keep track of compiled files, and later, to reduce build time.</li>
-<li>Classes for styles, IDs for accessibility and JavaScript only</li>
-<li>Omit protocol from embedded external resources (//www.google.com/image.png)</li>
-<li>All tags must be lowercase.</li>
-<li>HTML must validate to HTML5.</li>
-<li>Accessibility checklist (<a href="http://a11yproject.com/checklist.html">http://a11yproject.com/checklist.html</a>)<pre><code class="lang-markdown">[] ARIA Roles
-[] Links have :focus state and :active state
-[] Images have alt text
-[] Provide alternatives for users without JavaScript (within reason)
-[] Labels for all form elements
-[] Group forms with fieldset and describe with legend
-</code></pre>
-</li>
-<li>Accessibility jump navigation</li>
-</ul>
+            <h1 id="readme">README</h1>
+<h2 id="front-end-coding-standards">Front-end Coding Standards</h2>
+<p>The standards by which the dev team at BarkleyREI in Pittsburgh codes every project.</p>
+<p>Uses <a href="http://beautifuldocs.com">beautifuldocs</a></p>
+<h2 id="how-to-compile">How to compile</h2>
+<p><code>npm install -g beautifuldocs</code></p>
+<p>Navigate to directory in terminal</p>
+<p><code>bfdocs --theme=./themes/rei manifest.json</code></p>
+<h2 id="how-to-push-to-gh-pages">How to push to gh-pages</h2>
+<p><code>git add .</code></p>
+<p><code>git commit -m &quot;blah blah commit message&quot;</code></p>
+<p><code>git push origin master</code></p>
+<p>At this point you have pushed it to the github repository (hopefully your forked version)</p>
+<p>Now to subtree into the pages branch</p>
+<p><code>git subtree push --prefix out origin gh-pages</code></p>
+<p>No further steps, this pushes it to the branch and up to the repo</p>
+<h2 id="code-reviews">Code reviews</h2>
+<p>All recommendations in this documentation should be adhered to during code reviews. Exceptions can be discussed but should be avoided.</p>
 
 
 <div id="disqus_thread"></div>

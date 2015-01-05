@@ -19,6 +19,37 @@
 
 ## HTML
 
+### Foundation
+
+Use foundation grid classes to build layout.
+- http://foundation.zurb.com/docs/components/grid.html
+
+### Reusable wrapper vs. container
+
+Consider using a wrapper inside main blocks instead of a global container.
+
+e.g.
+
+````html
+<header>
+	<div class="wrapper">
+
+	</div>
+</header>
+````
+
+vs
+
+````html
+<div class="container">
+	<header>
+
+	</header>
+</div>
+````
+
+## Other
+
 - Use build scripts to minify and optimize CSS and JS.
 - Place references to all site scripts inside a single markup file, to keep track of compiled files, and later, to reduce build time.
 - Classes for styles, IDs for accessibility and JavaScript only

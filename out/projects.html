@@ -196,32 +196,44 @@
 </div>
 
         <div id="content">
-            <h2>Search results for "<span id="search-q"></span>"</h2>
-<ul id="search-results"></ul>
-<script type="text/javascript" src="lunr-index.js"></script>
+            <h1 id="project-standards-and-practices">Project Standards and Practices</h1>
+<h2 id="configuration">Configuration</h2>
+<h3 id="readme">README</h3>
+<p>Be sure to include a README with your project that includes any special cases someone else
+will need to accomplish in order to build the assets.</p>
+<p>You can also include notes on your project that you feel are important to know for a dev
+picking up the project.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-markdown">Slippery Rock University
+
+Supported: IE8+, Android 2.3+, Blackberry
+
+Requires `compass watch` to be run in CSS directory.
+
+Sprite images placed in /css/i directory get added to spritesheet automatically.
+
+Plugins used:
+- owlCarousel --&gt; Mastheads on home page
+</code></pre>
+<h2 id="code-reviews">Code Reviews</h2>
+<p>Code reviews are encouraged for static projects. They help reduce errors and help enforce coding standards.</p>
+<p>All code reviews should enforce standards to the closest degree, and exceptions should be documented and well-explained.</p>
+<p>Code reviews can be done in person or via email.</p>
+
+
+<div id="disqus_thread"></div>
 <script type="text/javascript">
-    function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-            results = regex.exec(location.search);
-        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
-
-    $(function() {
-        var q = getParameterByName('q'), 
-            ul = $('#search-results').empty(),
-            results = index.search(q);
-
-        $('#search-q').text(q);
-        if (results.length > 0) {
-            for (var i = 0; i < results.length; i++) {
-                ul.append($('<li><a href="' + results[i].ref + '">' + documentTitles[results[i].ref] + '</a></li>'));
-            }
-        } else {
-            ul.append($('<li class="no-results">No results found</li>'));
-        }
-    })
+    var disqus_shortname = 'reidev';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
 </script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
 
         </div>
         <footer id="footer">
