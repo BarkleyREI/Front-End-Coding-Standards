@@ -4,6 +4,13 @@
 - Create an index.html that is a Table of Contents for the project.
 > This is especially useful to QA to know what to test.
 
+## Assemble.io
+
+Using the Generator version 2+ will allow you to bootstrap a project using the Assemble.io static site generator.
+
+- Store all static content inside fixture json files
+- Write your partials and modules so they can be reused across the website easily
+
 ## Responsive Web Design
 
 - Always design mobile first (using min-width media queries)

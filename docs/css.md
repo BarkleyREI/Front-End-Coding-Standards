@@ -152,6 +152,8 @@ Use webfonts as a preference to embedded fonts.
 
 Some of these services may include their own files that declare class names or variables.
 
+Recommendation: Use icomoon (which supports fontawesome icons) instead of using fontawesome so that you can specify the exact icons you need.
+
 #### Numbers
 
 Save numbers with meaning (such as z-indexes or font sizes) to variables.
