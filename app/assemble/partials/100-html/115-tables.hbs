@@ -1,0 +1,38 @@
+---
+title: "Tables"
+section: true
+weight: 215 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+Tables should not be used for page layout; only use them when you need **to display tabular data.** Tables provide an important semantic association (used mostly by screen readers for the sight-impaired) between row/column headers and their data, so use `<table>` rather than other elements when displaying multiple records of data.
+
+The `<caption>` element is the recommended way to describe a table for both sighted and sight-impaired users, though this can also be done less semantically in the normal page text around the table. Use the `<thead>` and `<tbody>` elements to denote which row contains column headers so when a user prints the website and the table runs onto another page, browsers can display the `<thead>` on each page for easier readability. Remember to use the scope attribute on the `<th>` element to indicate whether the header applies to the row or column.	
+{{/markdown}}
+{{#code "html"}}
+<table>
+    <caption>First two U.S. presidents</caption>
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Took office</th>
+            <th scope="col">Party</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>George Washington</td>
+            <td>April 30, 1789</td>
+            <td>n/a</td>
+        </tr>
+        <tr>
+            <td>John Adams</td>
+            <td>March 4, 1797</td>
+            <td>Federalist</td>
+        </tr>
+    </tbody>
+</table>
+{{/code}}

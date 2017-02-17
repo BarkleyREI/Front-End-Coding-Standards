@@ -1,0 +1,20 @@
+// LAYERS
+@mixin layer($layer) {
+
+	@if $layer == max {
+		z-index: 200;
+	}
+
+	@if $layer == top {
+		z-index: 100;
+	}
+
+	@if $layer == middle {
+		z-index: 50;
+	}
+
+	@if $layer == bottom {
+		z-index: 1;
+	}
+
+}

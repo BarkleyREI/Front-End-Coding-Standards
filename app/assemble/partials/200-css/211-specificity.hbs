@@ -1,0 +1,32 @@
+---
+title: "Specificity"
+section: true
+weight: 311 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+Use the minimum specificity required to achieve the desired style. It can be difficult to quickly read and locate styles or even bugs with heavily nested styles in the CSS.
+
+The ID is the most specific selector, since it can only match one element, and the class is a close second. Use those whenever possible rather than HTML tag names.
+{{/markdown}}
+{{#code "css"}}
+/* BAD */
+button#back-button { ... }
+.popular ul li a { ... }
+.popular > ul > li > a { ... }
+
+/* GOOD */
+.back-button { ... }
+.popular-link { ... }
+.unpopular-link { ... }
+{{/code}}
+{{#markdown}}
+As a rule, CSS is most maintainable with the simplest selectors possible. Try applying a class to the element you want to target instead.
+
+**Note:**
+
+While performance of CSS selectors has been a debated topic, browsers perform quite well on most types of selectors. That said, specificity reduced to the most simple name to get the desired results is the best idea in most cases *for readability* and *maintainability*.
+{{/markdown}}

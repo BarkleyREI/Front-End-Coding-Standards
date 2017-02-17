@@ -1,31 +1,95 @@
-# README
+# BarkleyREI Front End Coding Standards
 
-## Front-end Coding Standards
+Create new markdown documents under the app/assemble/partials directory.
 
-The standards by which the dev team at BarkleyREI in Pittsburgh codes every project.
+There is an example file at app/assemble/partials/\_example/\_example.md
 
-Uses [beautifuldocs](http://beautifuldocs.com)
+Build with `grunt`.
 
-## How to compile
+Deploy with `grunt deploy`.
 
-`npm install -g beautifuldocs`
+Remotes:
+- `stash`
+- `github`
 
-Navigate to directory in terminal
+## Index.hbs Helpers
 
-`bfdocs manifest.json`
+*Use only in index.hbs*
 
-## How to push to gh-pages
+**optionNotEmpty**
 
-`git add .`
+```
+{{optionNotEmpty data.options "key"}}
+	true
+{{else}}
+	false
+{{/optionNotEmpty}}
+```
 
-`git commit -m "blah blah commit message"`
+**optionEquals**
 
-`git push origin master`
+```
+{{optionEquals data.options "key" "value"}}
+	true
+{{else}}
+	false
+{{/optionEquals}}
+```
 
-At this point you have pushed it to the github repository (hopefully your forked version)
+**option**
 
-Now to subtree into the pages branch
+*returns option value*
 
-`git subtree push --prefix out origin gh-pages`
+`{{option data.options "key"}}`
 
-No futher steps, this pushes it to the branch and up to the repo
+**levelHeading**
+
+*displays appropriate heading for section based on options.level*
+
+`{{levelHeading data.options data.title}}`
+
+**levelLink**
+
+*displays appropriate link for section based on options.level*
+
+`{{levelLink data.options data.title basename classes}}`
+
+**githubLink**
+
+*displays link to open issue regarding section on github*
+
+`{{githubLink github_url basename classes}}`
+
+**levelListLink**
+
+*displays a link to a section in a list item tag*
+
+`{{levelListLink data.options data.title basename}}`
+
+**sectionClass**
+
+*generates a class appropriate to the level of the section*
+
+`class="{{sectionClass data.options}}"`
+
+## Section Helpers
+
+**code**
+
+*output a code block*
+
+```
+{{#code "language"}}
+... code goes here ...
+{{/code}}
+```
+
+**markdown**
+
+*output html from markdown*
+
+```
+{{#markdown}}
+type markdown
+{{/markdown}}
+```

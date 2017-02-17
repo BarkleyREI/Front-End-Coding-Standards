@@ -1,0 +1,10 @@
+{
+	"name": "front-end-coding-standards",
+	"version": "1.0.0",
+	"dependencies": {
+		"modernizr": "~3.3.1",
+		"jquery": "~2.x",
+		"foundation-sites": "6.1.2"
+	},
+	"devDependencies": {}
+}

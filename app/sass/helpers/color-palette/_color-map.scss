@@ -1,0 +1,34 @@
+$black: #000000;
+$white: #ffffff;
+$sail: #b3d4fc;
+$silver: #cccccc;
+$mineshaft: #333333;
+$deepmineshaft: #222222;
+
+$barkley-red: #ed0000;
+$barkley-black: #11171c;
+$barkley-blue: #66cef7;
+$barkley-gray: #494d50;
+
+$palettes: (
+	'root': (
+		'core': $white,
+		'root': $deepmineshaft,
+		'selection': $sail
+	),
+	'theme': (
+		'core': $mineshaft
+	),
+	'font': (
+		'core': $barkley-black
+	),
+	'border': (
+		'core': $barkley-red
+	),
+	'black': (
+		'core': $barkley-black
+	),
+	'white': (
+		'core': $white
+	)
+);

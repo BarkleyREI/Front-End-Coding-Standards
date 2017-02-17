@@ -1,0 +1,30 @@
+table {
+
+	tbody {
+
+	}
+
+	tr {
+
+	}
+
+	td {
+
+	}
+
+	th {
+
+	}
+
+	&,
+	tbody,
+	tr,
+	th,
+	td {
+		border: 1px solid palette('black');
+	}
+
+	.content & {
+
+	}
+}

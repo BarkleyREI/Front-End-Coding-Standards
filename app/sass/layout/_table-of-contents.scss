@@ -1,0 +1,88 @@
+$indent-interval: rem-calc(8);
+
+.table-of-contents {
+	position: relative;
+	padding-bottom: 20px;
+
+	@include breakpoint(midway) {
+		border-left: 5px solid $barkley-red;
+
+		&:before {
+			content: '';
+			height: 100%;
+			width: 5px;
+			position: absolute;
+			top: 16px;
+			left: 2px;
+			background-color: $barkley-blue;
+		}
+	}
+
+	a {
+		display: inline-block;
+		color: $barkley-red;
+
+		&:hover,
+		&:focus {
+			color: $barkley-gray;
+		}
+	}
+
+	@for $i from 1 to 7 {
+		.level-#{$i} a {
+			padding-left: #{$indent-interval + (($indent-interval + 1) * ($i - 1))};
+
+			@if $i == 1 {
+				// font-size: 18px;
+			}
+
+			@if $i == 2 {
+				// font-size: 16px;
+			}
+
+			@if $i == 3 {
+				// font-size: 14px;
+			}
+
+			@if $i > 3 {
+				// font-size: 13px;
+			}
+
+			@include breakpoint(medium) {
+				@if $i == 1 {
+					// font-size: 20px;
+				}
+
+				@if $i == 2 {
+					// font-size: 18px;
+				}
+
+				@if $i == 3 {
+					// font-size: 16px;
+				}
+
+				@if $i > 3 {
+					// font-size: 13px;
+				}
+			}
+
+			@include breakpoint(large) {
+				@if $i == 1 {
+					// font-size: 28px;
+				}
+
+				@if $i == 2 {
+					// font-size: 22px;
+				}
+
+				@if $i == 3 {
+					// font-size: 16px;
+				}
+
+				@if $i > 3 {
+					// font-size: 13px;
+				}
+			}
+		}
+	}
+}
