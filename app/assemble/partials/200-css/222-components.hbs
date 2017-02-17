@@ -1,0 +1,46 @@
+---
+title: "Components"
+section: true
+weight: 322 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 4 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+Components are a high level concept for organizing CSS files and rules. A component simply means a grouped set of rules pertaining to an object or set of related objects on a page.
+
+Additionally, encapsulating these components into distinct files is a great option. Within this file, using a naming convention is a tremendous help here for code maintainability and readability.
+
+Group styles under a simple name-space using a prefix-suffix-modifier type pattern such as:
+{{/markdown}}
+{{#code "css"}}
+/* core component */
+.component { ... }
+
+/* component elements */
+.component-header { ... }
+.component-content { ... }
+
+/* component descendant */
+.component-content-group { ... }
+
+/* component descendant element */
+.component-content-group-header { ... }
+.component-content-group-imgs { ... }
+{{/code}}
+{{#markdown}}
+This type of pattern is easy to read, extend, and follow in the absence of something more sophisticated.
+
+Additionally, generally components will be the only CSS class with distinct names that do not have prefixes before the core, root, or base name of the component (e.g. above we are using component).
+
+Just to get developers thinking, these might be things like:
+
+* navbar
+* footer
+* page-info
+* article-date
+* lead
+* widgetfoo
+* byline
+{{/markdown}}

@@ -1,0 +1,14 @@
+body {
+
+	* {
+		// Better defaults for `background` so we can just do background: url(image) and not have to set anything else.
+		background-color: transparent;
+		background-position: top center;
+		background-repeat: no-repeat;
+
+		// Allow non-breaking characters to wrap
+		word-break: break-word;
+		word-wrap: break-word;
+	}
+
+}

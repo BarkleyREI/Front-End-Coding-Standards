@@ -1,0 +1,23 @@
+---
+title: "JavaScript Performance"
+section: true
+weight: 417 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 4 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+One of the most costly operations a browser can perform is updating the DOM in the page via inefficient JavaScript techniques. The most important thing to know is that the more you do on a Web page with JavaScript, the more work is being done, the more memory and the bigger the footprint it can generate. Additionally, updating a complex DOM structure over and over in JavaScript can cause re-flow, repainting, and jank.
+
+A book could be written on the subject, but here's a taste of various references:
+
+* [Minimizing browser re-flow](https://developers.google.com/speed/articles/reflow?hl=en)
+* [Repaints and Reflows, Manipulating the DOM Responsibly](http://blog.letitialew.com/post/30425074101/repaints-and-reflows-manipulating-the-dom)
+* [Reflows & Repaints: Css Performance Making Your Javascript Slow?](http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/)
+* [Rendering: repaint, reflow/relayout, restyle](http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/)
+* [Speed Up Your JavaScript (part 4)](http://www.nczonline.net/blog/2009/02/03/speed-up-your-javascript-part-4/)
+* [Memory Management and Performance](https://gist.github.com/dypsilon/4252079)
+* [Writing Fast, Memory-Efficient JavaScript](http://www.smashingmagazine.com/2012/11/writing-fast-memory-efficient-javascript/)
+* [Front-end developer essentials – 5 tips for efficient jQuery](http://www.punkchip.com/javascript-efficiency/)
+{{/markdown}}

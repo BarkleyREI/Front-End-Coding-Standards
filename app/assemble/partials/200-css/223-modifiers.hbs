@@ -1,0 +1,31 @@
+---
+title: "Modifiers"
+section: true
+weight: 323 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 4 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+If you need to extend an existing component then create distinct modifier classes with the prefix mod- to easily indicate that it is a modifier and not a complete style. Using the mod name prefix prevents confusing the class with a full class.
+{{/markdown}}
+{{#code "css"}}
+.mod-modifier-a { ... }
+.mod-modifier-b { ... }
+{{/code}}
+{{#markdown}}
+Then, when used in the HTML, the class stands out:
+{{/markdown}}
+{{#code "html"}}
+<div class="component-content mod-modifier-a">...</div>
+{{/code}}
+{{#markdown}}
+This is a strong technique because the modifier classes can stand on their own in the CSS. Further, they may also be altered via more complex rules:
+{{/markdown}}
+{{#code "css"}}
+.component-header.mod-modifier-a { ... }
+{{/code}}
+{{#markdown}}
+This is simplistic and easy to follow, understand, and expand upon.
+{{/markdown}}

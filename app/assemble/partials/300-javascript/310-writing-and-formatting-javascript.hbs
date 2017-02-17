@@ -1,0 +1,45 @@
+---
+title: "Writing and Formatting JavaScript"
+section: true
+weight: 410 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 4 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+The use of whitespace should follow long-standing English writing conventions, with blank lines between ideas and groups of code such as objects, functions, and new lines for new statements.
+
+Formatting the language statements and patterns should follow these basics:
+
+* Open braces are preceded by a single space.
+* Open braces should appear on the same line as their preceding argument.
+* Close braces should appear at the same indentation as the statement preceding the opening brace
+* There should be no space characters between parentheses and their contents.
+* Use semicolons and do not rely on automatic semicolon insertion.
+* Each comma and colon (and semi-colons that don't end a line) should be followed by a single space.
+* Binary and ternary operators should have a single space on each side.
+* Quoted values should be in 'single quotes' so that double quotes may easily exist inside them.
+* Comment JavaScript code thoroughly and consider using a pattern such as those described by JSDocs so that documentation may be generated automatically.
+* Conditional statements go on a new line followed by the opening brace.
+* Else/else go on the same line as the brace.
+* Use type strict checks with === as opposed to == whenever possible.
+{{/markdown}}
+{{#code "javascript"}}
+for (var i = 0, len = arr.length; i < len; i++) {
+    var example = 1;
+    if (example === i) {
+        // we are looping
+    } else {
+        // this will never happen
+    }
+}
+{{/code}}
+{{#markdown}}
+To maximize readability without worrying about which boolean operators bind more tightly than others, each segment of a boolean expression should be enclosed in parentheses.
+{{/markdown}}
+{{#code "javascript"}}
+if ((allowUpdate) && ((user.isAdmin) || (user.role === item.owner))) {
+    // do something
+}
+{{/code}}

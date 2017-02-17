@@ -1,0 +1,25 @@
+---
+title: "Input Labels"
+section: true
+weight: 217 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+All input fields should be associated with a `<label>` element. The for attribute of the `<label>` element should contain the ID of the corresponding input field. This means the input field will receive focus when a user clicks the label and also enables screen readers for sight-impaired users to read out an appropriate description of the input field.
+{{/markdown}}
+{{#code "html"}}
+<label for="home-address">Home Address</label>
+<input id="home-address" type="text" />
+{{/code}}
+{{#markdown}}
+You can also, alternatively, place the input for the label inside the label itself. This allows you many style opportunities to use the label as a container to align or place the form element in specific configurations.
+{{/markdown}}
+{{#code "html"}}
+<label for="home-address">
+	<span>Home Address</span>
+	<input id="home-address" type="text" />
+</label>
+{{/code}}

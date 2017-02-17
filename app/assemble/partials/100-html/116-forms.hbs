@@ -1,0 +1,14 @@
+---
+title: "Forms"
+section: true
+weight: 216 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+For both semantic and functional reasons, we make full use of the `<form>` tag for all sections requiring user input. All form action attributes should point to URLs with user-readable content, so they will still work if the form is submitted by the user before JavaScript has loaded on a page, or if JavaScript is broken, disabled, or not supported. This will require that the back-end be able to return a full HTML page for form submission (e.g. registering a new user, editing the quantity in a shopping cart).
+
+Do not nest the HTML form element tag.
+{{/markdown}}

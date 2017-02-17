@@ -1,0 +1,29 @@
+---
+title: "Getting Started with Mobile Development"
+section: true
+weight: 502 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 2 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+As the name of RWD implies, it all starts with a flexible design that features components having mutable characteristics based on the available screen canvas and varied types of user interactions. Careful consideration needs to be taken when innovating to derive a design that can respond to various screens.
+
+For a given project, always consider:
+
+* The extent of the use cases for each feature on the site.
+* The target audience and likelihood they may be using an alternative device to conduct certain activities on the site.
+* If all target devices will support all the technologies required.
+* That the UX will **not** be 100% the same across all devices, browsers and screens — nor should it be!
+* What happens to the design when the screen gets smaller **and larger** than the static canvas size it is being designed on.
+* For placement of content and decorative elements, are there patterns or rules that can describe where it falls and adjust with screen sizes?
+* Will some components be better suited as vector graphics (SVG or fonts) instead of raster files to allow for distortion free scaling?
+* Will assets need to be produced in different formats for different devices (e.g. HTML5 video, lower resolution artwork vs. high resolution artwork, smaller file sizes vs. larger sizes).
+* If a device offers a superior UX for some types of interaction (e.g. native date-pickers vs. traditional browser controls, or swiping instead of clicking on dots).
+* What happens when a feature is not supported by a device, or if a feature were to fail in a given device?
+* What if a device went off-line during usage of a feature?
+* The best ways to detect support for various features (e.g. Modernizr, etc.).
+
+Brad Frost's [Responsive Design Patterns](https://bradfrost.github.io/this-is-responsive/patterns.html) and [Responsive Design Resources](https://bradfrost.github.io/this-is-responsive/resources.html) are two great resources that continue to grow due to user contributions.
+{{/markdown}}

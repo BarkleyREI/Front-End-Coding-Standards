@@ -1,0 +1,30 @@
+---
+title: "Establishing Conventions and Development Strategies"
+section: true
+weight: 304 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+Like other aspects of the code on a site, consistency is key. Areas of critical consistency include:
+
+* Code formatting
+* Naming conventions
+* File and folder structure
+* Examples or sample code
+* How page components might be broken down or re-used
+
+On a large site never develop using a single CSS stylesheet, though a single file served for a page is best. To this end we often recommend the use of CSS preprocessors to break style sheets into smaller, better organized files, or the use of a build process to combine files for serving via HTTP.
+
+Try to use the rule of three when building stylesheets for a website:
+
+* Global site styles (Main.css)
+* Template specific styles (Level vs. Home)
+* Feature specific styles (One off page)
+
+**Note:**
+
+It is a great idea to approach front-end development like a set of [reusable components](http://patternlab.io/) are being created. This matches how they are designed, how they must adapt to responsive layouts, and how they will be implemented inside content management or other server-side frameworks.
+{{/markdown}}

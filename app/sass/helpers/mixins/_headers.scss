@@ -1,0 +1,15 @@
+// Apply styles to multiple heading tags at the same time
+//
+// @include headings(2, 5) {
+//     color: red;
+// }
+//
+@mixin headings($min: 1, $max: 6) {
+
+	@for $i from $min through $max {
+		#{ 'h' + $i} {
+			@content;
+		}
+	}
+
+}

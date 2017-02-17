@@ -1,0 +1,27 @@
+---
+title: "Speed is a feature"
+section: true
+weight: 509 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+People expect page load time to be as fast if not faster on their mobile phones in comparison to a desktop experience.
+
+* Try to keep your Web site's footprint as small as possible (this is a general best practice).
+* Start with global styles that apply across all breakpoints
+    * Optionally in-line these vital styles for faster initial render time
+* Consider every HTTP request
+    * The request itself may end up taking as much if not more time then the transfer of the data and could block downstream actions or more vital downloads.
+* Concatenate, gzip and minified your production CSS/JS where possible as this will lower page load size and time
+* Load the least amount of JavaScript that is needed.
+    * Wherever possible include script files at the end of your HTML document just before the </body> tag.
+
+Advanced CSS3 techniques are easy to implement, but when you start combining them, rendering and scrolling performance can be affected.
+
+Be careful of images!
+
+* Use a responsive image pattern that starts by serving a mobile optimized (and thus smaller file size) image first.
+{{/markdown}}

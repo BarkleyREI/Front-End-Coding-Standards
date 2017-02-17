@@ -1,0 +1,15 @@
+---
+title: "Inclusion"
+section: true
+weight: 307 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+Use the `<link>` tag to include all your style sheets in the `<head>` of the document. For optimal page performance, concatenate your CSS into as few files as possible and do not use the @import command to include other style sheets, as this will fire an additional HTTP request and block page rendering until its completion.
+{{/markdown}}
+{{#code "html"}}
+<link rel="stylesheet" type="text/css" href="main.css" />
+{{/code}}

@@ -1,0 +1,11 @@
+*node_modules*
+*.sass-cache
+*.tmp*
+*bower_components*
+*.log*
+*.orig*
+*_assemble-*.scss
+dist
+app/*.html
+app/modules
+app/partials

@@ -1,0 +1,23 @@
+---
+title: "Utilities"
+section: true
+weight: 326 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 4 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+A utility is a type of component modifier that is specifically designed to be used on more than one component type. If it was restricted to a single component, it would simply be a modifier.
+
+Utilities will use the prefix of u- and should serve only the modifier purpose intended without side effects when applied to any component, or component descendant.
+{{/markdown}}
+{{#code "css"}}
+.u-warning {
+
+}
+.u-scroll-infobox {
+    overflow-x: scroll;
+    width: auto;
+}
+{{/code}}

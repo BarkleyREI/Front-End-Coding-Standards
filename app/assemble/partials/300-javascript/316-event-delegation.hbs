@@ -1,0 +1,24 @@
+---
+title: "Limit Events - Use Event Delegation"
+section: true
+weight: 416 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 4 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+It is always preferable to use fewer events being bound to objects on a page as possible. Too many events bound on a page can mean memory leaks or just an accumulation of handlers bound to DOM elements which becomes less and less efficient over time. Additionally, event delegation has the added benefit of persisting events over dynamic page updates when items are added or removed from the DOM.
+
+With jQuery this is easy, simply use the on method with a selector:
+{{/markdown}}
+{{#code "javascript"}}
+$('body').on('click', 'a.scroller', function(){
+   // this only runs if the a.scroller is matched
+});
+{{/code}}
+{{#markdown}}
+**Learn more:**
+
+The jQuery API site has an excellent overview of the [on method](http://jqapi.com/#p=on).
+{{/markdown}}

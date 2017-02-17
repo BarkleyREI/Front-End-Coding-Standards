@@ -1,0 +1,30 @@
+---
+title: "Formatting SCSS"
+section: true
+weight: 309 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+Basic rules for formatting SCSS files:
+
+* The ordering of styles should be:
+    * @extend
+    * @includes (without inner content)
+    * Regular styles
+    * @includes (with inner content)
+    * Nested rule sets
+* Nested rule sets should follow the same ordering of styles.
+* Foundation breakpoints should be placed inside the selector they directly affect, and should not contain nested styles.
+* Nesting shouldn’t go deeper than 4 levels.
+* Nested statements shouldn’t be longer than 50 lines.
+* Only use variables or functions for colors in a module/partial.
+    * Try to use specifically named variables instead of the raw color names. For example, `$header-outer-border-color` instead of `$congress-blue;`
+* Surround all pixel values in `rem-calc()`
+
+Inside sets of rules or style declarations:
+* Omit an empty line between the top and bottom of a nested block.
+* Add empty lines in between nested blocks.
+{{/markdown}}

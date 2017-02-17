@@ -1,0 +1,45 @@
+{
+  "name": "brei-sass-boilerplate",
+  "version": "2.0.5",
+  "description": "https://github.com/BarkleyREI/brei-sass-boilerplate",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BarkleyREI/brei-sass-boilerplate"
+  },
+  "author": {
+    "name": "Ian Moffitt",
+    "email": "nessthehero@gmail.com",
+    "url": "https://github.com/nessthehero"
+  },
+  "contributors": [
+    {
+      "name": "Ian Moffitt",
+      "email": "nessthehero@gmail.com",
+      "url": "https://github.com/nessthehero"
+    },
+    {
+      "name": "Ryan Sprake",
+      "url": "https://github.com/eightdotthree"
+    },
+    {
+      "name": "Joseph Dillon",
+      "url": "https://github.com/jdillon522"
+    },
+    {
+      "name": "Sean Stacho",
+      "url": "https://github.com/Sean-BREI"
+    },
+    {
+      "name": "Sarah Harissis",
+      "url": "https://github.com/sharissis"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BarkleyREI/brei-sass-boilerplate/issues"
+  },
+  "homepage": "https://github.com/BarkleyREI/brei-sass-boilerplate"
+}

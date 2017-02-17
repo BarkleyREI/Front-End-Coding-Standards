@@ -1,0 +1,29 @@
+---
+title: "Inclusion of Code"
+section: true
+weight: 408 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 4 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+Use external JavaScript files. **Do NOT include JavaScript in-line in the page unless there is a good reason.**
+
+Use the `<script></script>` tag to include your JavaScript files at the bottom of your HTML document just before the closing `</body>` tag. For optimal page performance, concatenate your JavaScript into as few files as possible.
+{{/markdown}}
+{{#code "html"}}
+<script src="bundle.js"></script>
+{{/code}}
+{{#markdown}}
+* This should link to concatenated and minified, finalized JavaScript files.
+* Enable source maps to assist with debugging and testing.
+
+In development environments, this may point at a non-optimized file, however having techniques in place to toggle optimized files on and off is often beneficial.
+
+A reference similar to this may need to include a build-specific file name based upon a hash or something along those lines for HTTP cache purposes.
+
+**Learn more:**
+
+For information about build tools that help with these techniques, please see the Appendix.
+{{/markdown}}

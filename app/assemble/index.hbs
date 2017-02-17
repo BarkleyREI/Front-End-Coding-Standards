@@ -1,0 +1,56 @@
+---
+layout: index.hbs
+---
+
+<h1 class="row column"><span class="company">BarkleyREI</span> Front End Coding Standards</h1>
+
+<hr class="barkley" />
+
+<main id="main" class="main row">
+
+	<aside class="table-of-contents column medium-4 medium-push-8">
+		<h2 class="hide-for-medium">Table of Contents</h2>
+		<nav>
+			<ul>
+				{{#each section }}
+					{{#withSort pages "data.weight" dir="asc"}}
+
+						{{#if data.title}}
+							{{levelListLink data.options data.title basename}}
+						{{/if}}
+
+					{{/withSort}}
+				{{/each}}
+			</ul>
+		</nav>
+		<div id="back-top" class="back-to-top">
+		  <a href="#"> BACK TO TOP </a>
+		</div>
+	</aside>
+
+	<section class="standards column medium-8 medium-pull-4">
+		{{#each section }}
+			{{#withSort pages "data.weight" dir="asc"}}
+
+				<section id="section-{{basename}}" name="section-{{basename}}" class="{{sectionClass data.options}}">
+					{{#if data.title}}
+						{{levelHeading data.options data.title}}
+					{{/if}}
+
+					<span class="jumper">
+						[{{levelLink data.options "#" basename ""}}]
+						[{{githubLink "BarkleyREI/Front-End-Coding-Standards" basename ""}}]
+					</span>
+
+					{{render page }}
+
+					{{#optionEquals data.options "end-with-rule" true }}
+						<hr class="barkley" />
+					{{/optionEquals}}
+				</section>
+
+			{{/withSort}}
+		{{/each}}
+	</section>
+
+</main>
