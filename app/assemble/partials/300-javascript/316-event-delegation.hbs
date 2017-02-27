@@ -13,9 +13,20 @@ It is always preferable to use fewer events being bound to objects on a page as 
 With jQuery this is easy, simply use the on method with a selector:
 {{/markdown}}
 {{#code "javascript"}}
-$('body').on('click', 'a.scroller', function(){
-   // this only runs if the a.scroller is matched
+// jQuery
+$(‘body).on(‘click’, ‘.a.scrollbar’, function () {
+	// this only runs if the a.scrollbar is matched 
 });
+
+// JavaScript
+document.body.addEventListener(‘click’, function (event) {
+	var event = event.target;
+	if (target && target.nodeName.toLowerCase() === ‘a’) {
+		if (target.classList.contains(‘scrollbar’)) {
+			// this only runs if the a.scrollbar is matched
+		}
+	}
+}, false);
 {{/code}}
 {{#markdown}}
 **Learn more:**
