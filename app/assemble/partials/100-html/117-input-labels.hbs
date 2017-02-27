@@ -16,10 +16,12 @@ All input fields should be associated with a `<label>` element. The for attribut
 {{/code}}
 {{#markdown}}
 You can also, alternatively, place the input for the label inside the label itself. This allows you many style opportunities to use the label as a container to align or place the form element in specific configurations.
+
+Input controls must also have a name attribute. This can match or be similar to the id attribute. This is required for any backend integration, as the server sees the name as the key when the form is submitted.
 {{/markdown}}
 {{#code "html"}}
 <label for="home-address">
 	<span>Home Address</span>
-	<input id="home-address" type="text" />
+	<input id="home-address" name="home-address" type="text" />
 </label>
 {{/code}}
