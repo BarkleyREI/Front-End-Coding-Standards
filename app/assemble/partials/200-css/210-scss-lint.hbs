@@ -11,7 +11,7 @@ published: true
 All BarkleyREI projects are linted by SCSS-Lint to detect and alert style issues with SCSS files. We adhere to [all the defaults located here](https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md) with the exceptions of the following:
 
 * *__DeclarationOrder__* is set to false
-    * This causes issues with Foundation’s breakpoint() mixin.
+    * This causes issues with Foundation's breakpoint() mixin.
 * *__EmptyRule__* is set to false
     * These are removed in the final compiled file anyway, and this plays nice with our generator.
 * *__HexLength__* is enabled and set to “long” (requiring 6 characters always)
@@ -22,7 +22,7 @@ All BarkleyREI projects are linted by SCSS-Lint to detect and alert style issues
 * *__PropertySortOrder__* is set to false
     * This is difficult to enforce but we may pursue this later.
 * *__PseudoElement__* is set to false
-    * I’ve noticed that two colons fails in some browsers but I’m not certain.
+    * I've noticed that two colons fails in some browsers but I'm not certain.
 * *__QualifyingElement__* has “allow_element_with_attribute” set to “true”
 * *__SelectorDepth__* has “max_depth” set to “4”
 * *__SpaceAroundOperator__* is set to false
