@@ -11,6 +11,7 @@ published: true
 Consider using a wrapper inside module/partial blocks instead of using an outer container. The outermost tag of a module/partial can be devoid of padding or specific dimensions, allowing for various styles of formatting like centering elements.
 {{/markdown}}
 {{#code "html"}}
+<!-- preferred -->
 <header>
     <div class="wrapper">
 
@@ -21,6 +22,7 @@ Consider using a wrapper inside module/partial blocks instead of using an outer 
 vs.
 {{/markdown}}
 {{#code "html"}}
+<!-- sometimes necessary but prefer to avoid -->
 <div class="container">
     <header>
 

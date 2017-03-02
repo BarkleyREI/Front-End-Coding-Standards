@@ -31,4 +31,27 @@ All BarkleyREI projects are linted by SCSS-Lint to detect and alert style issues
 * *__TrailingZero__* is set to true
 * *__TransitionAll__* is set to true
     * You should only transition specific properties
+
+Excluding SCSS from linting should be avoided, but in the fringe case that you must remove linting from a specific section of a SCSS file, this can be achieved by the following example:
+{{/markdown}}
+{{#code}}
+.search {
+	// scss-lint:disable VendorPrefix
+	::-webkit-input-placeholder {
+		color: $placeholder-text-color;
+		font-style: italic;
+	}
+	// scss-lint:enable VendorPrefix
+}
+{{/code}}
+You must always deactivate only the rules you need, for only the lines you need. If an entire scss file needs excluded from linting, one of the following must occur:
+
+* It should be rewritten so that it passes without disabling rules.
+* It should be rewritten so that only the affected lines are excluded.
+* It should be moved to an excluded directory (like plugins, if you are importing styles from a third party component).
+
+**Resources:**
+
+- [BarkleyREI SCSS Lint Config](https://github.com/BarkleyREI/generator-brei-app/blob/master/generators/new/templates/scss-lint.yml)
+- [SCSS Lint configuration options](https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md)
 {{/markdown}}
