@@ -26,9 +26,10 @@ Formatting the language statements and patterns should follow these basics:
 * Conditional statements go on a new line followed by the opening brace.
 * Else/else go on the same line as the brace.
 * Use type strict checks with === as opposed to == whenever possible.
+* Use += and -= instead of ++ and --.
 {{/markdown}}
 {{#code "javascript"}}
-for (var i = 0, len = arr.length; i < len; i++) {
+for (var i = 0, len = arr.length; i < len; i += 1) {
     var example = 1;
     if (example === i) {
         // we are looping
