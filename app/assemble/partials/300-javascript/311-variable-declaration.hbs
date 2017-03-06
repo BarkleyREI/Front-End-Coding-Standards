@@ -22,4 +22,12 @@ This has been [debated at length](http://benalman.com/news/2012/05/multiple-var-
 * Easier debugging with debuggers.
 * Easier merges with version control and diff utilities.
 * Most technical issues are resolved by 'use strict'.
+
+Fallback values should also be considered when declaring variables whose values may be omitted or missing by the calling function.
+{{/markdown}}
+{{#code "javascript"}}
+var subhead = $('.thing').val() || '';
+{{/code}}
+{{#markdown}}
+The `||` syntax may not work in all situations, so it may be better to write a standard function that can do null-checking of values and pass all requests for data through that function.
 {{/markdown}}
