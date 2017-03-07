@@ -55,7 +55,7 @@
 							<li class="level-2"><a href="#section-003-getting-started">Getting Started</a></li>
 
 
-							<li class="level-3"><a href="#section-004-pillars">Pillars of Web Development</a></li>
+							<li class="level-3"><a href="#section-004-pillars">Pillars of Front-end Development</a></li>
 
 
 							<li class="level-2"><a href="#section-005-general-standards">General Standards</a></li>
@@ -127,7 +127,7 @@
 							<li class="level-3"><a href="#section-116-forms">Forms</a></li>
 
 
-							<li class="level-3"><a href="#section-117-input-labels">Input Labels</a></li>
+							<li class="level-4"><a href="#section-117-input-labels">Input Labels</a></li>
 
 
 							<li class="level-3"><a href="#section-118-wrapper-container">Wrapper vs. Container</a></li>
@@ -217,7 +217,7 @@
 							<li class="level-4"><a href="#section-224-state">State</a></li>
 
 
-							<li class="level-4"><a href="#section-225-javascript-js-prefix">JavaScript (JS) Prefix</a></li>
+							<li class="level-4"><a href="#section-225-javascript-prefix">JavaScript Behavior Prefixes and Classes</a></li>
 
 
 							<li class="level-4"><a href="#section-226-utilities">Utilities</a></li>
@@ -365,11 +365,11 @@
 					
 <p>This document contains the guidelines and best practices for the front-end web development team at BarkleyREI.</p>
 <p>Each item here represents either:</p>
-<ol>
-<li>A reminder to follow existing standards or industry conventions,</li>
-<li>guidance on what constitutes professional patterns and organization, or</li>
-<li>a decision we&#39;ve made favoring one method over its alternatives.</li>
-</ol>
+<ul>
+<li>A reminder to follow existing standards or industry conventions.</li>
+<li>Guidance on what constitutes professional patterns and organization.</li>
+<li>A decision we&#39;ve made favoring one method over its alternatives.</li>
+</ul>
 <p>What this document is not is a series of explanations as to how front-end technologies work; a basic familiarity is assumed. It also does not provide evaluations of the pros and cons of various alternatives unless there is common confusion about which option is best; when appropriate we pick what we consider to be the best solutions and present them. Issues that don&#39;t yet have a clear solution are considered flexible and may or may not be listed.</p>
 
 
@@ -389,7 +389,7 @@
 <ol>
 <li>Foster code consistency across our projects.</li>
 <li>Facilitate ease of maintenance.</li>
-<li>Ensure we create professional quality Web sites.</li>
+<li>Ensure we create professional quality websites.</li>
 <li>Guide staff on-boarding or educate new developers.</li>
 </ol>
 <p>This document is not intended to replace common sense, conventions requested by particular clients, teams, or prevent expressive or creative solutions to problems. Team or project-specific agreements or client requests will always supersede this document&#39;s content.</p>
@@ -427,13 +427,14 @@
 <p>At the outset of the project it is essential to <strong>properly understand the goals of the project</strong> and <strong>identify the specific deliverables</strong> expected of the front-end team. Where your responsibilities begin and end should not be taken for granted or assumed.</p>
 <p>It&#39;s important to understand how the development environment will work, what tools will be available, and what the differences between development, test, and production environments may ultimately be.</p>
 <p>Finally, all project teams should get a reasonable understanding of the what client&#39;s <strong>browser and device requirements</strong> are. Make no assumptions as to the technology available either from the client or their audience.</p>
+<p><strong>BarkleyREI</strong> has testing and coding standards documents that outline the base deliverable requirements of our code. These are delivered to the client during the discovery phase, and any special requirements the client has is recorded to those documents and signed for approval.</p>
 
 
 				</section>
 
 
 				<section id="section-004-pillars" name="section-004-pillars" class="level-3">
-						<h4 class="section-heading">Pillars of Web Development</h4>
+						<h4 class="section-heading">Pillars of Front-end Development</h4>
 
 					<span class="jumper">
 						[<a href="#section-004-pillars" class="">#</a>]
@@ -441,9 +442,13 @@
 					</span>
 
 					
-<p>At the outset of the project it is essential to <strong>properly understand the goals of the project</strong> and <strong>identify the specific deliverables</strong> expected of the front-end team. Where your responsibilities begin and end should not be taken for granted or assumed.</p>
-<p>It&#39;s important to understand how the development environment will work, what tools will be available, and what the differences between development, test, and production environments may ultimately be.</p>
-<p>Finally, all project teams should get a reasonable understanding of the what client&#39;s <strong>browser and device requirements</strong> are. Make no assumptions as to the technology available either from the client or their audience.</p>
+<p>Whenever possible, the front-end technology solutions produced shall adhere to industry best practices honoring as strict a separation of concerns as possible between:</p>
+<ul>
+<li>Semantic HyperText Markup Language (HTML) for structure</li>
+<li>Cascading Style Sheets (CSS) for presentation</li>
+<li>JavaScript (JS) for behavior and interaction</li>
+</ul>
+<p>When at all possible, we strive for a <a href="https://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> strategy.</p>
 
 
 				</section>
@@ -464,8 +469,9 @@
 <li>Solutions should be as simple and clear as possible.</li>
 <li>Solutions should serve a specific purpose.</li>
 <li>Clever code does not mean good code; readability is critical.</li>
+<li>Complex code solutions should be documented via comments, and if possible, documented elsewhere in a deliverable format (PDF, DOCX, etc).</li>
 </ul>
-<p>A key hallmark of professional code includes a notion that while we are writing code that must reach a desired goal, we are also creating code that must be read and understood by others.</p>
+<p>A key hallmark of professional code includes a notion that while we are writing code, we must reach a desired goal, and we must also create code that can be read and understood by others.</p>
 
 
 				</section>
@@ -497,8 +503,8 @@
 
 					
 <p>Please consistently indent, nest, include braces, quotes, and newlines so that code is clear and can be read easily. New code that is added should never deviate from existing formatting conventions or change the indent levels.</p>
-<p>For all code languages, we recommend the use of hard tabs at all times.</p>
-<p>You may modify your editor-of-choice to display tabs as 2 or 4 spaces, but they should exist as tabs to maintain consistency.</p>
+<p>For all code languages, we require the use of hard tabs at all times.</p>
+<p>You may modify your editor-of-choice to display tabs as 4 spaces, but they should exist as tabs to maintain consistency.</p>
 
 
 				</section>
@@ -515,8 +521,7 @@
 					
 <p>We encourage liberal use of whitespace, comments, and descriptive variable names as appropriate for writing easy-to-read code.</p>
 <p>There is no need to write code in an obfuscated or compressed way for the purpose of file-size savings.</p>
-<p>We will use build processes to optimize files.</p>
-<p>This includes concatenating files, code minification, gzipping, and setting &quot;Far Future Expires&quot;.</p>
+<p>We will use build processes to optimize files; this includes concatenating files, code minification, gzipping, and setting &quot;Far Future Expires&quot;.</p>
 <p>The ability for another developer to read the code is paramount above other concerns, especially if optimization can be handled another way.</p>
 
 
@@ -532,9 +537,19 @@
 					</span>
 
 					
-<p>Un-minified libraries and third-party scripts should be leveraged in local development environments for easier debugging if available. The code should be committed to source control in an unmodified state, or simply referenced in dependency management components that resolve the files in a build. The final products will be compressed with the rest of the source for delivery. Use bower to reference as much as possible before storing any third party scripts directly in the project. Make sure to use --save-dev to add the library to your bower config.</p>
+<p>Un-minified libraries and third-party scripts should be leveraged in local development environments for easier debugging if available. The code should not be committed to source control directly, but instead referenced in the <em>Assemble</em> files so that they are included in compiled versions of JavaScript deliverables. The final products will be compressed and minified with the rest of the source for delivery. Use <code>bower</code> to reference as much as possible before storing any third party scripts directly in the project. Make sure to use <code>--save-dev</code> to add the library to your bower config.</p>
 <p>Likewise, third-party code and libraries should never be modified and their original source and the license must be documented and be appropriate for a project. Any changes to third party code must be agreed upon and must be for specific reasons. If changes are mandated by bug fixes then the appropriate upstream project should have the changes submitted (assuming the code is part of an open source repository).</p>
-<p>Library code should be treated as an external dependency and should be considered something that may need to be wholesale updated or replaced at a later time.</p>
+<p>If a vendor library needs to be customized for the specific project, or is not generally available to install via <code>bower</code>, it can be saved in the <code>/app/js/vendor</code> directory of the project. The <code>bower_components</code> directory is not (and should not be) versioned and thus any changes made in that environment will not be saved.</p>
+<pre><code class="language-handlebars">&lt;!-- build:js js/main.js --&gt;
+&lt;script src=&quot;bower_components/jquery/dist/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;bower_components/foundation-sites/js/foundation.core.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;bower_components/foundation-sites/js/foundation.util.triggers.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;bower_components/foundation-sites/js/foundation.util.mediaQuery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;bower_components/foundation-sites/js/foundation.sticky.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/vendor/prism.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/standards.js&quot;&gt;&lt;/script&gt;
+&lt;!-- endbuild --&gt;
+</code></pre><p>Library code should be treated as an external dependency and should be considered something that may need to be wholesale updated or replaced at a later time.</p>
 <p>Inclusion of any third-party code should be carefully considered and verified with the project team as the appropriate solution to a given problem. &quot;Adding another plug-in&quot; is not always the best solution. Finally, selection of third party libraries should be done carefully and not be out of alignment with the nature of the problem being addressed.</p>
 <p>To be blunt, <strong>use the right tool for the right job.</strong></p>
 
@@ -552,7 +567,9 @@
 
 					
 <p>Quality deliverables are essential for professionals. Sloppy or messy deliverables are unprofessional and reflect poorly on the final product and the delivery team. Please remove legacy files, be certain the work is delivered in a clean file system, and in an orderly, logical structure that serves a clear purpose.</p>
-<p>Unless specifically requested, delivery of code should be a zip of the compiled static assets. If the client desires a part of the unbuilt project or the entire project itself, documentation should be prepared for the client accordingly, and minimal support offered.</p>
+<p>Unless specifically requested, delivery of code should be a zip of the compiled static assets. If the client desires a part of the unbuilt project or the entire project itself, documentation should be prepared for the client accordingly, and minimal support offered. If a client does receive the code base for a project, they must be made aware that any changes made on their end are separated from our final version of the code and will be the sole responsibility of the client.</p>
+<p>The deployment of a project may be satisfied by the integration of the template into their CMS or hosted server.</p>
+<p>There is no official standard of project documentation at BarkleyREI yet, but as much documentation as is possible should be provided along with finished code.</p>
 
 
 						<hr class="barkley"/>
@@ -683,7 +700,6 @@
 
 					
 <p>Always include a proper doctype to trigger standards mode. Omitting the doctype <a href="https://developer.mozilla.org/en-US/docs/Quirks_Mode_and_Standards_Mode">triggers quirks mode</a> and should always be avoided. The HTML5 doctype is simple and easy to remember.</p>
-
 <pre><code class="language-html">&lt;!doctype html&gt;
 </code></pre>
 
@@ -699,8 +715,7 @@
 					</span>
 
 					
-<p>All markup should be delivered as UTF-8, since it has the best support for internationalization. The character encoding should be designated in both the HTTP header and the head of the document via a meta tag. If the server happens to omit the HTTP header, browsers can take a guess at the character encoding and begins parsing and rendering the markup in a particular way. If there are inconsistencies, the browser will re-parse and re-render, throwing away all that work and starting over if it encounters the meta tag and its guess was incorrect. As a best practice, we always put the meta tag as early in the <head> tag as early as possible — however server-settings are ideal.</head></p>
-
+<p>All markup should be delivered as UTF-8, since it has the best support for internationalization. The character encoding should be designated in both the HTTP header and the head of the document via a meta tag. If the server happens to omit the HTTP header, browsers can take a guess at the character encoding and begins parsing and rendering the markup in a particular way. If there are inconsistencies, the browser will re-parse and re-render, throwing away all that work and starting over if it encounters the meta tag and its guess was incorrect. As a best practice, we always put the meta tag as early in the <code>&lt;head&gt;</code> tag as early as possible — however server-settings are ideal.</p>
 <pre><code class="language-html">&lt;meta charset=&quot;UTF-8&quot; /&gt;
 </code></pre>
 
@@ -716,7 +731,7 @@
 					</span>
 
 					
-<p>Include slashes in all self closing tags for compatibility in older, XML based CMS systems. Include all closing tags, even if they are technically optional.</p>
+<p>Include slashes in all self closing tags for compatibility in older, XML based CMS&#39;s. Include all closing tags, even if they are technically optional.</p>
 <pre><code class="language-html">&lt;!-- closing &quot;/&quot; is not necessary but should be included for compatibility --&gt;
 &lt;img src=&quot;/logo.png&quot; alt=&quot;ISOBAR&quot; /&gt;
 
@@ -806,7 +821,7 @@
 					
 <p>Use quotes to surround all attribute values in HTML, despite quotes being optional in HTML5. This maintains consistency between attribute values that contain whitespace and those that don&#39;t.</p>
 <pre><code class="language-html">&lt;form class=&quot;registration module&quot; action=&quot;/register&quot; method=&quot;POST&quot;&gt;
-</code></pre><p>For boolean attributes that don&#39;t normally require values, include them anyway in order to remain compatible with XML based CMS systems that have a more strict parser.</p>
+</code></pre><p>For boolean attributes that don&#39;t normally require values, include them anyway in order to remain compatible with XML based CMS&#39;s that have a more strict parser.</p>
 <pre><code class="language-html">&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; /&gt;
 </code></pre>
 
@@ -823,7 +838,10 @@
 
 					
 <p>Avoid using <code>&lt;br&gt;</code> tags to separate paragraphs or lines of text. Use <code>&lt;p&gt;</code> instead with proper opening and closing elements.</p>
-
+<pre><code class="language-html">&lt;p&gt;
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+&lt;/p&gt;
+</code></pre>
 
 				</section>
 
@@ -838,7 +856,18 @@
 
 					
 <p>Use definition lists to display a single record of name-value pairs, like a contact card.</p>
+<pre><code class="language-html">&lt;dl&gt;
+  &lt;dt&gt;Firefox&lt;/dt&gt;
+  &lt;dd&gt;
+    A free, open source, cross-platform,
+    graphical web browser developed by the
+    Mozilla Corporation and hundreds of
+    volunteers.
+  &lt;/dd&gt;
 
+  &lt;!-- Other terms and descriptions --&gt;
+&lt;/dl&gt;
+</code></pre>
 
 				</section>
 
@@ -891,14 +920,33 @@
 
 					
 <p>For both semantic and functional reasons, we make full use of the <code>&lt;form&gt;</code> tag for all sections requiring user input. All form action attributes should point to URLs with user-readable content, so they will still work if the form is submitted by the user before JavaScript has loaded on a page, or if JavaScript is broken, disabled, or not supported. This will require that the back-end be able to return a full HTML page for form submission (e.g. registering a new user, editing the quantity in a shopping cart).</p>
-<p>Do not nest the HTML form element tag.</p>
+<p>Form tags should have a container inside that holds the inputs. Do not place the inputs directly inside a form tag. A <code>&lt;fieldset&gt;</code> tag is suitable for this purpose. You can also use <code>&lt;legend&gt;</code> to describe sections of a form.</p>
+<p>Forms should have a name and ID.</p>
+<p>Do not nest the HTML form element tag inside another form tag.</p>
+<pre><code class="language-html">&lt;form action=&quot;/handler.aspx&quot; method=&quot;POST&quot; name=&quot;contact&quot; id=&quot;contact-form&quot;&gt;
 
+	&lt;fieldset&gt;
+
+		&lt;legend&gt;Name&lt;/legend&gt;
+
+		&lt;label for=&quot;first-name&quot;&gt;First Name&lt;/label&gt;
+		&lt;input type=&quot;text&quot; name=&quot;first&quot; id=&quot;first-name&quot; placeholder=&quot;Enter your first name&quot; /&gt;
+
+		&lt;label for=&quot;last-name&quot;&gt;Last Name&lt;/label&gt;
+		&lt;input type=&quot;text&quot; name=&quot;last&quot; id=&quot;last-name&quot; placeholder=&quot;Enter your last name&quot; /&gt;
+
+		&lt;input type=&quot;submit&quot; /&gt;
+
+	&lt;/fieldset&gt;
+
+&lt;/form&gt;
+</code></pre>
 
 				</section>
 
 
 				<section id="section-117-input-labels" name="section-117-input-labels" class="level-1">
-						<h4 class="section-heading">Input Labels</h4>
+						<h5 class="section-heading">Input Labels</h5>
 
 					<span class="jumper">
 						[<a href="#section-117-input-labels" class="">#</a>]
@@ -910,9 +958,10 @@
 <pre><code class="language-html">&lt;label for=&quot;home-address&quot;&gt;Home Address&lt;/label&gt;
 &lt;input id=&quot;home-address&quot; type=&quot;text&quot; /&gt;
 </code></pre><p>You can also, alternatively, place the input for the label inside the label itself. This allows you many style opportunities to use the label as a container to align or place the form element in specific configurations.</p>
+<p>Input controls must also have a name attribute. This can match or be similar to the id attribute. This is required for any backend integration, as the server sees the name as the key when the form is submitted.</p>
 <pre><code class="language-html">&lt;label for=&quot;home-address&quot;&gt;
 	&lt;span&gt;Home Address&lt;/span&gt;
-	&lt;input id=&quot;home-address&quot; type=&quot;text&quot; /&gt;
+	&lt;input id=&quot;home-address&quot; name=&quot;home-address&quot; type=&quot;text&quot; /&gt;
 &lt;/label&gt;
 </code></pre>
 
@@ -929,13 +978,15 @@
 
 					
 <p>Consider using a wrapper inside module/partial blocks instead of using an outer container. The outermost tag of a module/partial can be devoid of padding or specific dimensions, allowing for various styles of formatting like centering elements.</p>
-<pre><code class="language-html">&lt;header&gt;
+<pre><code class="language-html">&lt;!-- preferred --&gt;
+&lt;header&gt;
     &lt;div class=&quot;wrapper&quot;&gt;
 
     &lt;/div&gt;
 &lt;/header&gt;
-</code></pre><p>vs</p>
-<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+</code></pre><p>vs.</p>
+<pre><code class="language-html">&lt;!-- sometimes necessary but prefer to avoid --&gt;
+&lt;div class=&quot;container&quot;&gt;
     &lt;header&gt;
 
     &lt;/header&gt;
@@ -954,7 +1005,41 @@
 					</span>
 
 					
-<p>All projects will use the latest (or highest internally supported) version of Zurb’s Foundation framework. Grad classes can be used to define the layout of the page, but their use is not required.</p>
+<p>All projects will use the latest (or highest internally supported) version of Zurb&#39;s Foundation framework. Grad classes can be used to define the layout of the page, but their use is not required.</p>
+<p><strong>BarkleyREI currently implements Foundation 6.3.0</strong></p>
+<p><em>Example:</em></p>
+<pre><code class="language-html">&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;small-2 large-4 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;small-4 large-4 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;small-6 large-4 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;large-3 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;large-6 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;large-3 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;small-6 large-2 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;small-6 large-8 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;small-12 large-2 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;small-3 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;small-9 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;large-4 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;large-8 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;small-6 large-5 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;small-6 large-7 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;large-6 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;large-6 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>For additional examples and more information on Foundation&#39;s grid, visit the <a href="http://foundation.zurb.com/sites/docs/grid.html">Zurb Grid documentation site</a>.</p>
 
 
 				</section>
@@ -969,7 +1054,8 @@
 					</span>
 
 					
-<p>Typically HTML deliverables are incorporated into Content Management Systems or application delivery platforms as templates. A plan for incorporation of templates that leverage patterns created during the markup creation phase should be followed and matching types of pages to templates that were created, so that an association between the source markup and the destination markup can be maintained over time.</p>
+<p>Typically HTML deliverables are incorporated into CMS&#39;s or application delivery platforms as templates. A plan for incorporation of templates that leverage patterns created during the markup creation phase should be followed and matching types of pages to templates that were created, so that an association between the source markup and the destination markup can be maintained over time.</p>
+<p>If the templates built are not being integrated into a CMS by BarkleyREI, the static coded versions of these templates can be provided as a deliverable.</p>
 
 
 				</section>
@@ -985,16 +1071,16 @@
 
 					
 <p>Considerations:</p>
-<ol>
-<li>Site maintenance procedures</li>
-<li>Browser testing strategies</li>
-<li>How new features will be added</li>
-<li>Where new features will be added</li>
-<li>What the file system looks like for static site assets</li>
-<li>If a CDN is involved</li>
-<li>Naming conventions and organization of graphics and photography assets</li>
-<li>If the &quot;back-end implementation&quot; of static HTML templates will require review by front-end team members</li>
-</ol>
+<ul>
+<li>Site maintenance procedures.</li>
+<li>Browser testing strategies.</li>
+<li>How new features will be added.</li>
+<li>Where new features will be added.</li>
+<li>What the file system looks like for static site assets.</li>
+<li>If a CDN is involved.</li>
+<li>Naming conventions and organization of graphics and photography assets.</li>
+<li>If the &quot;back-end implementation&quot; of static HTML templates will require review by front-end team members.</li>
+</ul>
 
 
 						<hr class="barkley"/>
@@ -1038,7 +1124,7 @@
 <p>When setting up the CSS for a site, always consider:</p>
 <ul>
 <li>What the default styles for HTML elements are going to be.</li>
-<li>Which styles are global styles versus specific one-off use-cases.</li>
+<li>Which styles are global styles versus template specific styles versus specific one-off use-cases. (Rule of Three)</li>
 <li>Distinctions between code for layout and for content.</li>
 <li>How the code will evolve and grow.</li>
 <li>Potential impact of bug fixes on the overall site.</li>
@@ -1058,8 +1144,8 @@
 					</span>
 
 					
-<p>All styles should be written in Sass (Syntactically Awesome Style Sheets) unless specifically requested otherwise by management or the client. The structure of the Sass in the project should follow the SCSS Boilerplate on our Github.</p>
-<p>Refer to the &quot;Formatting SCSS&quot; section of this document for more information on writing Sass styles.</p>
+<p>All styles should be written in <a href="http://sass-lang.com/">Sass (Syntactically Awesome Style Sheets)</a> unless specifically requested otherwise by management or the client. The structure of the Sass in the project should follow the <a href="https://github.com/BarkleyREI/brei-sass-boilerplate">SCSS Boilerplate</a> on our Github.</p>
+<p>Refer to the <a href="#section-209-formatting-scss">&quot;Formatting SCSS&quot;</a> section of this document for more information on writing Sass styles.</p>
 
 
 				</section>
@@ -1074,7 +1160,7 @@
 					</span>
 
 					
-<p>Unless specified otherwise, all projects should use Zurb’s Foundation framework. The grid system, reset, and default styles will be included by default.</p>
+<p>Unless specified otherwise, all projects should use Zurb&#39;s Foundation framework. The grid system, reset, and default styles will be included by default.</p>
 <p>Only use components and features from Foundation as they are needed. Do not include anything unnecessarily, as this adds to overall bloat.</p>
 <p>If other frameworks are desired by the client or management, best care should be taken to minimize the total size of the final CSS file. This can be accomplished by separating out the bulk of the framework into a separate or CDN-hosted CSS file that is referred to before the main styles.</p>
 
@@ -1093,21 +1179,26 @@
 					
 <p>Like other aspects of the code on a site, consistency is key. Areas of critical consistency include:</p>
 <ul>
-<li>Code formatting</li>
-<li>Naming conventions</li>
-<li>File and folder structure</li>
-<li>Examples or sample code</li>
-<li>How page components might be broken down or re-used</li>
+<li>Code formatting.</li>
+<li>Naming conventions.</li>
+<li>File and folder structure.</li>
+<li>Examples or sample code.</li>
+<li>How page components might be broken down or re-used.</li>
 </ul>
 <p>On a large site never develop using a single CSS stylesheet, though a single file served for a page is best. To this end we often recommend the use of CSS preprocessors to break style sheets into smaller, better organized files, or the use of a build process to combine files for serving via HTTP.</p>
 <p>Try to use the rule of three when building stylesheets for a website:</p>
 <ul>
-<li>Global site styles (Main.css)</li>
-<li>Template specific styles (Level vs. Home)</li>
-<li>Feature specific styles (One off page)</li>
+<li>Global site styles (Main.css).</li>
+<li>Template specific styles (Level vs. Home).</li>
+<li>Feature specific styles (One off page).</li>
 </ul>
 <p><strong>Note:</strong></p>
 <p>It is a great idea to approach front-end development like a set of <a href="http://patternlab.io/">reusable components</a> are being created. This matches how they are designed, how they must adapt to responsive layouts, and how they will be implemented inside content management or other server-side frameworks.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="http://patternlab.io">Pattern Lab</a></li>
+<li><a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Web Design</a></li>
+</ul>
 
 
 				</section>
@@ -1122,10 +1213,10 @@
 					</span>
 
 					
-<p>One technique to consider is maintaining static HTML style reference implementations well into integration with server-side / back-end systems. These could be a series of templates or widgets that use the live styles being built. This helps reduce regressions that can happen across the board as the code for the site evolves. Continue to test these reference implementations as they will be the &quot;source of record&quot; for the styles created on the site. They also allow you to more easily distinguish the front-end bugs from the bugs potentially introduced by integration with a complex back-end.</p>
+<p>One technique to consider is maintaining static HTML style reference implementations well into integration with server-side / back-end systems. Because BarkleyREI statically codes all designs and submits them to Quality Assurance Testing before integrating into any CMS&#39;s, these files are a reference for the global styles of the site and a great place to code and test additions to the project before integrating. This helps reduce regressions that can happen across the board as the code for the site evolves. Continue to test these reference implementations as they will be the &quot;source of record&quot; for the styles created on the site. They also allow you to more easily distinguish the front-end bugs from the bugs potentially introduced by integration with a complex back-end.</p>
 <p>These reference implementations can serve as a living style guide and broken components are easily spotted in testing over time.</p>
 <p>Defining a solid style guide to be applied to tag names can significantly reduce the size of the CSS if that style guide is adhered to by both the design and development teams. It is recommended that a style guide is agreed upon at the beginning of a project, defined in HTML and then iterated on by both the design and development teams.</p>
-<p>For BarkleyREI’s purposes, the living style guide can be satisfied by the statically coded templates. All new work should be done statically and tested before integrating into a CMS. Care should be taken to maintain the integrity of the existing styles and markup, and maintain parity with the CMS-integrated versions.</p>
+<p>For BarkleyREI&#39;s purposes, the living style guide can be satisfied by the statically coded templates. All new work should be done statically and tested before integrating into a CMS. Care should be taken to maintain the integrity of the existing styles and markup, and maintain parity with the CMS-integrated versions.</p>
 
 
 				</section>
@@ -1155,8 +1246,9 @@
 					</span>
 
 					
-<p>Use the <code>&lt;link&gt;</code> tag to include all your style sheets in the <code>&lt;head&gt;</code> of the document. For optimal page performance, concatenate your CSS into as few files as possible and do not use the @import command to include other style sheets, as this will fire an additional HTTP request and block page rendering until its completion.</p>
+<p>Use the <code>&lt;link&gt;</code> tag to include all your style sheets in the <code>&lt;head&gt;</code> of the document. For optimal page performance, concatenate your CSS into as few files as possible and do not use the <code>@import</code> command to include other style sheets, as this will fire an additional HTTP request and block page rendering until its completion.</p>
 <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;main.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;home.css&quot; /&gt;
 </code></pre>
 
 				</section>
@@ -1171,6 +1263,7 @@
 					</span>
 
 					
+<p>The majority of CSS produced by BarkleyREI will be compiled from SCSS, but in the odd occasion that we must write normal CSS for a project, please adhere to the following rules.</p>
 <p>Basic rules for formatting CSS files:</p>
 <ul>
 <li>Use a new line for every selector and every declaration.</li>
@@ -1195,6 +1288,7 @@
 </ul>
 </li>
 <li>When allowed, use 0 without units.</li>
+<li>All font families must have fallbacks to web safe fonts. (e.g. serif, sans-serif)</li>
 </ul>
 <p>Putting each selector on its own line and each property on its own line is great for readability and so version control systems can clearly show which parts have changed in a diff.</p>
 <p>The attributes within a selector can be alphabetized for easy scanning and so that compression algorithms like gzip have a greater chance of finding repeatable patterns.</p>
@@ -1206,14 +1300,13 @@
 .twitter-popular,
 .twitter-favorites,
 .twitter-feed {
+	background-image: url(&quot;/img/bg.png&quot;);
     float: left;
-    padding-left: 2%;
+	padding: 15px 0;
     width: 33.33%;
-    padding: 15px 0;
 }
 </code></pre><p><strong>Do not indent child styles</strong> underneath their parent styles; this is important for a number of reasons:</p>
 <ul>
-<li>We usually recommend indenting media queries, so this can cause confusion.</li>
 <li>Some CSS preprocessors heavily use indentation.</li>
 <li>Various levels of indentation hinders maintainability.</li>
 <li>HTML and CSS structure can change frequently over the course of a project, quickly rendering obsolete the parent-child relationship the indentation used to represent.</li>
@@ -1244,20 +1337,83 @@
 </li>
 <li>Nested rule sets should follow the same ordering of styles.</li>
 <li>Foundation breakpoints should be placed inside the selector they directly affect, and should not contain nested styles.</li>
-<li>Nesting shouldn’t go deeper than 4 levels.</li>
-<li>Nested statements shouldn’t be longer than 50 lines.</li>
-<li>Only use variables or functions for colors in a module/partial.<ul>
-<li>Try to use specifically named variables instead of the raw color names. For example, <code>$header-outer-border-color</code> instead of <code>$congress-blue;</code></li>
+<li>Nesting shouldn&#39;t go deeper than 4 levels.</li>
+<li>Nested statements shouldn&#39;t be longer than 50 lines.<ul>
+<li>This means that each nested selector shouldn&#39;t total 50 lines, not that the entire file should be under 50 lines. This is so that a nested selector can fit into your editor window to reduce confusion during development.</li>
 </ul>
 </li>
-<li>Surround all pixel values in <code>rem-calc()</code></li>
+<li>Only use variables or functions for colors in a module/partial.<ul>
+<li>Try to use specifically named variables instead of the raw color names. For example, <code>$header-outer-border-color</code> instead of <code>$congress-blue;</code></li>
+<li>The palette helper is also recommended to assist with naming.</li>
+</ul>
+</li>
+<li>Surround all pixel values in <code>rem-calc()</code><ul>
+<li>Exceptions are permitted where rem units are not supported or cause issues (like borders)</li>
+</ul>
+</li>
 </ul>
 <p>Inside sets of rules or style declarations:</p>
 <ul>
 <li>Omit an empty line between the top and bottom of a nested block.</li>
 <li>Add empty lines in between nested blocks.</li>
 </ul>
+<pre><code class="language-scss">$palettes: map-merge($palettes, (
+    &#x27;accordion&#x27;: (
+        &#x27;core&#x27;: $black,
+        &#x27;background&#x27;: $iron,
+		&#x27;title&#x27;: $midnight-blue,
+		&#x27;hover&#x27;: $mango-tango,
+		&#x27;border&#x27;: $mango-tango
+    )
+));
 
+// Example, normally this would be in theme-variables.scss
+$default-font: &#x27;Lato&#x27;, Arial, sans-serif;
+
+.accordion-item {
+	@extend %list-reset;
+
+	border-top: 1px dotted $dodger-blue;
+
+	&amp;:first-child {
+		border-top: 1px dotted palette(&#x27;accordion&#x27;, &#x27;border&#x27;);
+	}
+
+	.accordion-title {
+		color: palette(&#x27;accordion&#x27;, &#x27;title&#x27;);
+		display: block;
+		font-size: rem-calc(24);
+		line-height: rem-calc(28);
+		position: relative;
+		padding: rem-calc(15 20 15 28);
+
+		@include breakpoint(large) {
+			font-size: rem-calc(30);
+			line-height: rem-calc(34);
+			padding: rem-calc(17 20 17 42);
+		}
+
+		.no-js &amp; {
+			padding-left: 0;
+		}
+
+		&amp;:hover,
+		&amp;:focus {
+			text-decoration: none;
+		}
+	}
+
+	.accordion-content {
+		background-color: palette(&#x27;accordion&#x27;, &#x27;background&#x27;);
+		display: none;
+		padding: rem-calc(25 25 25 0);
+
+		.no-js &amp; {
+			display: block;
+		}
+	}
+}
+</code></pre>
 
 				</section>
 
@@ -1274,7 +1430,7 @@
 <p>All BarkleyREI projects are linted by SCSS-Lint to detect and alert style issues with SCSS files. We adhere to <a href="https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md">all the defaults located here</a> with the exceptions of the following:</p>
 <ul>
 <li><em><strong>DeclarationOrder</strong></em> is set to false<ul>
-<li>This causes issues with Foundation’s breakpoint() mixin.</li>
+<li>This causes issues with Foundation&#39;s breakpoint() mixin.</li>
 </ul>
 </li>
 <li><em><strong>EmptyRule</strong></em> is set to false<ul>
@@ -1291,7 +1447,7 @@
 </ul>
 </li>
 <li><em><strong>PseudoElement</strong></em> is set to false<ul>
-<li>I’ve noticed that two colons fails in some browsers but I’m not certain.</li>
+<li>I&#39;ve noticed that two colons fails in some browsers but I&#39;m not certain.</li>
 </ul>
 </li>
 <li><em><strong>QualifyingElement</strong></em> has “allow_element_with_attribute” set to “true”</li>
@@ -1306,6 +1462,26 @@
 <li>You should only transition specific properties</li>
 </ul>
 </li>
+</ul>
+<p>Excluding SCSS from linting should be avoided, but in the fringe case that you must remove linting from a specific section of a SCSS file, this can be achieved by the following example:</p>
+<pre><code class="language-css">.search {
+	// scss-lint:disable VendorPrefix
+	::-webkit-input-placeholder {
+		color: $placeholder-text-color;
+		font-style: italic;
+	}
+	// scss-lint:enable VendorPrefix
+}
+</code></pre><p>You must always deactivate only the rules you need, for only the lines you need. If an entire scss file needs excluded from linting, one of the following must occur:</p>
+<ul>
+<li>It should be rewritten so that it passes without disabling rules.</li>
+<li>It should be rewritten so that only the affected lines are excluded.</li>
+<li>It should be moved to an excluded directory (like plugins, if you are importing styles from a third party component).</li>
+</ul>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://github.com/BarkleyREI/generator-brei-app/blob/master/generators/new/templates/scss-lint.yml">BarkleyREI SCSS Lint Config</a></li>
+<li><a href="https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md">SCSS Lint configuration options</a></li>
 </ul>
 
 
@@ -1367,6 +1543,7 @@ button#back-button { ... }
 					
 <p>As noted above, use the lowest level of specificity necessary to get the desired results. This means the use of the ID selector should be minimized. Often creating a new class is preferable to using inheritance or additional specificity to target an element or elements.</p>
 <p>ID selectors, if used, should be used mainly as access points for JavaScript or if a very particular use case surfaces. Styles and classes can be applied via the same element with a className.</p>
+<p>SCSS Lint will flag the use of IDs, so if they are absolutely required, they must be excluded via <code>scss-lint:disable</code> statements.</p>
 
 
 				</section>
@@ -1402,7 +1579,11 @@ button#back-button { ... }
 
 					
 <p>Do not hard code style information into your HTML markup directly, either with the style attribute that accepts CSS or with deprecated attributes such as align, border, or width. These are difficult to maintain and make it harder to track down what is causing an element to appear as it does.</p>
-<p>An exception to this is background images that may be changeable by the client.</p>
+<p>There are a few exceptions to this:</p>
+<ul>
+<li>Background images that are changeable by the client.</li>
+<li>Positioning of captions in mastheads using percentages or pixels via top/left/right/bottom.</li>
+</ul>
 
 
 				</section>
@@ -1419,6 +1600,7 @@ button#back-button { ... }
 					
 <p>In some cases for performance reasons it may be good practice to in-line critical styles in a <code>style</code> block in the document&#39;s head. This delivers these styles to the browser in the fastest method possible by preventing the need for an additional HTTP request. Fetching linked style sheets are a blocking operation on the rendering of a Web page in a browser in most cases. An enormous CSS file can mean a highly reduced time to first rendering because a browser may pause during loading of the page to download CSS which may not even be used on the first page.</p>
 <p>With the above in mind it may be desirable to include the rules required to render the top portions of a page (i.e. &quot;Above the fold&quot;) in advance of styles loaded after the rendering begins. Critical styles can be identified either manually or through the use of a tool. Non critical styles can then be asynchronously loaded, increasing the perceived page load speed.</p>
+<p><strong>BarkleyREI</strong> does not currently implement critical styles as a technique.</p>
 
 
 				</section>
@@ -1467,7 +1649,7 @@ button#back-button { ... }
 <li>Some developers may find the syntax difficult to read.</li>
 </ul>
 <p>For these reasons it is often best to go with the most simple, basic set of conventions possible, based on obvious patterns.</p>
-<p>BarkleyREI does not currently follow a coding pattern for CSS/SCSS.</p>
+<p>BarkleyREI does not currently follow a popular coding pattern for CSS/SCSS.</p>
 
 
 				</section>
@@ -1510,7 +1692,12 @@ button#back-button { ... }
 					
 <p>For the purposes of discussion we could refer to the global defaults as the baseline HTML elements and their associated styles. Frequently you may wish to use a third party library which normalizes CSS behavior across browsers. Either way, it makes sense to keep these files in their own files.</p>
 <p>BarkleyREI uses Foundation to reset styles, which in turn uses Normalize.css.</p>
+<p>Print styles should be contained within a separate stylesheet, and should be applied with <code>&lt;link&gt;</code> tags set to the appropriate media statement so that they style the unstyled document.</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;main.css&quot; /&gt;
 
+&lt;!-- print styles are seperate and style the plain document --&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;print&quot; href=&quot;print.css&quot; /&gt;
+</code></pre>
 
 				</section>
 
@@ -1581,7 +1768,7 @@ button#back-button { ... }
 					</span>
 
 					
-<p>If you need to extend an existing component then create distinct modifier classes with the prefix mod- to easily indicate that it is a modifier and not a complete style. Using the mod name prefix prevents confusing the class with a full class.</p>
+<p>If you need to extend an existing component then create distinct modifier classes to easily indicate that it is a modifier and not a complete style. Using a prefix can prevent confusing the class with a full class. In the examples below, we are using the <code>mod-</code> prefix to identify modifiers.</p>
 <pre><code class="language-css">.mod-modifier-a { ... }
 .mod-modifier-b { ... }
 </code></pre><p>Then, when used in the HTML, the class stands out:</p>
@@ -1603,7 +1790,7 @@ button#back-button { ... }
 					</span>
 
 					
-<p>A state for an element or component is presentation information for a given component. This may be a dynamic state set by JavaScript or a user interaction, but not always. It could also be a preset from the server or the results after a transaction. State modifiers are a great way for a distinct class to be provided to engineers unfamiliar with the design to be provided hooks for various things. This is slightly different than JS specific classes, however.</p>
+<p>A state for an element or component is presentation information for a given component. This may be a dynamic state set by JavaScript or a user interaction, but not always. It could also be a preset from the server or the results after a transaction. State modifiers are a great way for a distinct class to be provided to engineers unfamiliar with the design, to give them hooks for various behavior. This is slightly different than JS specific classes, however.</p>
 <p>State rules will use the <code>is-</code> prefix.</p>
 <pre><code class="language-css">.component-group.is-full { ... }
 .component-group.is-expired { ... }
@@ -1620,18 +1807,30 @@ button#back-button { ... }
 				</section>
 
 
-				<section id="section-225-javascript-js-prefix" name="section-225-javascript-js-prefix" class="level-1">
-						<h5 class="section-heading">JavaScript (JS) Prefix</h5>
+				<section id="section-225-javascript-prefix" name="section-225-javascript-prefix" class="level-1">
+						<h5 class="section-heading">JavaScript Behavior Prefixes and Classes</h5>
 
 					<span class="jumper">
-						[<a href="#section-225-javascript-js-prefix" class="">#</a>]
-						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/issues/new?title=Issue+regarding+Section+225-javascript-js-prefix" class="" target="blank">Open Issue on Github</a>]
+						[<a href="#section-225-javascript-prefix" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/issues/new?title=Issue+regarding+Section+225-javascript-prefix" class="" target="blank">Open Issue on Github</a>]
 					</span>
 
 					
 <p>The usage of a js- prefix is present in the markup but should never really appear in the CSS file itself. If the styles are being set, then use modifiers or state type classes.</p>
 <pre><code class="language-html">&lt;button class=&quot;component-button js-execute&quot;&gt;...&lt;/button&gt;
 </code></pre><p>The js-execute rule should not appear in the CSS file, but only in JS files they are tied to behavior. These are events, verbs, or action related, and are access points for JavaScript not a toggle or state changer. It&#39;s best to think of these classes as closer to and ID attribute in the HTML.</p>
+<p>The <code>.no-js</code> class can be used to add behavior to a component when JavaScript is disabled or otherwise unavailable to the page. This class is added by default to the <code>&lt;html&gt;</code> tag and is removed by Modernizr when the page loads.</p>
+<p>Special attention should be paid to components that are enhanced with JavaScript to ensure that their behavior is reasonable when JavaScript is not available. Some examples include:</p>
+<ol>
+<li>Showing a rendered slide of a carousel without the paging functionality.</li>
+<li>Opening all accordions by default.</li>
+<li>AJAX driven functionality is linked so that it will click through to a query-string enabled page that supports the same functionality that was implemented using AJAX.<ul>
+<li>For example, on a faceted search, a user may be able to click on a category and will be taken to /results?category=1 where the results will be filtered to the category they selected.</li>
+</ul>
+</li>
+<li>Result sets can be filtered and paged using query strings.</li>
+<li>Functionality that cannot exist without JavaScript at all should have an explanatory message shown to the end user to explain the issue.</li>
+</ol>
 
 
 				</section>
@@ -1647,10 +1846,11 @@ button#back-button { ... }
 
 					
 <p>A utility is a type of component modifier that is specifically designed to be used on more than one component type. If it was restricted to a single component, it would simply be a modifier.</p>
-<p>Utilities will use the prefix of u- and should serve only the modifier purpose intended without side effects when applied to any component, or component descendant.</p>
+<p>Utilities should serve only the modifier purpose intended without side effects when applied to any component, or component descendant. In the examples below, the prefix <code>u-</code> is being used for utilities.</p>
 <pre><code class="language-css">.u-warning {
 
 }
+
 .u-scroll-infobox {
     overflow-x: scroll;
     width: auto;
@@ -1669,7 +1869,7 @@ button#back-button { ... }
 					</span>
 
 					
-<p>With the mobile Web taking off Media Queries are mandatory in CSS going forwards.</p>
+<p>With the mobile Web taking off Media Queries are mandatory in CSS going forwards. All styles should be written <strong>mobile first</strong>, with limited exceptions.</p>
 <p>We discuss media queries in the Mobile / Responsive section of this document.</p>
 
 
@@ -1688,6 +1888,7 @@ button#back-button { ... }
 <p>Please be aware of potential conflicts between the original development environment for CSS and an ultimate deployment to production systems, if continuous integration will allow the continued use of CSS preprocessors, or if there should a cross-platform development strategy.</p>
 <p>Delivered CSS should be concatenated, minified, tested against browser bugs (e.g. MSIE selector count bugs) and extra files should be removed.</p>
 <p>File naming conventions should be consistent and language or use-case specific files should be clear and not be easily confused with the global style CSS.</p>
+<p>Uncompiled SCSS files can be provided to the client upon request. Appropriate documentation should be given on how to compile them.</p>
 
 
 				</section>
@@ -1821,7 +2022,7 @@ button#back-button { ... }
 
 					
 <p>Recent years have seen a virtual explosion in new JavaScript libraries sometimes calling themselves &quot;frameworks&quot;.</p>
-<p>Libraries and frameworks can be useful, especially when the client-side is become more responsible for larger parts of applications and Web sites.</p>
+<p>Libraries and frameworks can be useful, especially when the client-side is become more responsible for larger parts of applications and websites.</p>
 <ul>
 <li>Libraries are code you use within your structure, featuring code that is available for you call upon.</li>
 <li>Frameworks are code collections that serve specific purposes in a particular way, and call your code that is included following their patterns.</li>
@@ -1892,6 +2093,7 @@ button#back-button { ... }
 
 					
 <p>Developers are encouraged to begin learning and using the <a href="https://leanpub.com/understandinges6/read/">latest version of JavaScript, ES6</a>. Please use appropriate transpilers and never release untested or unsupported code in the deliverables. Do <strong>not</strong> assume a feature <a href="https://kangax.github.io/compat-table/es6/">is supported</a> in a browser.</p>
+<p>BarkleyREI currently writes JavaScript using ECMAScript 5 standards.</p>
 
 
 				</section>
@@ -1908,7 +2110,7 @@ button#back-button { ... }
 					
 <p>The following guidelines are general best practices for writing JavaScript at BarkleyREI.</p>
 <ul>
-<li>Avoid user-agent sniffing and rely on feature detection instead. Browser detection is dangerous and error-prone.</li>
+<li>If possible, avoid user-agent sniffing and rely on feature detection instead. Browser detection is dangerous and error-prone.</li>
 <li>Avoid using document.write.</li>
 <li>Only run scripts on a page that are needed for that page.</li>
 <li>Don&#39;t repeat yourself (i.e. keep your code DRY)</li>
@@ -1955,6 +2157,7 @@ button#back-button { ... }
 
 					
 <p>On some sites it may be appropriate to load a single JavaScript file with all dependencies bundled together, or it may be more appropriate (such as in a very large SPA) to load files on demand, as they are needed, asynchronously.</p>
+<p>BarkleyREI doesn not currently use asynchronous bundling methods to load JavaScript into the page.</p>
 
 
 				</section>
@@ -1972,6 +2175,8 @@ button#back-button { ... }
 <p>The use of whitespace should follow long-standing English writing conventions, with blank lines between ideas and groups of code such as objects, functions, and new lines for new statements.</p>
 <p>Formatting the language statements and patterns should follow these basics:</p>
 <ul>
+<li>For named functions, do not insert a space character between the function name and the parentheses.</li>
+<li>For anonymous functions, do insert a space character between the function keyword and the parentheses. It’s a function definition; it’s not a function invocation. A space character helps to identify, and communicate, the difference between the use of functions.</li>
 <li>Open braces are preceded by a single space.</li>
 <li>Open braces should appear on the same line as their preceding argument.</li>
 <li>Close braces should appear at the same indentation as the statement preceding the opening brace</li>
@@ -1984,8 +2189,9 @@ button#back-button { ... }
 <li>Conditional statements go on a new line followed by the opening brace.</li>
 <li>Else/else go on the same line as the brace.</li>
 <li>Use type strict checks with === as opposed to == whenever possible.</li>
+<li>Use += and -= instead of ++ and --.</li>
 </ul>
-<pre><code class="language-javascript">for (var i = 0, len = arr.length; i &lt; len; i++) {
+<pre><code class="language-javascript">for (var i = 0, len = arr.length; i &lt; len; i += 1) {
     var example = 1;
     if (example === i) {
         // we are looping
@@ -2016,7 +2222,7 @@ button#back-button { ... }
 var windowHeight;
 var currentVal = $(this).val();
 var min = parseInt($(this).attr(&#x27;min&#x27;), 10);
-</code></pre><p>This has been <a href="http://benalman.com/news/2012/05/multiple-var-statements-javascript/">debated at length</a> and is controversial, however we believe this is a better practice due to several technical reasons:</p>
+</code></pre><p>This has been <a href="http://benalman.com/news/2012/05/multiple-var-statements-javascript/">debated at length</a>, however we believe this is a better practice due to several technical reasons:</p>
 <ul>
 <li>Easier debugging with debuggers.</li>
 <li>Easier merges with version control and diff utilities.</li>
@@ -2122,9 +2328,20 @@ var newArray = [];
 					
 <p>It is always preferable to use fewer events being bound to objects on a page as possible. Too many events bound on a page can mean memory leaks or just an accumulation of handlers bound to DOM elements which becomes less and less efficient over time. Additionally, event delegation has the added benefit of persisting events over dynamic page updates when items are added or removed from the DOM.</p>
 <p>With jQuery this is easy, simply use the on method with a selector:</p>
-<pre><code class="language-javascript">$(&#x27;body&#x27;).on(&#x27;click&#x27;, &#x27;a.scroller&#x27;, function(){
-   // this only runs if the a.scroller is matched
+<pre><code class="language-javascript">// jQuery
+$(‘body).on(‘click’, ‘.a.scrollbar’, function () {
+	// this only runs if the a.scrollbar is matched 
 });
+
+// JavaScript
+document.body.addEventListener(‘click’, function (event) {
+	var event = event.target;
+	if (target &amp;&amp; target.nodeName.toLowerCase() === ‘a’) {
+		if (target.classList.contains(‘scrollbar’)) {
+			// this only runs if the a.scrollbar is matched
+		}
+	}
+}, false);
 </code></pre><p><strong>Learn more:</strong></p>
 <p>The jQuery API site has an excellent overview of the <a href="http://jqapi.com/#p=on">on method</a>.</p>
 
@@ -2441,7 +2658,7 @@ var newArray = [];
 <p>Like all programming and creative processes there is flexibility in how you go about achieving these, so long as there is consistency within your team.</p>
 <p>Some core guidelines:</p>
 <ul>
-<li>Always design and develop the mobile UX first (thus start with small defaults and scale upwards; please see Mobile First)</li>
+<li>Always design and develop the mobile UX first (thus start with small defaults and scale upwards; please see <a href="#section-408-mobile-first">Mobile First</a>)</li>
 <li>Set the baseline Media Queries as a team for various types of devices, and try to stick to them as much as possible.</li>
 <li>Add additional Media Queries — as necessary — for less than ideal experiences at the sizes in between, as appropriate for different types of content and components.</li>
 <li>Build for speed (load time and interaction) and the minimum viable product for slower connection speeds and less able devices.</li>
@@ -2476,7 +2693,7 @@ var newArray = [];
 <p>These are applied with CSS Media Queries test the device or browsers current feature set for various conditions and feature support. The most common example is screen size.</p>
 <p>The golden rule is:</p>
 <ul>
-<li>Don’t specify vendor- or device-specific widths</li>
+<li>Don&#39;t specify vendor- or device-specific widths</li>
 </ul>
 <p>Let the content and the design dictate the breakpoints.</p>
 <ul>
@@ -2499,6 +2716,10 @@ var newArray = [];
 <p>Instead, you are better off forcing older browsers to experience the site through a desktop experience (optionally tailored specifically for these older browsers).</p>
 <ul>
 <li>This can be done either through feature detection (with the likes of Modernizr) or with IE conditional statements and optionally including additional CSS style sheets.</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><a href="http://foundation.zurb.com/sites/docs/media-queries.html">Media Queries in Foundation 6</a></li>
 </ul>
 
 
@@ -2585,7 +2806,7 @@ var newArray = [];
 </li>
 <li>Concatenate, gzip and minified your production CSS/JS where possible as this will lower page load size and time</li>
 <li>Load the least amount of JavaScript that is needed.<ul>
-<li>Wherever possible include script files at the end of your HTML document just before the <code>&amp;gt;/body&gt;</code> tag.</li>
+<li>Wherever possible include script files at the end of your HTML document just before the <code>&lt;/body&gt;</code> tag.</li>
 </ul>
 </li>
 </ul>
@@ -2626,7 +2847,7 @@ var newArray = [];
 <ul>
 <li>The browser tends to use significantly more memory when storing and resizing these higher resolution images than scaling them to fit a container.</li>
 </ul>
-<p>What’s important to realize is that this is changing faster than we can develop. What you do now will be obsolete very soon, so be sure to stay on top of current trends.</p>
+<p>What&#39;s important to realize is that this is changing faster than we can develop. What you do now will be obsolete very soon, so be sure to stay on top of current trends.</p>
 
 
 				</section>
