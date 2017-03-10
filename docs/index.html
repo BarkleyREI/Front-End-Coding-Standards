@@ -2191,7 +2191,8 @@ button#back-button { ... }
 <li>Use type strict checks with === as opposed to == whenever possible.</li>
 <li>Use += and -= instead of ++ and --.</li>
 </ul>
-<pre><code class="language-javascript">for (var i = 0, len = arr.length; i &lt; len; i += 1) {
+<pre><code class="language-javascript">var len = arr.length;
+for (var i = 0; i &lt; len; i += 1) {
     var example = 1;
     if (example === i) {
         // we are looping
@@ -2199,7 +2200,11 @@ button#back-button { ... }
         // this will never happen
     }
 }
-</code></pre><p>To maximize readability without worrying about which boolean operators bind more tightly than others, each segment of a boolean expression should be enclosed in parentheses.</p>
+</code></pre><ul>
+<li><a href="http://stackoverflow.com/questions/8452317/do-loops-check-the-array-length-every-time-when-comparing-i-against-array-length">StackOverflow: &quot;Do loops check the array.length every time when comparing i against array.length?&quot;</a></li>
+<li><a href="http://stackoverflow.com/questions/17989270/for-loop-performance-storing-array-length-in-a-variable">StackOverflow: &quot;For-loop performance: storing array length in a variable&quot;</a></li>
+</ul>
+<p>To maximize readability without worrying about which boolean operators bind more tightly than others, each segment of a boolean expression should be enclosed in parentheses.</p>
 <pre><code class="language-javascript">if ((allowUpdate) &amp;&amp; ((user.isAdmin) || (user.role === item.owner))) {
     // do something
 }
