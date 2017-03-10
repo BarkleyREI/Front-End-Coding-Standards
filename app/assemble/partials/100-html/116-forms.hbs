@@ -10,5 +10,28 @@ published: true
 {{#markdown}}
 For both semantic and functional reasons, we make full use of the `<form>` tag for all sections requiring user input. All form action attributes should point to URLs with user-readable content, so they will still work if the form is submitted by the user before JavaScript has loaded on a page, or if JavaScript is broken, disabled, or not supported. This will require that the back-end be able to return a full HTML page for form submission (e.g. registering a new user, editing the quantity in a shopping cart).
 
+Form tags should have a container inside that holds the inputs. Do not place the inputs directly inside a form tag. A `<fieldset>` tag is suitable for this purpose. You can also use `<legend>` to describe sections of a form.
+
+Forms should have a name and ID.
+
 Do not nest the HTML form element tag inside another form tag.
 {{/markdown}}
+{{#code "html"}}
+<form action="/handler.aspx" method="POST" name="contact" id="contact-form">
+
+	<fieldset>
+
+		<legend>Name</legend>
+
+		<label for="first-name">First Name</label>
+		<input type="text" name="first" id="first-name" placeholder="Enter your first name" />
+
+		<label for="last-name">Last Name</label>
+		<input type="text" name="last" id="last-name" placeholder="Enter your last name" />
+
+		<input type="submit" />
+
+	</fieldset>
+
+</form>
+{{/code}}

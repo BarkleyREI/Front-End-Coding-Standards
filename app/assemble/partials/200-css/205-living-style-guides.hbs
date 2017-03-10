@@ -8,7 +8,7 @@ options:
 published: true
 ---
 {{#markdown}}
-One technique to consider is maintaining static HTML style reference implementations well into integration with server-side / back-end systems. These could be a series of templates or widgets that use the live styles being built. This helps reduce regressions that can happen across the board as the code for the site evolves. Continue to test these reference implementations as they will be the "source of record" for the styles created on the site. They also allow you to more easily distinguish the front-end bugs from the bugs potentially introduced by integration with a complex back-end.
+One technique to consider is maintaining static HTML style reference implementations well into integration with server-side / back-end systems. Because BarkleyREI statically codes all designs and submits them to Quality Assurance Testing before integrating into any CMS's, these files are a reference for the global styles of the site and a great place to code and test additions to the project before integrating. This helps reduce regressions that can happen across the board as the code for the site evolves. Continue to test these reference implementations as they will be the "source of record" for the styles created on the site. They also allow you to more easily distinguish the front-end bugs from the bugs potentially introduced by integration with a complex back-end.
 
 These reference implementations can serve as a living style guide and broken components are easily spotted in testing over time.
 
