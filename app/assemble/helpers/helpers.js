@@ -171,10 +171,13 @@ module.exports.register = function(Handlebars, options) {
 		}
 	});
 
-	Handlebars.registerHelper('githubLink', function (repo, basename, style) {
+	Handlebars.registerHelper('githubLink', function (repo, dirname, basename, style) {
 		var style = (Handlebars.Utils.isEmpty(style)) ? ' class="' + style + '"' : '';
 
-		return new Handlebars.SafeString("<a href=\"https://www.github.com/" + repo + "/issues/new?title=Issue+regarding+Section+" + basename + "\"" + style + " target=\"blank\">Open Issue on Github</a>");
+		var directory = dirname.replace('app/', 'app/assemble/');
+
+		return new Handlebars.SafeString("<a href=\"https://www.github.com/" + repo + "/edit/master/" + directory + "/" + basename + ".hbs\"" + style + " target=\"blank\">Edit on Github</a>");
+		// return new Handlebars.SafeString("<a href=\"https://www.github.com/" + repo + "/issues/new?title=Issue+regarding+Section+" + basename + "\"" + style + " target=\"blank\">Open Issue on Github</a>");
 	});
 
 	Handlebars.registerHelper('levelListLink', function (option, title, basename) {
