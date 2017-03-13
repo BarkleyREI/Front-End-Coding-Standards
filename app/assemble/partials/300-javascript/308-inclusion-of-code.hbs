@@ -11,6 +11,8 @@ published: true
 Use external JavaScript files. **Do NOT include JavaScript in-line in the page unless there is a good reason.**
 
 Use the `<script></script>` tag to include your JavaScript files at the bottom of your HTML document just before the closing `</body>` tag. For optimal page performance, concatenate your JavaScript into as few files as possible.
+
+The only exception to script files being placed at the bottom of the document is Modernizr, which should be placed before the closing `</head>` tag on the document.
 {{/markdown}}
 {{#code "html"}}
 <script src="bundle.js"></script>
