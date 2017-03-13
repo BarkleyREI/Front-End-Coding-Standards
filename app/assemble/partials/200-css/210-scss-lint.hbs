@@ -11,7 +11,7 @@ published: true
 All BarkleyREI projects are linted by SCSS-Lint to detect and alert style issues with SCSS files. We adhere to [all the defaults located here](https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md) with the exceptions of the following:
 
 * *__DeclarationOrder__* is set to false
-    * This causes issues with Foundation’s breakpoint() mixin.
+    * This causes issues with Foundation's breakpoint() mixin.
 * *__EmptyRule__* is set to false
     * These are removed in the final compiled file anyway, and this plays nice with our generator.
 * *__HexLength__* is enabled and set to “long” (requiring 6 characters always)
@@ -22,7 +22,7 @@ All BarkleyREI projects are linted by SCSS-Lint to detect and alert style issues
 * *__PropertySortOrder__* is set to false
     * This is difficult to enforce but we may pursue this later.
 * *__PseudoElement__* is set to false
-    * I’ve noticed that two colons fails in some browsers but I’m not certain.
+    * I've noticed that two colons fails in some browsers but I'm not certain.
 * *__QualifyingElement__* has “allow_element_with_attribute” set to “true”
 * *__SelectorDepth__* has “max_depth” set to “4”
 * *__SpaceAroundOperator__* is set to false
@@ -31,4 +31,28 @@ All BarkleyREI projects are linted by SCSS-Lint to detect and alert style issues
 * *__TrailingZero__* is set to true
 * *__TransitionAll__* is set to true
     * You should only transition specific properties
+
+Excluding SCSS from linting should be avoided, but in the fringe case that you must remove linting from a specific section of a SCSS file, this can be achieved by the following example:
+{{/markdown}}
+{{#code "css"}}
+.search {
+	// scss-lint:disable VendorPrefix
+	::-webkit-input-placeholder {
+		color: $placeholder-text-color;
+		font-style: italic;
+	}
+	// scss-lint:enable VendorPrefix
+}
+{{/code}}
+{{#markdown}}
+You must always deactivate only the rules you need, for only the lines you need. If an entire scss file needs excluded from linting, one of the following must occur:
+
+* It should be rewritten so that it passes without disabling rules.
+* It should be rewritten so that only the affected lines are excluded.
+* It should be moved to an excluded directory (like plugins, if you are importing styles from a third party component).
+
+**Resources:**
+
+* [BarkleyREI SCSS Lint Config](https://github.com/BarkleyREI/generator-brei-app/blob/master/generators/new/templates/scss-lint.yml)
+* [SCSS Lint configuration options](https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md)
 {{/markdown}}

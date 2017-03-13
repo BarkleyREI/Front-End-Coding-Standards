@@ -8,8 +8,9 @@ options:
 published: true
 ---
 {{#markdown}}
-Use the `<link>` tag to include all your style sheets in the `<head>` of the document. For optimal page performance, concatenate your CSS into as few files as possible and do not use the @import command to include other style sheets, as this will fire an additional HTTP request and block page rendering until its completion.
+Use the `<link>` tag to include all your style sheets in the `<head>` of the document. For optimal page performance, concatenate your CSS into as few files as possible and do not use the `@import` command to include other style sheets, as this will fire an additional HTTP request and block page rendering until its completion.
 {{/markdown}}
 {{#code "html"}}
 <link rel="stylesheet" type="text/css" href="main.css" />
+<link rel="stylesheet" type="text/css" href="home.css" />
 {{/code}}

@@ -17,9 +17,17 @@ var currentVal = $(this).val();
 var min = parseInt($(this).attr('min'), 10);
 {{/code}}
 {{#markdown}}
-This has been [debated at length](http://benalman.com/news/2012/05/multiple-var-statements-javascript/) and is controversial, however we believe this is a better practice due to several technical reasons:
+This has been [debated at length](http://benalman.com/news/2012/05/multiple-var-statements-javascript/), however we believe this is a better practice due to several technical reasons:
 
 * Easier debugging with debuggers.
 * Easier merges with version control and diff utilities.
 * Most technical issues are resolved by 'use strict'.
+
+Fallback values should also be considered when declaring variables whose values may be omitted or missing by the calling function.
+{{/markdown}}
+{{#code "javascript"}}
+var subhead = $('.thing').val() || '';
+{{/code}}
+{{#markdown}}
+The `||` syntax may not work in all situations, so it may be better to write a standard function that can do null-checking of values and pass all requests for data through that function.
 {{/markdown}}

@@ -29,17 +29,20 @@ The most obvious fact is you will need to provide working files that are error-f
 Delivery of a flat folder full of JavaScript files is not advised.
 {{/markdown}}
 {{#code "bash"}}
-├── _assets/
+
+# Do not deliver the following
+
+├── web/
 │   ├── js/
-│   │   ├── app.js
-│   │   ├── tools.js
+│   │   ├── main.js
+│   │   ├── home.js
 │   │   ├── ...
 │   │   ├── vendor
 │   │   │   ├── source01.js
 │   │   │   ├── source02.js
 │   │   │   ├── ...
-│   │   ├── views
-│   │   │   ├── view01.js
-│   │   │   ├── view02.js
+│   │   ├── modules
+│   │   │   ├── module01.js
+│   │   │   ├── module02.js
 │   │   │   ├── ...
 {{/code}}

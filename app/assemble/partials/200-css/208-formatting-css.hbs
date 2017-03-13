@@ -8,6 +8,8 @@ options:
 published: true
 ---
 {{#markdown}}
+The majority of CSS produced by BarkleyREI will be compiled from SCSS, but in the odd occasion that we must write normal CSS for a project, please adhere to the following rules.
+
 Basic rules for formatting CSS files:
 
 * Use a new line for every selector and every declaration.
@@ -28,6 +30,7 @@ Inside sets of rules or style declarations:
 * Use shorthand if you can, like:
     * `padding: 15px 0;` and not `padding: 15px 0px 15px 0px;`
 * When allowed, use 0 without units.
+* All font families must have fallbacks to web safe fonts. (e.g. serif, sans-serif)
 
 Putting each selector on its own line and each property on its own line is great for readability and so version control systems can clearly show which parts have changed in a diff.
 
@@ -43,16 +46,15 @@ Some examples:
 .twitter-popular,
 .twitter-favorites,
 .twitter-feed {
+	background-image: url("/img/bg.png");
     float: left;
-    padding-left: 2%;
+	padding: 15px 0;
     width: 33.33%;
-    padding: 15px 0;
 }
 {{/code}}
 {{#markdown}}
 **Do not indent child styles** underneath their parent styles; this is important for a number of reasons:
 
-* We usually recommend indenting media queries, so this can cause confusion.
 * Some CSS preprocessors heavily use indentation.
 * Various levels of indentation hinders maintainability.
 * HTML and CSS structure can change frequently over the course of a project, quickly rendering obsolete the parent-child relationship the indentation used to represent.
