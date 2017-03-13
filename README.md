@@ -1,3 +1,5 @@
+View the current standards site here: [BarkleyREI Front End Coding Standards](https://barkleyrei.github.io/Front-End-Coding-Standards/)
+
 # BarkleyREI Front End Coding Standards
 
 Create new markdown documents under the app/assemble/partials directory.
