@@ -10,3 +10,4 @@ app/*.html
 app/modules
 app/partials
 travisstandards
+docs
