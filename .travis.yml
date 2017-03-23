@@ -7,13 +7,12 @@ before_install:
   - gem install compass --version "=1.0.3"
   - gem install scss_lint
 before_script:
-  - chmod a+x deploy.sh
   - chmod a+x compile.sh
 script: bash ./compile.sh
 deploy:
     provider: pages
     skip_cleanup: true
-    local_dir: docs
     github_token: $GITHUB_TOKEN
+    local_dir: docs
     on:
         branch: master
