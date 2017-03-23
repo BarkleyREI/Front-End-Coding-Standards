@@ -1,7 +1,10 @@
-language: node_js # don't install any environment
+language: node_js
 node_js:
-- stable
-
+  - '5.12.0'
+before_script:
+  - npm install -g grunt-cli bower yo
+  - gem install sass --version "=3.4.22"
+  - gem install compass --version "=1.0.3"
 script: bash ./deploy.sh
 env:
   global:
