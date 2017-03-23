@@ -13,7 +13,7 @@ script: bash ./compile.sh
 deploy:
     provider: pages
     skip_cleanup: true
-    github_token: $DEPLOY_TOKEN
     local_dir: docs
+    github_token: $GITHUB_TOKEN
     on:
         branch: master
