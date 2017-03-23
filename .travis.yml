@@ -9,8 +9,11 @@ before_install:
 before_script:
   - chmod a+x deploy.sh
   - chmod a+x compile.sh
-script: bash ./deploy.sh
-env:
-  global:
-  - ENCRYPTION_LABEL: "a410450ed0bf"
-  - COMMIT_AUTHOR_EMAIL: "imoffitt@barkleyrei.com"
+script: bash ./compile.sh
+deploy:
+    provider: pages
+    skip_cleanup: true
+    github_token: AmiEtUs6p4RTZPnfNE1X
+    local_dir: docs
+    on:
+        branch: master
