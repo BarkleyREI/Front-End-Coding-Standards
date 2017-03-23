@@ -5,6 +5,7 @@ before_install:
   - npm install -g grunt-cli bower yo
   - gem install sass --version "=3.4.22"
   - gem install compass --version "=1.0.3"
+  - gem install scss_lint
 before_script:
   - chmod a+x deploy.sh
   - chmod a+x compile.sh
