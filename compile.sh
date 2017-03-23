@@ -1,3 +1,3 @@
 grunt && grunt deploy
 
-cp -R docs/* out/
+cp -R ./docs/* ./out/
