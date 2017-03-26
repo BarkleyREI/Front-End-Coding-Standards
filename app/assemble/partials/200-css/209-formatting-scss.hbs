@@ -11,21 +11,21 @@ published: true
 Basic rules for formatting SCSS files:
 
 * The ordering of styles should be:
-    * @extend
-    * @includes (without inner content)
-    * Regular styles
-    * @includes (with inner content)
-    * Nested rule sets
+    1. `@extend`
+    2. `@includes` (without inner content)
+    3. Regular styles
+    4. `@includes` (with inner content)
+    5. Nested rule sets
 * Nested rule sets should follow the same ordering of styles.
 * Foundation breakpoints should be placed inside the selector they directly affect, and should not contain nested styles.
 * Nesting shouldn't go deeper than 4 levels.
 * Nested statements shouldn't be longer than 50 lines.
     * This means that each nested selector shouldn't total 50 lines, not that the entire file should be under 50 lines. This is so that a nested selector can fit into your editor window to reduce confusion during development.
 * Only use variables or functions for colors in a module/partial.
-    * Try to use specifically named variables instead of the raw color names. For example, `$header-outer-border-color` instead of `$congress-blue;`
+    * Try to use specifically named variables instead of the raw color names. For example, `$header-outer-border-color` instead of `$congress-blue;`.
 	* The palette helper is also recommended to assist with naming.
-* Surround all pixel values in `rem-calc()`
-    * Exceptions are permitted where rem units are not supported or cause issues (like borders)
+* Surround all pixel values in `rem-calc()`.
+    * Exceptions are permitted where rem units are not supported or cause issues (like borders).
 
 Inside sets of rules or style declarations:
 * Omit an empty line between the top and bottom of a nested block.

@@ -9,3 +9,4 @@ dist
 app/*.html
 app/modules
 app/partials
+docs
