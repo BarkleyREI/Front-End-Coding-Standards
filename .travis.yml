@@ -1,19 +1,22 @@
 language: node_js
 node_js:
-  - '5.12.0'
+- 5.12.0
 before_install:
-  - npm install -g grunt-cli bower yo
-  - gem install sass --version "=3.4.22"
-  - gem install compass --version "=1.0.3"
-  - gem install scss_lint
+- npm install -g grunt-cli bower yo
+- gem install sass --version "=3.4.22"
+- gem install compass --version "=1.0.3"
+- gem install scss_lint
 before_script:
-  - chmod a+x deploy.sh
-  - chmod a+x compile.sh
+- chmod a+x compile.sh
 script: bash ./compile.sh
 deploy:
-    provider: pages
-    skip_cleanup: true
-    local_dir: docs
-    github_token: $GITHUB_TOKEN
-    on:
-        branch: master
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: docs
+  on:
+    branch: master
+notifications:
+  hipchat:
+    rooms:
+      secure: bfpky2EKlmBqVhNzB5AhOWyq0amicbk7bTCPbUrjbVRdvB76qacm+7QZouUT3ry2C/jIo6o01sypiY/B+M3EiIyYh8IaVWKfdfyX+scZ1xkzv3Xhrfy5msbv11PEt/3ARKQNDUMDa1XlA6x/23EwYLJ5fqIrzfkB3OwVEJxdC9I=
