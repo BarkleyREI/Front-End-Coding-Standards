@@ -1,0 +1,52 @@
+---
+title: "# vs. javascript:void(0)"
+section: true
+weight: 213 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+Sometimes you may need to call, or invoke, some logic with JavaScript from a link. Usually, when a user clicks a link the browser loads a new web page or refreshes the same page. In order to mitigate this occurence, we could use the void operator:
+{{/markdown}}
+
+{{#code "html"}}
+<a href="javascript:void(0);">
+	Click here
+</a>
+{{/code}}
+
+{{#markdown}}
+The void operator in JavaScript evaluates a given expression and returns undefined. This in turn, prevents the default behavior of a link. It is often used to eliminate any unwanted side-effects when it comes to an expression where the desired returned value is undefined. For more information regarding the [void operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void), consult the docs at the Mozilla Developer Network.
+
+However, the use of `javascript:void(0)`, or `javascript:` URLs, can be a security issue. It violates [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) (CSP) and can lead to [Cross-Site Scripting](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting) (XSS) and other data injection attacks. Therefore, using `javascript:void(0)` should be avoided and discouraged amongst developers. For more information, read [An Introduction to Content Security Policy](https://www.html5rocks.com/en/tutorials/security/content-security-policy/) by Mike West.
+
+Alternatively, you may use the `#` symbol. It's the safest solution, especially, if the user has JavaScript disabled.
+{{/markdown}}
+
+{{#code "html"}}
+<a href="#">
+	Click here
+</a>
+{{/code}}
+
+{{#markdown}}
+The default behavior of the link can be prevented programmatically as so:
+{{/markdown}}
+
+{{#code "javascript"}}
+// jQuery
+$('a:first-child').on('click', function (event) {
+	event.preventDefault();
+});
+
+// JavaScript
+document.querySelectorAll('a')[0].addEventListener('click', function (event) {
+	event.preventDefault();
+}, false);
+{{/code}}
+
+{{#markdown}}
+Lastly, if a link doesn't go anywhere then perhaps the best solution is to not use the `<a>` tag whatsoever. Instead, use the `<button>` tag or something that is semantically correct and/or appropriate to attach an event handler to.
+{{/markdown}}

@@ -1,0 +1,36 @@
+---
+title: "Comments"
+section: true
+weight: 417 # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 4 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+The use of comments in programming should be encouraged and used liberally in order to help communicate and improve the readability of one’s script. Javascript utilizes two different types of comments: block and line-editing comments.
+
+For example:
+{{/markdown}}
+{{#code "javascript"}}
+/*
+	This is a block comment.
+*/
+
+// This is a line-editing comment.
+{{/code}}
+{{#markdown}}
+However, block comments are problematic in the JavaScript language. The symbols used for block comments are also used in regular expression literals. Therefore, the use of block comments are not safe for commenting out blocks of code.
+
+For example, the the following block comment would cause a syntax error:
+{{/markdown}}
+{{#code "javascript"}}
+/*
+	var rm_a = /a*/.match(s);
+*/
+{{/code}}
+{{#markdown}}
+As a result, block comments should be avoided and the use of line-editing comments should be used to comment out code.
+
+Crockford, D. (2008). JavaScript: The Good Parts. O'Reilly Media and Yahoo! Inc.
+{{/markdown}}
