@@ -1,0 +1,3131 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="md-no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="md-no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="md-no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="md-no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="md-no-js" lang="en"> <!--<![endif]-->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192"/>
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16"/>
+
+    <title>BarkleyREI Front End Coding Standards</title>
+
+    <meta name="description" content="BarkleyREI Front End Coding Standards"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata|Slabo+27px" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css"/>
+
+    <script src="js/plugins/modernizr.optimized.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+
+        
+
+<h1 class="row column"><span class="company">BarkleyREI</span> Front End Coding Standards</h1>
+
+<hr class="barkley"/>
+
+<main id="main" class="main row">
+
+	<aside class="table-of-contents column medium-4 medium-push-8">
+		<h2 class="hide-for-medium">Table of Contents</h2>
+		<nav>
+			<ul>
+
+							<li class="level-1"><a href="#section-0-0-introduction">Introduction</a></li>
+
+
+							<li class="level-2"><a href="#section-0-1-goals">Goals</a></li>
+
+
+							<li class="level-3"><a href="#section-0-2-professional-responsibility">Professional Responsibility</a></li>
+
+
+							<li class="level-2"><a href="#section-0-3-getting-started">Getting Started</a></li>
+
+
+							<li class="level-3"><a href="#section-0-4-pillars">Pillars of Front-end Development</a></li>
+
+
+							<li class="level-2"><a href="#section-0-5-general-standards">General Standards</a></li>
+
+
+							<li class="level-3"><a href="#section-0-6-code-consistency">Code Consistency</a></li>
+
+
+							<li class="level-3"><a href="#section-0-7-indentation">Indentation</a></li>
+
+
+							<li class="level-3"><a href="#section-0-8-readability">Readability</a></li>
+
+
+							<li class="level-3"><a href="#section-0-9-third-party-libraries">Third-Party Libraries</a></li>
+
+
+							<li class="level-2"><a href="#section-0-10-deliverables">Deliverables</a></li>
+
+
+							<li class="level-1"><a href="#section-1-0-html">HTML</a></li>
+
+
+							<li class="level-2"><a href="#section-1-1-goals-for-markup">Goals for Markup</a></li>
+
+
+							<li class="level-2"><a href="#section-1-2-getting-started-on-markup">Getting Started on Markup</a></li>
+
+
+							<li class="level-2"><a href="#section-1-3-best-practices">HTML Markup Best Practices</a></li>
+
+
+							<li class="level-3"><a href="#section-1-4-semantic-markup">Semantic Markup</a></li>
+
+
+							<li class="level-3"><a href="#section-1-5-browser-support">HTML Standards and Browser Support</a></li>
+
+
+							<li class="level-3"><a href="#section-1-6-doctype">Doctype</a></li>
+
+
+							<li class="level-3"><a href="#section-1-7-character-encoding">Character Encoding</a></li>
+
+
+							<li class="level-3"><a href="#section-1-8-self-closing-tags">Optional and Self-closing Tags</a></li>
+
+
+							<li class="level-3"><a href="#section-1-9-validation">Validation</a></li>
+
+
+							<li class="level-3"><a href="#section-1-10-html-indentation">Indentation in HTML</a></li>
+
+
+							<li class="level-3"><a href="#section-1-11-html5-elements">HTML5 Elements</a></li>
+
+
+							<li class="level-3"><a href="#section-1-12-attribute-values">Attribute Values</a></li>
+
+
+							<li class="level-3"><a href="#section-1-13-paragraphs">Paragraphs</a></li>
+
+
+							<li class="level-3"><a href="#section-1-14-definition-lists">Definition Lists</a></li>
+
+
+							<li class="level-3"><a href="#section-1-15-tables">Tables</a></li>
+
+
+							<li class="level-3"><a href="#section-1-16-forms">Forms</a></li>
+
+
+							<li class="level-4"><a href="#section-1-17-input-labels">Input Labels</a></li>
+
+
+							<li class="level-3"><a href="#section-1-18-wrapper-container">Wrapper vs. Container</a></li>
+
+
+							<li class="level-3"><a href="#section-1-19-grid-system">Grid System</a></li>
+
+
+							<li class="level-1"><a href="#section-2-0-css">CSS</a></li>
+
+
+							<li class="level-2"><a href="#section-2-1-goals">Goals for Effective CSS</a></li>
+
+
+							<li class="level-3"><a href="#section-2-2-sass">Sass</a></li>
+
+
+							<li class="level-3"><a href="#section-2-3-frameworks">Frameworks</a></li>
+
+
+							<li class="level-3"><a href="#section-2-4-establishing-conventions">Establishing Conventions and Development Strategies</a></li>
+
+
+							<li class="level-4"><a href="#section-2-5-living-style-guides">Living Style Guides and Reference Implementations</a></li>
+
+
+							<li class="level-2"><a href="#section-2-6-best-practices">CSS Best Practices</a></li>
+
+
+							<li class="level-3"><a href="#section-2-7-inclusion">Inclusion</a></li>
+
+
+							<li class="level-3"><a href="#section-2-8-formatting-css">Formatting CSS</a></li>
+
+
+							<li class="level-3"><a href="#section-2-9-formatting-scss">Formatting SCSS</a></li>
+
+
+							<li class="level-3"><a href="#section-2-10-scss-lint">SCSS-Lint</a></li>
+
+
+							<li class="level-3"><a href="#section-2-11-specificity">Specificity</a></li>
+
+
+							<li class="level-3"><a href="#section-2-12-important">Do Not Use !important</a></li>
+
+
+							<li class="level-3"><a href="#section-2-13-id-selectors">ID Selectors</a></li>
+
+
+							<li class="level-3"><a href="#section-2-14-vendor-prefixes">Vendor Prefixes</a></li>
+
+
+							<li class="level-3"><a href="#section-2-15-inline-styling">Inline Styling</a></li>
+
+
+							<li class="level-3"><a href="#section-2-16-performance-caveats">Performance Caveats</a></li>
+
+
+							<li class="level-3"><a href="#section-2-17-box-model">Box Model</a></li>
+
+
+							<li class="level-3"><a href="#section-2-18-coding-patterns">Coding Patterns</a></li>
+
+
+							<li class="level-3"><a href="#section-2-19-simple-css-pattern">A Simple CSS Code Pattern</a></li>
+
+
+							<li class="level-4"><a href="#section-2-20-global-defaults">Global Defaults</a></li>
+
+
+							<li class="level-4"><a href="#section-2-21-page-level-rules">Page Level Rules</a></li>
+
+
+							<li class="level-2"><a href="#section-1-21-markup-deliverables">Markup Deliverables</a></li>
+
+
+							<li class="level-2"><a href="#section-1-22-next-steps">Next Steps &amp; HTML5 Resources</a></li>
+
+
+							<li class="level-4"><a href="#section-2-22-components">Components</a></li>
+
+
+							<li class="level-4"><a href="#section-2-23-modifiers">Modifiers</a></li>
+
+
+							<li class="level-4"><a href="#section-2-24-state">State</a></li>
+
+
+							<li class="level-4"><a href="#section-2-25-javascript-prefix">JavaScript Behavior Prefixes and Classes</a></li>
+
+
+							<li class="level-4"><a href="#section-2-26-utilities">Utilities</a></li>
+
+
+							<li class="level-3"><a href="#section-2-27-mobile-web">The Mobile Web, Media Queries, Responsive Design</a></li>
+
+
+							<li class="level-2"><a href="#section-2-28-css-deliverables">CSS Deliverables</a></li>
+
+
+							<li class="level-2"><a href="#section-2-29-next-steps">Next Steps &amp; CSS Resources</a></li>
+
+
+							<li class="level-1"><a href="#section-3-0-javascript">JavaScript</a></li>
+
+
+							<li class="level-2"><a href="#section-3-1-goals">Goals</a></li>
+
+
+							<li class="level-2"><a href="#section-3-2-getting-started">Getting Started on JavaScript</a></li>
+
+
+							<li class="level-3"><a href="#section-3-3-libraries-frameworks-plugins">JavaScript Libraries, Frameworks, and Plugins</a></li>
+
+
+							<li class="level-4"><a href="#section-3-4-third-party-code-selection">Selection of Third Party Code</a></li>
+
+
+							<li class="level-4"><a href="#section-3-5-third-party-code-usage">Usage of Third Party Code</a></li>
+
+
+							<li class="level-3"><a href="#section-3-6-ecmascript-6">ECMAScript 6, ES6, ECMAScript 2015</a></li>
+
+
+							<li class="level-3"><a href="#section-3-7-best-practices">JavaScript Best Practices</a></li>
+
+
+							<li class="level-4"><a href="#section-3-8-inclusion-of-code">Inclusion of Code</a></li>
+
+
+							<li class="level-5"><a href="#section-3-9-loading-files-on-demand">Loading Files On Demand</a></li>
+
+
+							<li class="level-4"><a href="#section-3-10-writing-and-formatting-javascript">Writing and Formatting JavaScript</a></li>
+
+
+							<li class="level-4"><a href="#section-3-11-variable-declaration">Variable Declaration</a></li>
+
+
+							<li class="level-4"><a href="#section-3-12-variable-scope">Variable Scope</a></li>
+
+
+							<li class="level-4"><a href="#section-3-13-variable-names-and-types">Variable Names and Types</a></li>
+
+
+							<li class="level-4"><a href="#section-3-14-settings-constants">Settings, Constants</a></li>
+
+
+							<li class="level-4"><a href="#section-3-15-feature-detection">Feature Detection</a></li>
+
+
+							<li class="level-4"><a href="#section-3-16-event-delegation">Limit Events - Use Event Delegation</a></li>
+
+
+							<li class="level-4"><a href="#section-3-17-javascript-performance">JavaScript Performance</a></li>
+
+
+							<li class="level-3"><a href="#section-3-18-basic-javascript-architecture">Basic JavaScript Architecture</a></li>
+
+
+							<li class="level-4"><a href="#section-3-19-about-javascript-modules">About JavaScript Modules</a></li>
+
+
+							<li class="level-2"><a href="#section-3-20-javascript-deliverables">JavaScript Deliverables</a></li>
+
+
+							<li class="level-2"><a href="#section-3-21-next-steps">Next Steps &amp; JavaScript Resources</a></li>
+
+
+							<li class="level-1"><a href="#section-4-0-responsive-web-design">Responsive Web Design</a></li>
+
+
+							<li class="level-2"><a href="#section-4-1-goals">Goals of Responsive Web Design</a></li>
+
+
+							<li class="level-2"><a href="#section-4-2-getting-started">Getting Started with Mobile Development</a></li>
+
+
+							<li class="level-3"><a href="#section-4-3-prebuilt-grids">To Use a Prebuilt Grid Or Not?</a></li>
+
+
+							<li class="level-3"><a href="#section-4-4-progressive-enhancement">Progressive Enhancement</a></li>
+
+
+							<li class="level-2"><a href="#section-4-6-best-practices">Responsive Design Best Practices</a></li>
+
+
+							<li class="level-3"><a href="#section-4-7-media-queries">Media Queries and CSS Breakpoints</a></li>
+
+
+							<li class="level-3"><a href="#section-4-8-mobile-first">Mobile First</a></li>
+
+
+							<li class="level-3"><a href="#section-4-9-speed-is-a-feature">Speed is a feature</a></li>
+
+
+							<li class="level-3"><a href="#section-4-10-responsive-images">Responsive Images</a></li>
+
+
+							<li class="level-3"><a href="#section-4-11-vector-graphics">Vector Graphics (SVG)</a></li>
+
+
+							<li class="level-3"><a href="#section-4-12-other-categories">Other Categories</a></li>
+
+
+							<li class="level-3"><a href="#section-4-13-nagivation-changes">Navigation Changes</a></li>
+
+
+							<li class="level-2"><a href="#section-4-15-next-steps">Next Steps &amp; RWD Resources</a></li>
+
+
+							<li class="level-1"><a href="#section-5-0-appendix">Appendix</a></li>
+
+
+							<li class="level-2"><a href="#section-5-1-acknowledgments">Acknowledgments</a></li>
+
+			</ul>
+		</nav>
+		<div id="back-top" class="back-to-top">
+		  <a href="#"> BACK TO TOP </a>
+		</div>
+	</aside>
+
+	<section class="standards column medium-8 medium-pull-4">
+
+				<section id="section-0-0-introduction" name="section-0-0-introduction" class="level-1">
+						<h2 class="section-heading">Introduction</h2>
+
+					<span class="jumper">
+						[<a href="#section-0-0-introduction" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/0-getting-started/0-0-introduction.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>This document contains the guidelines and best practices for the front-end web development team at BarkleyREI.</p>
+<p>Each item here represents either:</p>
+<ul>
+<li>A reminder to follow existing standards or industry conventions.</li>
+<li>Guidance on what constitutes professional patterns and organization.</li>
+<li>A decision we&#39;ve made favoring one method over its alternatives.</li>
+</ul>
+<p>What this document is not is a series of explanations as to how front-end technologies work; a basic familiarity is assumed. It also does not provide evaluations of the pros and cons of various alternatives unless there is common confusion about which option is best; when appropriate we pick what we consider to be the best solutions and present them. Issues that don&#39;t yet have a clear solution are considered flexible and may or may not be listed.</p>
+
+
+				</section>
+
+
+				<section id="section-0-1-goals" name="section-0-1-goals" class="level-2">
+						<h3 class="section-heading">Goals</h3>
+
+					<span class="jumper">
+						[<a href="#section-0-1-goals" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/0-getting-started/0-1-goals.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Our motivations in creating this document are to:</p>
+<ol>
+<li>Foster code consistency across our projects.</li>
+<li>Facilitate ease of maintenance.</li>
+<li>Ensure we create professional quality websites.</li>
+<li>Guide staff on-boarding or educate new developers.</li>
+</ol>
+<p>This document is not intended to replace common sense, conventions requested by particular clients, teams, or prevent expressive or creative solutions to problems. Team or project-specific agreements or client requests will always supersede this document&#39;s content.</p>
+
+
+				</section>
+
+
+				<section id="section-0-10-deliverables" name="section-0-10-deliverables" class="level-1">
+						<h3 class="section-heading">Deliverables</h3>
+
+					<span class="jumper">
+						[<a href="#section-0-10-deliverables" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/0-getting-started/0-10-deliverables.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Quality deliverables are essential for professionals. Sloppy or messy deliverables are unprofessional and reflect poorly on the final product and the delivery team. Please remove legacy files, be certain the work is delivered in a clean file system, and in an orderly, logical structure that serves a clear purpose.</p>
+<p>Unless specifically requested, delivery of code should be a zip of the compiled static assets. If the client desires a part of the unbuilt project or the entire project itself, documentation should be prepared for the client accordingly, and minimal support offered. If a client does receive the code base for a project, they must be made aware that any changes made on their end are separated from our final version of the code and will be the sole responsibility of the client.</p>
+<p>The deployment of a project may be satisfied by the integration of the template into their CMS or hosted server.</p>
+<p>There is no official standard of project documentation at BarkleyREI yet, but as much documentation as is possible should be provided along with finished code.</p>
+
+
+						<hr class="barkley"/>
+				</section>
+
+
+				<section id="section-0-2-professional-responsibility" name="section-0-2-professional-responsibility" class="level-3">
+						<h4 class="section-heading">Professional Responsibility</h4>
+
+					<span class="jumper">
+						[<a href="#section-0-2-professional-responsibility" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/0-getting-started/0-2-professional-responsibility.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>We are experts in our field creating solutions for our clients and their audiences, not for ourselves. Every technology and code choice needs to be measured against the benefits to the project versus the cool factor or how trendy a particular solution may be.</p>
+<p>Our industry is wrought with the flavor of the month, so please be deliberate.</p>
+<p>Always remember that just because you can does not mean you should. Some solutions are not reliable, may not perform well, or may be difficult to maintain over time or add more code to. Always remember your code may not be the last added to a project in that particular feature area.</p>
+
+
+				</section>
+
+
+				<section id="section-0-3-getting-started" name="section-0-3-getting-started" class="level-2">
+						<h3 class="section-heading">Getting Started</h3>
+
+					<span class="jumper">
+						[<a href="#section-0-3-getting-started" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/0-getting-started/0-3-getting-started.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>At the outset of the project it is essential to <strong>properly understand the goals of the project</strong> and <strong>identify the specific deliverables</strong> expected of the front-end team. Where your responsibilities begin and end should not be taken for granted or assumed.</p>
+<p>It&#39;s important to understand how the development environment will work, what tools will be available, and what the differences between development, test, and production environments may ultimately be.</p>
+<p>Finally, all project teams should get a reasonable understanding of the what client&#39;s <strong>browser and device requirements</strong> are. Make no assumptions as to the technology available either from the client or their audience.</p>
+<p><strong>BarkleyREI</strong> has testing and coding standards documents that outline the base deliverable requirements of our code. These are delivered to the client during the discovery phase, and any special requirements the client has is recorded to those documents and signed for approval.</p>
+
+
+				</section>
+
+
+				<section id="section-0-4-pillars" name="section-0-4-pillars" class="level-3">
+						<h4 class="section-heading">Pillars of Front-end Development</h4>
+
+					<span class="jumper">
+						[<a href="#section-0-4-pillars" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/0-getting-started/0-4-pillars.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Whenever possible, the front-end technology solutions produced shall adhere to industry best practices honoring as strict a separation of concerns as possible between:</p>
+<ul>
+<li>Semantic HyperText Markup Language (HTML) for structure</li>
+<li>Cascading Style Sheets (CSS) for presentation</li>
+<li>JavaScript (JS) for behavior and interaction</li>
+</ul>
+<p>When at all possible, we strive for a <a href="https://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> strategy.</p>
+
+
+				</section>
+
+
+				<section id="section-0-5-general-standards" name="section-0-5-general-standards" class="level-2">
+						<h3 class="section-heading">General Standards</h3>
+
+					<span class="jumper">
+						[<a href="#section-0-5-general-standards" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/0-getting-started/0-5-general-standards.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>For any project:</p>
+<ul>
+<li>Consistency and conventions between team members is paramount.</li>
+<li>Solutions should be as simple and clear as possible.</li>
+<li>Solutions should serve a specific purpose.</li>
+<li>Clever code does not mean good code; readability is critical.</li>
+<li>Complex code solutions should be documented via comments, and if possible, documented elsewhere in a deliverable format (PDF, DOCX, etc).</li>
+</ul>
+<p>A key hallmark of professional code includes a notion that while we are writing code, we must reach a desired goal, and we must also create code that can be read and understood by others.</p>
+
+
+				</section>
+
+
+				<section id="section-0-6-code-consistency" name="section-0-6-code-consistency" class="level-3">
+						<h4 class="section-heading">Code Consistency</h4>
+
+					<span class="jumper">
+						[<a href="#section-0-6-code-consistency" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/0-getting-started/0-6-code-consistency.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Usage of the same patterns is critical between team members so as to never cause confusion.</p>
+<p>It&#39;s worth establishing conventions at the project start or enabling automatic settings in the build or editor environments that might enforce particular rules.</p>
+
+
+				</section>
+
+
+				<section id="section-0-7-indentation" name="section-0-7-indentation" class="level-1">
+						<h4 class="section-heading">Indentation</h4>
+
+					<span class="jumper">
+						[<a href="#section-0-7-indentation" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/0-getting-started/0-7-indentation.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Please consistently indent, nest, include braces, quotes, and newlines so that code is clear and can be read easily. New code that is added should never deviate from existing formatting conventions or change the indent levels.</p>
+<p>For all code languages, we require the use of hard tabs at all times.</p>
+<p>You may modify your editor-of-choice to display tabs as 4 spaces, but they should exist as tabs to maintain consistency.</p>
+
+
+				</section>
+
+
+				<section id="section-0-8-readability" name="section-0-8-readability" class="level-1">
+						<h4 class="section-heading">Readability</h4>
+
+					<span class="jumper">
+						[<a href="#section-0-8-readability" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/0-getting-started/0-8-readability.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>We encourage liberal use of whitespace, comments, and descriptive variable names as appropriate for writing easy-to-read code.</p>
+<p>There is no need to write code in an obfuscated or compressed way for the purpose of file-size savings.</p>
+<p>We will use build processes to optimize files; this includes concatenating files, code minification, gzipping, and setting &quot;Far Future Expires&quot;.</p>
+<p>The ability for another developer to read the code is paramount above other concerns, especially if optimization can be handled another way.</p>
+
+
+				</section>
+
+
+				<section id="section-0-9-third-party-libraries" name="section-0-9-third-party-libraries" class="level-1">
+						<h4 class="section-heading">Third-Party Libraries</h4>
+
+					<span class="jumper">
+						[<a href="#section-0-9-third-party-libraries" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/0-getting-started/0-9-third-party-libraries.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Un-minified libraries and third-party scripts should be leveraged in local development environments for easier debugging if available. The code should not be committed to source control directly, but instead referenced in the <em>Assemble</em> files so that they are included in compiled versions of JavaScript deliverables. The final products will be compressed and minified with the rest of the source for delivery. Use <code>bower</code> to reference as much as possible before storing any third party scripts directly in the project. Make sure to use <code>--save-dev</code> to add the library to your bower config.</p>
+<p>Likewise, third-party code and libraries should never be modified and their original source and the license must be documented and be appropriate for a project. Any changes to third party code must be agreed upon and must be for specific reasons. If changes are mandated by bug fixes then the appropriate upstream project should have the changes submitted (assuming the code is part of an open source repository).</p>
+<p>If a vendor library needs to be customized for the specific project, or is not generally available to install via <code>bower</code>, it can be saved in the <code>/app/js/vendor</code> directory of the project. The <code>bower_components</code> directory is not (and should not be) versioned and thus any changes made in that environment will not be saved.</p>
+<pre><code class="language-handlebars">&lt;!-- build:js js/main.js --&gt;
+&lt;script src=&quot;bower_components/jquery/dist/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;bower_components/foundation-sites/js/foundation.core.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;bower_components/foundation-sites/js/foundation.util.triggers.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;bower_components/foundation-sites/js/foundation.util.mediaQuery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;bower_components/foundation-sites/js/foundation.sticky.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/vendor/prism.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/standards.js&quot;&gt;&lt;/script&gt;
+&lt;!-- endbuild --&gt;
+</code></pre><p>Library code should be treated as an external dependency and should be considered something that may need to be wholesale updated or replaced at a later time.</p>
+<p>Inclusion of any third-party code should be carefully considered and verified with the project team as the appropriate solution to a given problem. &quot;Adding another plug-in&quot; is not always the best solution. Finally, selection of third party libraries should be done carefully and not be out of alignment with the nature of the problem being addressed.</p>
+<p>To be blunt, <strong>use the right tool for the right job.</strong></p>
+
+
+				</section>
+
+
+				<section id="section-1-0-html" name="section-1-0-html" class="level-1">
+						<h2 class="section-heading">HTML</h2>
+
+					<span class="jumper">
+						[<a href="#section-1-0-html" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-0-html.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>HTML markup defines the content of a document and gives it a rudimentary structure such as section dividers, headers, paragraphs, lists, menus, and forms.</p>
+
+
+				</section>
+
+
+				<section id="section-1-1-goals-for-markup" name="section-1-1-goals-for-markup" class="level-1">
+						<h3 class="section-heading">Goals for Markup</h3>
+
+					<span class="jumper">
+						[<a href="#section-1-1-goals-for-markup" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-1-goals-for-markup.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Please follow conventions established for a given project so all team members can have the same expectations around document structure and markup.</p>
+<p>Structural consistency is critical when talking about the types of pages being used on a site or in a Web app. The markup structure provides all the necessary hooks for scripting and behavior, so it&#39;s important that the appropriate hooks are in place.</p>
+<p>A clear, clean, and concise HTML structure is also necessary for semantics, flexibility, and a <strong>reliable deployment environment.</strong> Do <strong>not</strong> deviate from established templates or patterns without team approval.</p>
+<p>Which markup is used does matter:</p>
+<ul>
+<li>Use the most meaningful yet minimal markup required to present the styles and interaction required.</li>
+<li>Application-centric deliverables often have different types of requirements; please code accordingly.</li>
+<li><strong>Maintain a clear separation of concerns, avoid in-line styles and in-line JavaScript whenever possible.</strong></li>
+<li>Have reference implementations so that each team member knows what sorts of structures are appropriate, as well as where to add new code.</li>
+<li>Build pages as a <strong>library of components</strong>, in such a way that blocks of code can be broken up and reused when implemented.</li>
+<li>Be sure front-end code is compatible with destination environments and delivery platforms.</li>
+</ul>
+<p>The flexible nature of HTML markup and how loosely browsers interpret markup sometimes lends itself to inconsistencies not always being discovered immediately. This belies the care necessary in crafting a document&#39;s structure and in following established patterns.</p>
+
+
+				</section>
+
+
+				<section id="section-1-10-html-indentation" name="section-1-10-html-indentation" class="level-1">
+						<h4 class="section-heading">Indentation in HTML</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-10-html-indentation" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-10-html-indentation.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Indent nested elements and tags with single indentation settings, whatever they may be, for each level in the hierarchy of the document.</p>
+<pre><code class="language-html">&lt;div&gt;
+    &lt;p&gt;Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipisicing.&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;tempor incididunt ut labore. et dolore magna aliqua.&lt;/li&gt;
+        &lt;li&gt;quis nostrud exercitation ullamco.&lt;/li&gt;
+        &lt;li&gt;cillum dolore eu fugiat nulla pariatur.&lt;/li&gt;
+        &lt;li&gt;proident, sunt in culpa qui officia.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+				</section>
+
+
+				<section id="section-1-11-html5-elements" name="section-1-11-html5-elements" class="level-1">
+						<h4 class="section-heading">HTML5 Elements</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-11-html5-elements" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-11-html5-elements.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>To provide additional semantic value to our documents, make use of HTML5 elements such as <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;section&gt;</code> where appropriate.</p>
+<pre><code class="language-html">&lt;header class=&quot;global-header&quot;&gt;
+	&lt;main class=&quot;main-content&quot;&gt;
+
+	&lt;/main&gt;
+&lt;/header&gt;
+</code></pre>
+
+				</section>
+
+
+				<section id="section-1-12-attribute-values" name="section-1-12-attribute-values" class="level-1">
+						<h4 class="section-heading">Attribute Values</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-12-attribute-values" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-12-attribute-values.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Use quotes to surround all attribute values in HTML, despite quotes being optional in HTML5. This maintains consistency between attribute values that contain whitespace and those that don&#39;t.</p>
+<pre><code class="language-html">&lt;form class=&quot;registration module&quot; action=&quot;/register&quot; method=&quot;POST&quot;&gt;
+</code></pre><p>For boolean attributes that don&#39;t normally require values, include them anyway in order to remain compatible with XML based CMS&#39;s that have a more strict parser.</p>
+<pre><code class="language-html">&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; /&gt;
+</code></pre>
+
+				</section>
+
+
+				<section id="section-1-13-paragraphs" name="section-1-13-paragraphs" class="level-1">
+						<h4 class="section-heading">Paragraphs</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-13-paragraphs" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-13-paragraphs.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Avoid using <code>&lt;br&gt;</code> tags to separate paragraphs or lines of text. Use <code>&lt;p&gt;</code> instead with proper opening and closing elements.</p>
+<pre><code class="language-html">&lt;p&gt;
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+&lt;/p&gt;
+</code></pre>
+
+				</section>
+
+
+				<section id="section-1-14-definition-lists" name="section-1-14-definition-lists" class="level-1">
+						<h4 class="section-heading">Definition Lists</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-14-definition-lists" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-14-definition-lists.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Use definition lists to display a single record of name-value pairs, like a contact card.</p>
+<pre><code class="language-html">&lt;dl&gt;
+  &lt;dt&gt;Firefox&lt;/dt&gt;
+  &lt;dd&gt;
+    A free, open source, cross-platform,
+    graphical web browser developed by the
+    Mozilla Corporation and hundreds of
+    volunteers.
+  &lt;/dd&gt;
+
+  &lt;!-- Other terms and descriptions --&gt;
+&lt;/dl&gt;
+</code></pre>
+
+				</section>
+
+
+				<section id="section-1-15-tables" name="section-1-15-tables" class="level-1">
+						<h4 class="section-heading">Tables</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-15-tables" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-15-tables.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Tables should not be used for page layout; only use them when you need <strong>to display tabular data.</strong> Tables provide an important semantic association (used mostly by screen readers for the sight-impaired) between row/column headers and their data, so use <code>&lt;table&gt;</code> rather than other elements when displaying multiple records of data.</p>
+<p>The <code>&lt;caption&gt;</code> element is the recommended way to describe a table for both sighted and sight-impaired users, though this can also be done less semantically in the normal page text around the table. Use the <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> elements to denote which row contains column headers so when a user prints the website and the table runs onto another page, browsers can display the <code>&lt;thead&gt;</code> on each page for easier readability. Remember to use the scope attribute on the <code>&lt;th&gt;</code> element to indicate whether the header applies to the row or column.</p>
+<pre><code class="language-html">&lt;table&gt;
+    &lt;caption&gt;First two U.S. presidents&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;col&quot;&gt;Name&lt;/th&gt;
+            &lt;th scope=&quot;col&quot;&gt;Took office&lt;/th&gt;
+            &lt;th scope=&quot;col&quot;&gt;Party&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;George Washington&lt;/td&gt;
+            &lt;td&gt;April 30, 1789&lt;/td&gt;
+            &lt;td&gt;n/a&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;John Adams&lt;/td&gt;
+            &lt;td&gt;March 4, 1797&lt;/td&gt;
+            &lt;td&gt;Federalist&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+
+				</section>
+
+
+				<section id="section-1-16-forms" name="section-1-16-forms" class="level-1">
+						<h4 class="section-heading">Forms</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-16-forms" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-16-forms.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>For both semantic and functional reasons, we make full use of the <code>&lt;form&gt;</code> tag for all sections requiring user input. All form action attributes should point to URLs with user-readable content, so they will still work if the form is submitted by the user before JavaScript has loaded on a page, or if JavaScript is broken, disabled, or not supported. This will require that the back-end be able to return a full HTML page for form submission (e.g. registering a new user, editing the quantity in a shopping cart).</p>
+<p>Form tags should have a container inside that holds the inputs. Do not place the inputs directly inside a form tag. A <code>&lt;fieldset&gt;</code> tag is suitable for this purpose. You can also use <code>&lt;legend&gt;</code> to describe sections of a form.</p>
+<p>Forms should have a name and ID.</p>
+<p>Do not nest the HTML form element tag inside another form tag.</p>
+<pre><code class="language-html">&lt;form action=&quot;/handler.aspx&quot; method=&quot;POST&quot; name=&quot;contact&quot; id=&quot;contact-form&quot;&gt;
+
+	&lt;fieldset&gt;
+
+		&lt;legend&gt;Name&lt;/legend&gt;
+
+		&lt;label for=&quot;first-name&quot;&gt;First Name&lt;/label&gt;
+		&lt;input type=&quot;text&quot; name=&quot;first&quot; id=&quot;first-name&quot; placeholder=&quot;Enter your first name&quot; /&gt;
+
+		&lt;label for=&quot;last-name&quot;&gt;Last Name&lt;/label&gt;
+		&lt;input type=&quot;text&quot; name=&quot;last&quot; id=&quot;last-name&quot; placeholder=&quot;Enter your last name&quot; /&gt;
+
+		&lt;input type=&quot;submit&quot; /&gt;
+
+	&lt;/fieldset&gt;
+
+&lt;/form&gt;
+</code></pre>
+
+				</section>
+
+
+				<section id="section-1-17-input-labels" name="section-1-17-input-labels" class="level-1">
+						<h5 class="section-heading">Input Labels</h5>
+
+					<span class="jumper">
+						[<a href="#section-1-17-input-labels" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-17-input-labels.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>All input fields should be associated with a <code>&lt;label&gt;</code> element. The for attribute of the <code>&lt;label&gt;</code> element should contain the ID of the corresponding input field. This means the input field will receive focus when a user clicks the label and also enables screen readers for sight-impaired users to read out an appropriate description of the input field.</p>
+<pre><code class="language-html">&lt;label for=&quot;home-address&quot;&gt;Home Address&lt;/label&gt;
+&lt;input id=&quot;home-address&quot; type=&quot;text&quot; /&gt;
+</code></pre><p>You can also, alternatively, place the input for the label inside the label itself. This allows you many style opportunities to use the label as a container to align or place the form element in specific configurations.</p>
+<p>Input controls must also have a name attribute. This can match or be similar to the id attribute. This is required for any backend integration, as the server sees the name as the key when the form is submitted.</p>
+<pre><code class="language-html">&lt;label for=&quot;home-address&quot;&gt;
+	&lt;span&gt;Home Address&lt;/span&gt;
+	&lt;input id=&quot;home-address&quot; name=&quot;home-address&quot; type=&quot;text&quot; /&gt;
+&lt;/label&gt;
+</code></pre>
+
+				</section>
+
+
+				<section id="section-1-18-wrapper-container" name="section-1-18-wrapper-container" class="level-1">
+						<h4 class="section-heading">Wrapper vs. Container</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-18-wrapper-container" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-18-wrapper-container.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Consider using a wrapper inside module/partial blocks instead of using an outer container. The outermost tag of a module/partial can be devoid of padding or specific dimensions, allowing for various styles of formatting like centering elements.</p>
+<pre><code class="language-html">&lt;!-- preferred --&gt;
+&lt;header&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+
+    &lt;/div&gt;
+&lt;/header&gt;
+</code></pre><p>vs.</p>
+<pre><code class="language-html">&lt;!-- sometimes necessary but prefer to avoid --&gt;
+&lt;div class=&quot;container&quot;&gt;
+    &lt;header&gt;
+
+    &lt;/header&gt;
+&lt;/div&gt;
+</code></pre>
+
+				</section>
+
+
+				<section id="section-1-19-grid-system" name="section-1-19-grid-system" class="level-1">
+						<h4 class="section-heading">Grid System</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-19-grid-system" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-19-grid-system.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>All projects will use the latest (or highest internally supported) version of Zurb&#39;s Foundation framework. Grad classes can be used to define the layout of the page, but their use is not required.</p>
+<p><strong>BarkleyREI currently implements Foundation 6.3.0</strong></p>
+<p><em>Example:</em></p>
+<pre><code class="language-html">&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;small-2 large-4 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;small-4 large-4 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;small-6 large-4 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;large-3 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;large-6 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;large-3 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;small-6 large-2 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;small-6 large-8 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;small-12 large-2 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;small-3 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;small-9 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;large-4 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;large-8 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;small-6 large-5 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;small-6 large-7 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;large-6 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+	&lt;div class=&quot;large-6 columns&quot;&gt;&lt;!-- ... --&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>For additional examples and more information on Foundation&#39;s grid, visit the <a href="http://foundation.zurb.com/sites/docs/grid.html">Zurb Grid documentation site</a>.</p>
+
+
+				</section>
+
+
+				<section id="section-1-2-getting-started-on-markup" name="section-1-2-getting-started-on-markup" class="level-1">
+						<h3 class="section-heading">Getting Started on Markup</h3>
+
+					<span class="jumper">
+						[<a href="#section-1-2-getting-started-on-markup" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-2-getting-started-on-markup.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>When crafting the HTML for a website, environment or technical constraints may impact the type of markup that can be used. Please discuss the final delivery environment in depth with technical leads and clients so that pages are not structured or styled in some way that is not effective for the project solution.</p>
+<p>Discuss types of:</p>
+<ul>
+<li>Templates and types of pages.</li>
+<li>Which sections of pages (i.e. components) are reused or managed by software vs. by hand.</li>
+<li>Frameworks, CSS grid systems (custom or otherwise).</li>
+<li>Server-Side delivery platforms.</li>
+</ul>
+<p>Note that it is vital to take into account how the site will ultimately be maintained and who will be doing that work.</p>
+
+
+				</section>
+
+
+				<section id="section-1-3-best-practices" name="section-1-3-best-practices" class="level-1">
+						<h3 class="section-heading">HTML Markup Best Practices</h3>
+
+					<span class="jumper">
+						[<a href="#section-1-3-best-practices" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-3-best-practices.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>As noted these guidelines are flexible for projects as long as consensus or need determines a particular path, consistency is what matters most.</p>
+
+
+				</section>
+
+
+				<section id="section-1-4-semantic-markup" name="section-1-4-semantic-markup" class="level-1">
+						<h4 class="section-heading">Semantic Markup</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-4-semantic-markup" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-4-semantic-markup.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>HTML provides a number of <a href="http://www.bbc.co.uk/guidelines/futuremedia/technical/semantic_markup.shtml">semantic constructs</a> that allow automated tools like search engines and screen readers to make sense of the document and to understand relationships between pieces of content. Use semantic markup whenever possible — that is to say use elements with specific meanings for specific purposes to convey the spirit of the markup.</p>
+<p>A well-written HTML document will make appropriate use of these semantic elements and leave all responsibility for controlling the presentation of the document to the CSS style sheet.</p>
+
+
+				</section>
+
+
+				<section id="section-1-5-browser-support" name="section-1-5-browser-support" class="level-1">
+						<h4 class="section-heading">HTML Standards and Browser Support</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-5-browser-support" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-5-browser-support.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>All markup will be written using the latest HTML5 markup specifications from the W3C, as implemented by browsers and devices that meet project requirements. When creating markup be sure that the target environments support the techniques being implemented, or that there is a fall-back plan.</p>
+<p>Modernizr includes the HTML5 Shiv to allow HTML5 support for older browsers. Modernizr is a standard part of the app generator.</p>
+<p><strong>Learn more:</strong></p>
+<p>You will frequently hear the term &quot;polyfill&quot;, &quot;shim&quot;, or &quot;shiv&quot; passed around where backwards compatibility for HTML5 and older browsers is concerned. <a href="https://remysharp.com/2010/10/08/what-is-a-polyfill">What is a Polyfill?</a></p>
+
+
+				</section>
+
+
+				<section id="section-1-6-doctype" name="section-1-6-doctype" class="level-1">
+						<h4 class="section-heading">Doctype</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-6-doctype" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-6-doctype.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Always include a proper doctype to trigger standards mode. Omitting the doctype <a href="https://developer.mozilla.org/en-US/docs/Quirks_Mode_and_Standards_Mode">triggers quirks mode</a> and should always be avoided. The HTML5 doctype is simple and easy to remember.</p>
+<pre><code class="language-html">&lt;!doctype html&gt;
+</code></pre>
+
+				</section>
+
+
+				<section id="section-1-7-character-encoding" name="section-1-7-character-encoding" class="level-1">
+						<h4 class="section-heading">Character Encoding</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-7-character-encoding" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-7-character-encoding.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>All markup should be delivered as UTF-8, since it has the best support for internationalization. The character encoding should be designated in both the HTTP header and the head of the document via a meta tag. If the server happens to omit the HTTP header, browsers can take a guess at the character encoding and begins parsing and rendering the markup in a particular way. If there are inconsistencies, the browser will re-parse and re-render, throwing away all that work and starting over if it encounters the meta tag and its guess was incorrect. As a best practice, we always put the meta tag as early in the <code>&lt;head&gt;</code> tag as early as possible — however server-settings are ideal.</p>
+<pre><code class="language-html">&lt;meta charset=&quot;UTF-8&quot; /&gt;
+</code></pre>
+
+				</section>
+
+
+				<section id="section-1-8-self-closing-tags" name="section-1-8-self-closing-tags" class="level-1">
+						<h4 class="section-heading">Optional and Self-closing Tags</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-8-self-closing-tags" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-8-self-closing-tags.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Include slashes in all self closing tags for compatibility in older, XML based CMS&#39;s. Include all closing tags, even if they are technically optional.</p>
+<pre><code class="language-html">&lt;!-- closing &quot;/&quot; is not necessary but should be included for compatibility --&gt;
+&lt;img src=&quot;/logo.png&quot; alt=&quot;ISOBAR&quot; /&gt;
+
+&lt;!-- include closing tags always --&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Vero sunt veritatis magni sit odit,&lt;/li&gt;
+    &lt;li&gt;voluptatum ratione suscipit.&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>Unusual markup (or indeed, invalid) can lead to bugs in page rendering, DOM interpretation, or even how styles are applied, so it should be avoided whenever possible.</p>
+<p><strong>Note:</strong></p>
+<p>While a library like jQuery might recognize tags that are not typically self closed (e.g. <code>&lt;div /&gt;</code>), it is recommended to avoid this usage directly in your markup, as some browsers choke on it.</p>
+
+
+				</section>
+
+
+				<section id="section-1-9-validation" name="section-1-9-validation" class="level-1">
+						<h4 class="section-heading">Validation</h4>
+
+					<span class="jumper">
+						[<a href="#section-1-9-validation" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-9-validation.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p><a href="https://validator.w3.org/">Valid markup</a> is a goal but not a mandate. However, be aware validation can be an excellent starting place while debugging a Web page — especially if the problems are unusual.</p>
+<p>If it becomes necessary, please have reasons for invalid markup — otherwise it is just sloppy code.</p>
+<p>For W3C validation, we will strive to resolve as many reasonable issues that come up from validation as possible, but it should be understood that it may not be possible to resolve 100% of the issues. This should be reviewed by the developer and each issue considered for validity.</p>
+
+
+				</section>
+
+
+				<section id="section-2-0-css" name="section-2-0-css" class="level-1">
+						<h2 class="section-heading">CSS</h2>
+
+					<span class="jumper">
+						[<a href="#section-2-0-css" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-0-css.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Cascading Style Sheets (CSS) is where the visual presentation and design rules for a website belong. Well-written CSS makes good use of its cascading nature - general styles are applied first, and those styles are overridden for more specific instances as necessary.</p>
+
+
+				</section>
+
+
+				<section id="section-2-1-goals" name="section-2-1-goals" class="level-1">
+						<h3 class="section-heading">Goals for Effective CSS</h3>
+
+					<span class="jumper">
+						[<a href="#section-2-1-goals" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-1-goals.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>CSS is an unusual language which can easily lead to code bloat, inconsistencies in design or clashing code techniques. It is easy to end up with CSS code that is so fragile it can cause site-wide regressions with small changes.</p>
+<p>CSS should:</p>
+<ul>
+<li>Be easy to maintain.</li>
+<li>Follow clear enough patterns to understand.</li>
+<li>Offer a clear place for new styles going forwards.</li>
+<li>Not be a drag on page loading performance.</li>
+<li>Not include unused style rules.</li>
+<li>Address different devices, browser versions, and do as much as it can with as little code as possible.</li>
+</ul>
+<p>When setting up the CSS for a site, always consider:</p>
+<ul>
+<li>What the default styles for HTML elements are going to be.</li>
+<li>Which styles are global styles versus template specific styles versus specific one-off use-cases. (Rule of Three)</li>
+<li>Distinctions between code for layout and for content.</li>
+<li>How the code will evolve and grow.</li>
+<li>Potential impact of bug fixes on the overall site.</li>
+<li>Use of images as CSS background images vs. in-line HTML (content).</li>
+</ul>
+
+
+				</section>
+
+
+				<section id="section-2-10-scss-lint" name="section-2-10-scss-lint" class="level-1">
+						<h4 class="section-heading">SCSS-Lint</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-10-scss-lint" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-10-scss-lint.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>All BarkleyREI projects are linted by SCSS-Lint to detect and alert style issues with SCSS files. We adhere to <a href="https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md">all the defaults located here</a> with the exceptions of the following:</p>
+<ul>
+<li><em><strong>DeclarationOrder</strong></em> is set to false<ul>
+<li>This causes issues with Foundation&#39;s breakpoint() mixin.</li>
+</ul>
+</li>
+<li><em><strong>EmptyRule</strong></em> is set to false<ul>
+<li>These are removed in the final compiled file anyway, and this plays nice with our generator.</li>
+</ul>
+</li>
+<li><em><strong>HexLength</strong></em> is enabled and set to “long” (requiring 6 characters always)</li>
+<li><em><strong>ImportPath</strong></em> has leading_underscore set to true</li>
+<li><em><strong>Indentation</strong></em> has character set to “tab” and width set to “1”</li>
+<li><em><strong>LeadingZero</strong></em> is enabled and style set to “include_zero”</li>
+<li><em><strong>NestingDepth</strong></em> is enabled and max_depth is set to “4”</li>
+<li><em><strong>PropertySortOrder</strong></em> is set to false<ul>
+<li>This is difficult to enforce but we may pursue this later.</li>
+</ul>
+</li>
+<li><em><strong>PseudoElement</strong></em> is set to false<ul>
+<li>I&#39;ve noticed that two colons fails in some browsers but I&#39;m not certain.</li>
+</ul>
+</li>
+<li><em><strong>QualifyingElement</strong></em> has “allow_element_with_attribute” set to “true”</li>
+<li><em><strong>SelectorDepth</strong></em> has “max_depth” set to “4”</li>
+<li><em><strong>SpaceAroundOperator</strong></em> is set to false<ul>
+<li>Requested by Sarah and approved by Ian</li>
+</ul>
+</li>
+<li><em><strong>TrailingWhitespace</strong></em> is set to false</li>
+<li><em><strong>TrailingZero</strong></em> is set to true</li>
+<li><em><strong>TransitionAll</strong></em> is set to true<ul>
+<li>You should only transition specific properties</li>
+</ul>
+</li>
+</ul>
+<p>Excluding SCSS from linting should be avoided, but in the fringe case that you must remove linting from a specific section of a SCSS file, this can be achieved by the following example:</p>
+<pre><code class="language-css">.search {
+	// scss-lint:disable VendorPrefix
+	::-webkit-input-placeholder {
+		color: $placeholder-text-color;
+		font-style: italic;
+	}
+	// scss-lint:enable VendorPrefix
+}
+</code></pre><p>You must always deactivate only the rules you need, for only the lines you need. If an entire scss file needs excluded from linting, one of the following must occur:</p>
+<ul>
+<li>It should be rewritten so that it passes without disabling rules.</li>
+<li>It should be rewritten so that only the affected lines are excluded.</li>
+<li>It should be moved to an excluded directory (like plugins, if you are importing styles from a third party component).</li>
+</ul>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://github.com/BarkleyREI/generator-brei-app/blob/master/generators/new/templates/scss-lint.yml">BarkleyREI SCSS Lint Config</a></li>
+<li><a href="https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md">SCSS Lint configuration options</a></li>
+</ul>
+
+
+				</section>
+
+
+				<section id="section-2-11-specificity" name="section-2-11-specificity" class="level-1">
+						<h4 class="section-heading">Specificity</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-11-specificity" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-11-specificity.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Use the minimum specificity required to achieve the desired style. It can be difficult to quickly read and locate styles or even bugs with heavily nested styles in the CSS.</p>
+<p>The ID is the most specific selector, since it can only match one element, and the class is a close second. Use those whenever possible rather than HTML tag names.</p>
+<pre><code class="language-css">/* BAD */
+button#back-button { ... }
+.popular ul li a { ... }
+.popular &gt; ul &gt; li &gt; a { ... }
+
+/* GOOD */
+.back-button { ... }
+.popular-link { ... }
+.unpopular-link { ... }
+</code></pre><p>As a rule, CSS is most maintainable with the simplest selectors possible. Try applying a class to the element you want to target instead.</p>
+<p><strong>Note:</strong></p>
+<p>While performance of CSS selectors has been a debated topic, browsers perform quite well on most types of selectors. That said, specificity reduced to the most simple name to get the desired results is the best idea in most cases <em>for readability</em> and <em>maintainability</em>.</p>
+
+
+				</section>
+
+
+				<section id="section-2-12-important" name="section-2-12-important" class="level-1">
+						<h4 class="section-heading">Do Not Use !important</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-12-important" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-12-important.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Avoid using the !important keyword. Treat it like the nuclear option, only to be used in the most extreme of cases. This fundamentally destroys the specificity feature and can even break accessibility for some users.</p>
+<p>There is usually another way to achieve the same goal without causing headaches for developers in the future who are either trying to debug a styling issue, or trying to use normal specificity to override a style for a particular element only to find that they can&#39;t.</p>
+
+
+				</section>
+
+
+				<section id="section-2-13-id-selectors" name="section-2-13-id-selectors" class="level-1">
+						<h4 class="section-heading">ID Selectors</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-13-id-selectors" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-13-id-selectors.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>As noted above, use the lowest level of specificity necessary to get the desired results. This means the use of the ID selector should be minimized. Often creating a new class is preferable to using inheritance or additional specificity to target an element or elements.</p>
+<p>ID selectors, if used, should be used mainly as access points for JavaScript or if a very particular use case surfaces. Styles and classes can be applied via the same element with a className.</p>
+<p>SCSS Lint will flag the use of IDs, so if they are absolutely required, they must be excluded via <code>scss-lint:disable</code> statements.</p>
+
+
+				</section>
+
+
+				<section id="section-2-14-vendor-prefixes" name="section-2-14-vendor-prefixes" class="level-1">
+						<h4 class="section-heading">Vendor Prefixes</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-14-vendor-prefixes" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-14-vendor-prefixes.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>There is no need to manually type vendor prefixes. They will be automatically included by autoprefixer when the project is compiled. If your desired vendor prefix is not appearing, check the browserlist settings in your project. If you have to manually type a vendor prefix, put the standardized rule at the end to ensure browsers optimize and use the standard if they recognize it.</p>
+<p>For example:</p>
+<pre><code class="language-css">.thing {
+    -webkit-transition: all 100ms;
+    transition: all 100ms;
+}
+</code></pre>
+
+				</section>
+
+
+				<section id="section-2-15-inline-styling" name="section-2-15-inline-styling" class="level-1">
+						<h4 class="section-heading">Inline Styling</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-15-inline-styling" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-15-inline-styling.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Do not hard code style information into your HTML markup directly, either with the style attribute that accepts CSS or with deprecated attributes such as align, border, or width. These are difficult to maintain and make it harder to track down what is causing an element to appear as it does.</p>
+<p>There are a few exceptions to this:</p>
+<ul>
+<li>Background images that are changeable by the client.</li>
+<li>Positioning of captions in mastheads using percentages or pixels via top/left/right/bottom.</li>
+</ul>
+
+
+				</section>
+
+
+				<section id="section-2-16-performance-caveats" name="section-2-16-performance-caveats" class="level-1">
+						<h4 class="section-heading">Performance Caveats</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-16-performance-caveats" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-16-performance-caveats.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>In some cases for performance reasons it may be good practice to in-line critical styles in a <code>style</code> block in the document&#39;s head. This delivers these styles to the browser in the fastest method possible by preventing the need for an additional HTTP request. Fetching linked style sheets are a blocking operation on the rendering of a Web page in a browser in most cases. An enormous CSS file can mean a highly reduced time to first rendering because a browser may pause during loading of the page to download CSS which may not even be used on the first page.</p>
+<p>With the above in mind it may be desirable to include the rules required to render the top portions of a page (i.e. &quot;Above the fold&quot;) in advance of styles loaded after the rendering begins. Critical styles can be identified either manually or through the use of a tool. Non critical styles can then be asynchronously loaded, increasing the perceived page load speed.</p>
+<p><strong>BarkleyREI</strong> does not currently implement critical styles as a technique.</p>
+
+
+				</section>
+
+
+				<section id="section-2-17-box-model" name="section-2-17-box-model" class="level-1">
+						<h4 class="section-heading">Box Model</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-17-box-model" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-17-box-model.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>To simplify CSS authoring, we set the box-sizing attribute to border-box for all page elements. This enables us to use round numbers for width like 50% and then apply a padding or border to that same element without needing to</p>
+<ol>
+<li>adjust the width accordingly using calc (since borders use pixels rather than percents) or</li>
+<li>create an element inside it to take the padding and border. This is the only case where we use the inefficient universal selector (*).</li>
+</ol>
+<p>Example:</p>
+<pre><code class="language-css">* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+</code></pre>
+
+				</section>
+
+
+				<section id="section-2-18-coding-patterns" name="section-2-18-coding-patterns" class="level-1">
+						<h4 class="section-heading">Coding Patterns</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-18-coding-patterns" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-18-coding-patterns.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>There are a number of popular design patterns for naming conventions on selectors, groupings or extensions of styles in CSS files. Sometimes these are of value and may be used on projects as long as the developers are on board and they are used consistently by the team.</p>
+<p>Examples of pattern systems include BEM, SMACSS, Object Oriented CSS, Atomic design, and others.</p>
+<p>The downsides to some of these systems are:</p>
+<ul>
+<li>Often rely on less obvious rules that may be difficult to follow.</li>
+<li>They may use syntax that may be objectionable to some developers.</li>
+<li>Some developers may find the syntax difficult to read.</li>
+</ul>
+<p>For these reasons it is often best to go with the most simple, basic set of conventions possible, based on obvious patterns.</p>
+<p>BarkleyREI does not currently follow a popular coding pattern for CSS/SCSS.</p>
+
+
+				</section>
+
+
+				<section id="section-2-19-simple-css-pattern" name="section-2-19-simple-css-pattern" class="level-1">
+						<h4 class="section-heading">A Simple CSS Code Pattern</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-19-simple-css-pattern" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-19-simple-css-pattern.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>The following sections describe one simple approach, and as long as the types are defined on a project and the patterns are followed, then a clear meaning can be interpreted fairly quickly and easily reading through the CSS, HTML, and JavaScript.</p>
+<p>Every site will have distinct requirements but some examples of things that can be standardized on a site build include:</p>
+<ul>
+<li>Global Defaults</li>
+<li>Page Level Rules (grids, site template types, and so on)</li>
+<li>Components</li>
+<li>Modifiers</li>
+<li>State</li>
+<li>JavaScript-only Rules</li>
+<li>Utilities</li>
+</ul>
+<p>The following sections describe how some might work.</p>
+
+
+				</section>
+
+
+				<section id="section-2-2-sass" name="section-2-2-sass" class="level-1">
+						<h4 class="section-heading">Sass</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-2-sass" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-2-sass.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>All styles should be written in <a href="http://sass-lang.com/">Sass (Syntactically Awesome Style Sheets)</a> unless specifically requested otherwise by management or the client. The structure of the Sass in the project should follow the <a href="https://github.com/BarkleyREI/brei-sass-boilerplate">SCSS Boilerplate</a> on our Github.</p>
+<p>Refer to the <a href="#section-209-formatting-scss">&quot;Formatting SCSS&quot;</a> section of this document for more information on writing Sass styles.</p>
+
+
+				</section>
+
+
+				<section id="section-2-20-global-defaults" name="section-2-20-global-defaults" class="level-1">
+						<h5 class="section-heading">Global Defaults</h5>
+
+					<span class="jumper">
+						[<a href="#section-2-20-global-defaults" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-20-global-defaults.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>For the purposes of discussion we could refer to the global defaults as the baseline HTML elements and their associated styles. Frequently you may wish to use a third party library which normalizes CSS behavior across browsers. Either way, it makes sense to keep these files in their own files.</p>
+<p>BarkleyREI uses Foundation to reset styles, which in turn uses Normalize.css.</p>
+<p>Print styles should be contained within a separate stylesheet, and should be applied with <code>&lt;link&gt;</code> tags set to the appropriate media statement so that they style the unstyled document.</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;main.css&quot; /&gt;
+
+&lt;!-- print styles are seperate and style the plain document --&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;print&quot; href=&quot;print.css&quot; /&gt;
+</code></pre>
+
+				</section>
+
+
+				<section id="section-2-21-page-level-rules" name="section-2-21-page-level-rules" class="level-1">
+						<h5 class="section-heading">Page Level Rules</h5>
+
+					<span class="jumper">
+						[<a href="#section-2-21-page-level-rules" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-21-page-level-rules.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Any site is liable to have a standard baseline set of grids and types of pages. These grids can be collected into their own distinct set of component files — using a broad definition of a global &quot;thing&quot; as a component.</p>
+
+
+				</section>
+
+
+				<section id="section-1-21-markup-deliverables" name="section-1-21-markup-deliverables" class="level-1">
+						<h3 class="section-heading">Markup Deliverables</h3>
+
+					<span class="jumper">
+						[<a href="#section-1-21-markup-deliverables" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-21-markup-deliverables.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Typically HTML deliverables are incorporated into CMS&#39;s or application delivery platforms as templates. A plan for incorporation of templates that leverage patterns created during the markup creation phase should be followed and matching types of pages to templates that were created, so that an association between the source markup and the destination markup can be maintained over time.</p>
+<p>If the templates built are not being integrated into a CMS by BarkleyREI, the static coded versions of these templates can be provided as a deliverable.</p>
+
+
+				</section>
+
+
+				<section id="section-2-22-components" name="section-2-22-components" class="level-1">
+						<h5 class="section-heading">Components</h5>
+
+					<span class="jumper">
+						[<a href="#section-2-22-components" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-22-components.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Components are a high level concept for organizing CSS files and rules. A component simply means a grouped set of rules pertaining to an object or set of related objects on a page.</p>
+<p>Additionally, encapsulating these components into distinct files is a great option. Within this file, using a naming convention is a tremendous help here for code maintainability and readability.</p>
+<p>Group styles under a simple name-space using a prefix-suffix-modifier type pattern such as:</p>
+<pre><code class="language-css">/* core component */
+.component { ... }
+
+/* component elements */
+.component-header { ... }
+.component-content { ... }
+
+/* component descendant */
+.component-content-group { ... }
+
+/* component descendant element */
+.component-content-group-header { ... }
+.component-content-group-imgs { ... }
+</code></pre><p>This type of pattern is easy to read, extend, and follow in the absence of something more sophisticated.</p>
+<p>Additionally, generally components will be the only CSS class with distinct names that do not have prefixes before the core, root, or base name of the component (e.g. above we are using component).</p>
+<p>Just to get developers thinking, these might be things like:</p>
+<ul>
+<li>navbar</li>
+<li>footer</li>
+<li>page-info</li>
+<li>article-date</li>
+<li>lead</li>
+<li>widgetfoo</li>
+<li>byline</li>
+</ul>
+
+
+				</section>
+
+
+				<section id="section-1-22-next-steps" name="section-1-22-next-steps" class="level-1">
+						<h3 class="section-heading">Next Steps &amp; HTML5 Resources</h3>
+
+					<span class="jumper">
+						[<a href="#section-1-22-next-steps" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/1-html/1-22-next-steps.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Considerations:</p>
+<ul>
+<li>Site maintenance procedures.</li>
+<li>Browser testing strategies.</li>
+<li>How new features will be added.</li>
+<li>Where new features will be added.</li>
+<li>What the file system looks like for static site assets.</li>
+<li>If a CDN is involved.</li>
+<li>Naming conventions and organization of graphics and photography assets.</li>
+<li>If the &quot;back-end implementation&quot; of static HTML templates will require review by front-end team members.</li>
+</ul>
+
+
+						<hr class="barkley"/>
+				</section>
+
+
+				<section id="section-2-23-modifiers" name="section-2-23-modifiers" class="level-1">
+						<h5 class="section-heading">Modifiers</h5>
+
+					<span class="jumper">
+						[<a href="#section-2-23-modifiers" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-23-modifiers.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>If you need to extend an existing component then create distinct modifier classes to easily indicate that it is a modifier and not a complete style. Using a prefix can prevent confusing the class with a full class. In the examples below, we are using the <code>mod-</code> prefix to identify modifiers.</p>
+<pre><code class="language-css">.mod-modifier-a { ... }
+.mod-modifier-b { ... }
+</code></pre><p>Then, when used in the HTML, the class stands out:</p>
+<pre><code class="language-html">&lt;div class=&quot;component-content mod-modifier-a&quot;&gt;...&lt;/div&gt;
+</code></pre><p>This is a strong technique because the modifier classes can stand on their own in the CSS. Further, they may also be altered via more complex rules:</p>
+<pre><code class="language-css">.component-header.mod-modifier-a { ... }
+</code></pre><p>This is simplistic and easy to follow, understand, and expand upon.</p>
+
+
+				</section>
+
+
+				<section id="section-2-24-state" name="section-2-24-state" class="level-1">
+						<h5 class="section-heading">State</h5>
+
+					<span class="jumper">
+						[<a href="#section-2-24-state" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-24-state.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>A state for an element or component is presentation information for a given component. This may be a dynamic state set by JavaScript or a user interaction, but not always. It could also be a preset from the server or the results after a transaction. State modifiers are a great way for a distinct class to be provided to engineers unfamiliar with the design, to give them hooks for various behavior. This is slightly different than JS specific classes, however.</p>
+<p>State rules will use the <code>is-</code> prefix.</p>
+<pre><code class="language-css">.component-group.is-full { ... }
+.component-group.is-expired { ... }
+</code></pre><p>Treating components&#39; state as a modifier that is boolean (i.e. true or false) also:</p>
+<ul>
+<li>Semantically helps provide information about the content.</li>
+<li>Separates the code for state from default presentation.</li>
+<li>Removes the need to update corresponding states or components if the name of either changes.</li>
+</ul>
+<p>This last point is important from a maintenance perspective.</p>
+<p>It&#39;s best to try to restrict these state indicators as being restricted to a specific component.</p>
+
+
+				</section>
+
+
+				<section id="section-2-25-javascript-prefix" name="section-2-25-javascript-prefix" class="level-1">
+						<h5 class="section-heading">JavaScript Behavior Prefixes and Classes</h5>
+
+					<span class="jumper">
+						[<a href="#section-2-25-javascript-prefix" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-25-javascript-prefix.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>The usage of a js- prefix is present in the markup but should never really appear in the CSS file itself. If the styles are being set, then use modifiers or state type classes.</p>
+<pre><code class="language-html">&lt;button class=&quot;component-button js-execute&quot;&gt;...&lt;/button&gt;
+</code></pre><p>The js-execute rule should not appear in the CSS file, but only in JS files they are tied to behavior. These are events, verbs, or action related, and are access points for JavaScript not a toggle or state changer. It&#39;s best to think of these classes as closer to and ID attribute in the HTML.</p>
+<p>The <code>.no-js</code> class can be used to add behavior to a component when JavaScript is disabled or otherwise unavailable to the page. This class is added by default to the <code>&lt;html&gt;</code> tag and is removed by Modernizr when the page loads.</p>
+<p>Special attention should be paid to components that are enhanced with JavaScript to ensure that their behavior is reasonable when JavaScript is not available. Some examples include:</p>
+<ol>
+<li>Showing a rendered slide of a carousel without the paging functionality.</li>
+<li>Opening all accordions by default.</li>
+<li>AJAX driven functionality is linked so that it will click through to a query-string enabled page that supports the same functionality that was implemented using AJAX.<ul>
+<li>For example, on a faceted search, a user may be able to click on a category and will be taken to /results?category=1 where the results will be filtered to the category they selected.</li>
+</ul>
+</li>
+<li>Result sets can be filtered and paged using query strings.</li>
+<li>Functionality that cannot exist without JavaScript at all should have an explanatory message shown to the end user to explain the issue.</li>
+</ol>
+
+
+				</section>
+
+
+				<section id="section-2-26-utilities" name="section-2-26-utilities" class="level-1">
+						<h5 class="section-heading">Utilities</h5>
+
+					<span class="jumper">
+						[<a href="#section-2-26-utilities" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-26-utilities.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>A utility is a type of component modifier that is specifically designed to be used on more than one component type. If it was restricted to a single component, it would simply be a modifier.</p>
+<p>Utilities should serve only the modifier purpose intended without side effects when applied to any component, or component descendant. In the examples below, the prefix <code>u-</code> is being used for utilities.</p>
+<pre><code class="language-css">.u-warning {
+
+}
+
+.u-scroll-infobox {
+    overflow-x: scroll;
+    width: auto;
+}
+</code></pre>
+
+				</section>
+
+
+				<section id="section-2-27-mobile-web" name="section-2-27-mobile-web" class="level-1">
+						<h4 class="section-heading">The Mobile Web, Media Queries, Responsive Design</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-27-mobile-web" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-27-mobile-web.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>With the mobile Web taking off Media Queries are mandatory in CSS going forwards. All styles should be written <strong>mobile first</strong>, with limited exceptions.</p>
+<p>We discuss media queries in the Mobile / Responsive section of this document.</p>
+
+
+				</section>
+
+
+				<section id="section-2-28-css-deliverables" name="section-2-28-css-deliverables" class="level-1">
+						<h3 class="section-heading">CSS Deliverables</h3>
+
+					<span class="jumper">
+						[<a href="#section-2-28-css-deliverables" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-28-css-deliverables.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Please be aware of potential conflicts between the original development environment for CSS and an ultimate deployment to production systems, if continuous integration will allow the continued use of CSS preprocessors, or if there should a cross-platform development strategy.</p>
+<p>Delivered CSS should be concatenated, minified, tested against browser bugs (e.g. MSIE selector count bugs) and extra files should be removed.</p>
+<p>File naming conventions should be consistent and language or use-case specific files should be clear and not be easily confused with the global style CSS.</p>
+<p>Uncompiled SCSS files can be provided to the client upon request. Appropriate documentation should be given on how to compile them.</p>
+
+
+				</section>
+
+
+				<section id="section-2-29-next-steps" name="section-2-29-next-steps" class="level-1">
+						<h3 class="section-heading">Next Steps &amp; CSS Resources</h3>
+
+					<span class="jumper">
+						[<a href="#section-2-29-next-steps" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-29-next-steps.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>This is just the tip of the iceberg where CSS is concerned.</p>
+<ul>
+<li>Browser Compatibility</li>
+<li>Media Queries</li>
+<li>Accessibility and CSS</li>
+<li>CSS pre-processors usage</li>
+<li>Internet Explorer, or browser-specific bugs</li>
+<li>Usage of CSS3 transitions, transforms, and more</li>
+<li>Vendor prefixes</li>
+<li>Color Management</li>
+</ul>
+
+
+						<hr class="barkley"/>
+				</section>
+
+
+				<section id="section-2-3-frameworks" name="section-2-3-frameworks" class="level-1">
+						<h4 class="section-heading">Frameworks</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-3-frameworks" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-3-frameworks.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Unless specified otherwise, all projects should use Zurb&#39;s Foundation framework. The grid system, reset, and default styles will be included by default.</p>
+<p>Only use components and features from Foundation as they are needed. Do not include anything unnecessarily, as this adds to overall bloat.</p>
+<p>If other frameworks are desired by the client or management, best care should be taken to minimize the total size of the final CSS file. This can be accomplished by separating out the bulk of the framework into a separate or CDN-hosted CSS file that is referred to before the main styles.</p>
+
+
+				</section>
+
+
+				<section id="section-2-4-establishing-conventions" name="section-2-4-establishing-conventions" class="level-1">
+						<h4 class="section-heading">Establishing Conventions and Development Strategies</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-4-establishing-conventions" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-4-establishing-conventions.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Like other aspects of the code on a site, consistency is key. Areas of critical consistency include:</p>
+<ul>
+<li>Code formatting.</li>
+<li>Naming conventions.</li>
+<li>File and folder structure.</li>
+<li>Examples or sample code.</li>
+<li>How page components might be broken down or re-used.</li>
+</ul>
+<p>On a large site never develop using a single CSS stylesheet, though a single file served for a page is best. To this end we often recommend the use of CSS preprocessors to break style sheets into smaller, better organized files, or the use of a build process to combine files for serving via HTTP.</p>
+<p>Try to use the rule of three when building stylesheets for a website:</p>
+<ul>
+<li>Global site styles (Main.css).</li>
+<li>Template specific styles (Level vs. Home).</li>
+<li>Feature specific styles (One off page).</li>
+</ul>
+<p><strong>Note:</strong></p>
+<p>It is a great idea to approach front-end development like a set of <a href="http://patternlab.io/">reusable components</a> are being created. This matches how they are designed, how they must adapt to responsive layouts, and how they will be implemented inside content management or other server-side frameworks.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="http://patternlab.io">Pattern Lab</a></li>
+<li><a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Web Design</a></li>
+</ul>
+
+
+				</section>
+
+
+				<section id="section-2-5-living-style-guides" name="section-2-5-living-style-guides" class="level-1">
+						<h5 class="section-heading">Living Style Guides and Reference Implementations</h5>
+
+					<span class="jumper">
+						[<a href="#section-2-5-living-style-guides" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-5-living-style-guides.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>One technique to consider is maintaining static HTML style reference implementations well into integration with server-side / back-end systems. Because BarkleyREI statically codes all designs and submits them to Quality Assurance Testing before integrating into any CMS&#39;s, these files are a reference for the global styles of the site and a great place to code and test additions to the project before integrating. This helps reduce regressions that can happen across the board as the code for the site evolves. Continue to test these reference implementations as they will be the &quot;source of record&quot; for the styles created on the site. They also allow you to more easily distinguish the front-end bugs from the bugs potentially introduced by integration with a complex back-end.</p>
+<p>These reference implementations can serve as a living style guide and broken components are easily spotted in testing over time.</p>
+<p>Defining a solid style guide to be applied to tag names can significantly reduce the size of the CSS if that style guide is adhered to by both the design and development teams. It is recommended that a style guide is agreed upon at the beginning of a project, defined in HTML and then iterated on by both the design and development teams.</p>
+<p>For BarkleyREI&#39;s purposes, the living style guide can be satisfied by the statically coded templates. All new work should be done statically and tested before integrating into a CMS. Care should be taken to maintain the integrity of the existing styles and markup, and maintain parity with the CMS-integrated versions.</p>
+
+
+				</section>
+
+
+				<section id="section-2-6-best-practices" name="section-2-6-best-practices" class="level-1">
+						<h3 class="section-heading">CSS Best Practices</h3>
+
+					<span class="jumper">
+						[<a href="#section-2-6-best-practices" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-6-best-practices.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>What follows are some basic concepts for standardization of CSS code. Naturally, feel free to fork, update per project, and even issue pull requests for further discussion based upon experience.</p>
+
+
+				</section>
+
+
+				<section id="section-2-7-inclusion" name="section-2-7-inclusion" class="level-1">
+						<h4 class="section-heading">Inclusion</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-7-inclusion" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-7-inclusion.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Use the <code>&lt;link&gt;</code> tag to include all your style sheets in the <code>&lt;head&gt;</code> of the document. For optimal page performance, concatenate your CSS into as few files as possible and do not use the <code>@import</code> command to include other style sheets, as this will fire an additional HTTP request and block page rendering until its completion.</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;main.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;home.css&quot; /&gt;
+</code></pre>
+
+				</section>
+
+
+				<section id="section-2-8-formatting-css" name="section-2-8-formatting-css" class="level-1">
+						<h4 class="section-heading">Formatting CSS</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-8-formatting-css" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-8-formatting-css.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>The majority of CSS produced by BarkleyREI will be compiled from SCSS, but in the odd occasion that we must write normal CSS for a project, please adhere to the following rules.</p>
+<p>Basic rules for formatting CSS files:</p>
+<ul>
+<li>Use a new line for every selector and every declaration.</li>
+<li>Use a single space before the opening brace in a set of rules.</li>
+<li>Use lowercase for elements and longform hex values, e.g., #aaaaaa.</li>
+<li>Hyphenate class selector names; avoid underscores and camelCase.</li>
+<li>Quote attribute values in selectors.</li>
+<li>Use one level of indentation for each declaration.</li>
+<li>The closing brace of declaration goes in the same column as the first character of the set of rules.</li>
+<li>Use a single blank line between sets of rules.</li>
+</ul>
+<p>Inside sets of rules or style declarations:</p>
+<ul>
+<li>Add a single space between the property and value, for example:<ul>
+<li><code>prop: value;</code> and not <code>prop:value;</code></li>
+</ul>
+</li>
+<li>Use double quotes for quoted values.</li>
+<li>Always include a semicolon at the end of the last declaration.</li>
+<li>Use shorthand if you can, like:<ul>
+<li><code>padding: 15px 0;</code> and not <code>padding: 15px 0px 15px 0px;</code></li>
+</ul>
+</li>
+<li>When allowed, use 0 without units.</li>
+<li>All font families must have fallbacks to web safe fonts (e.g. serif, sans-serif).</li>
+</ul>
+<p>Putting each selector on its own line and each property on its own line is great for readability and so version control systems can clearly show which parts have changed in a diff.</p>
+<p>The attributes within a selector can be alphabetized for easy scanning and so that compression algorithms like gzip have a greater chance of finding repeatable patterns.</p>
+<p>Some examples:</p>
+<pre><code class="language-css">.content {
+    margin-left: -2%;
+}
+
+.twitter-popular,
+.twitter-favorites,
+.twitter-feed {
+	background-image: url(&quot;/img/bg.png&quot;);
+    float: left;
+	padding: 15px 0;
+    width: 33.33%;
+}
+</code></pre><p><strong>Do not indent child styles</strong> underneath their parent styles; this is important for a number of reasons:</p>
+<ul>
+<li>Some CSS preprocessors heavily use indentation.</li>
+<li>Various levels of indentation hinders maintainability.</li>
+<li>HTML and CSS structure can change frequently over the course of a project, quickly rendering obsolete the parent-child relationship the indentation used to represent.</li>
+</ul>
+
+
+				</section>
+
+
+				<section id="section-2-9-formatting-scss" name="section-2-9-formatting-scss" class="level-1">
+						<h4 class="section-heading">Formatting SCSS</h4>
+
+					<span class="jumper">
+						[<a href="#section-2-9-formatting-scss" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/2-css/2-9-formatting-scss.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Basic rules for formatting SCSS files:</p>
+<ul>
+<li>The ordering of styles should be:<ol>
+<li><code>@extend</code></li>
+<li><code>@includes</code> (without inner content)</li>
+<li>Regular styles</li>
+<li><code>@includes</code> (with inner content)</li>
+<li>Nested rule sets</li>
+</ol>
+</li>
+<li>Nested rule sets should follow the same ordering of styles.</li>
+<li>Foundation breakpoints should be placed inside the selector they directly affect, and should not contain nested styles.</li>
+<li>Nesting shouldn&#39;t go deeper than 4 levels.</li>
+<li>Nested statements shouldn&#39;t be longer than 50 lines.<ul>
+<li>This means that each nested selector shouldn&#39;t total 50 lines, not that the entire file should be under 50 lines. This is so that a nested selector can fit into your editor window to reduce confusion during development.</li>
+</ul>
+</li>
+<li>Only use variables or functions for colors in a module/partial.<ul>
+<li>Try to use specifically named variables instead of the raw color names. For example, <code>$header-outer-border-color</code> instead of <code>$congress-blue;</code>.</li>
+<li>The palette helper is also recommended to assist with naming.</li>
+</ul>
+</li>
+<li>Surround all pixel values in <code>rem-calc()</code>.<ul>
+<li>Exceptions are permitted where rem units are not supported or cause issues (like borders).</li>
+</ul>
+</li>
+</ul>
+<p>Inside sets of rules or style declarations:</p>
+<ul>
+<li>Omit an empty line between the top and bottom of a nested block.</li>
+<li>Add empty lines in between nested blocks.</li>
+</ul>
+<pre><code class="language-scss">$palettes: map-merge($palettes, (
+    &#x27;accordion&#x27;: (
+        &#x27;core&#x27;: $black,
+        &#x27;background&#x27;: $iron,
+		&#x27;title&#x27;: $midnight-blue,
+		&#x27;hover&#x27;: $mango-tango,
+		&#x27;border&#x27;: $mango-tango
+    )
+));
+
+// Example, normally this would be in theme-variables.scss
+$default-font: &#x27;Lato&#x27;, Arial, sans-serif;
+
+.accordion-item {
+	@extend %list-reset;
+
+	border-top: 1px dotted $dodger-blue;
+
+	&amp;:first-child {
+		border-top: 1px dotted palette(&#x27;accordion&#x27;, &#x27;border&#x27;);
+	}
+
+	.accordion-title {
+		color: palette(&#x27;accordion&#x27;, &#x27;title&#x27;);
+		display: block;
+		font-size: rem-calc(24);
+		line-height: rem-calc(28);
+		position: relative;
+		padding: rem-calc(15 20 15 28);
+
+		@include breakpoint(large) {
+			font-size: rem-calc(30);
+			line-height: rem-calc(34);
+			padding: rem-calc(17 20 17 42);
+		}
+
+		.no-js &amp; {
+			padding-left: 0;
+		}
+
+		&amp;:hover,
+		&amp;:focus {
+			text-decoration: none;
+		}
+	}
+
+	.accordion-content {
+		background-color: palette(&#x27;accordion&#x27;, &#x27;background&#x27;);
+		display: none;
+		padding: rem-calc(25 25 25 0);
+
+		.no-js &amp; {
+			display: block;
+		}
+	}
+}
+</code></pre>
+
+				</section>
+
+
+				<section id="section-3-0-javascript" name="section-3-0-javascript" class="level-1">
+						<h2 class="section-heading">JavaScript</h2>
+
+					<span class="jumper">
+						[<a href="#section-3-0-javascript" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-0-javascript.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>JavaScript is where extra behaviors, features, and functionality not offered natively by Web browsers through CSS and HTML is created.</p>
+<p>JavaScript has gained an enormous amount of attention in recent years due to more feature rich, faster browsers and server run-times such as Node.js. For the purposes of this document, general discussion here focuses on client-side JavaScript development, with references to where it crosses over.</p>
+<p>It is of note that many techniques identified these days as &quot;HTML5&quot; are actually enabled by the related JavaScript APIs.</p>
+
+
+				</section>
+
+
+				<section id="section-3-1-goals" name="section-3-1-goals" class="level-1">
+						<h3 class="section-heading">Goals</h3>
+
+					<span class="jumper">
+						[<a href="#section-3-1-goals" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-1-goals.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Unless we are talking about a complex client-side Single Page Application (SPA), JavaScript should be used sparingly, and when a deliberate choice is made to not perform a task with other available technologies. The decision to add more scripts to a Web page should be made carefully. Even with a SPA, it is critical to make controlled choices so as to not include too much unorganized impossible to maintain code.</p>
+<p>Any and all JavaScript code that&#39;s added to a Web page should be there if and only if it is needed for the page to achieve the desired ends or if there aren&#39;t any negative impacts with it there.</p>
+<p>Included JavaScript should:</p>
+<ul>
+<li>Be included after careful consideration.</li>
+<li>Have the performance overhead and file size evaluated.</li>
+<li>Have a feature set that is understood and appropriate.</li>
+<li>Perform only the necessary tasks without needless overhead.</li>
+<li>Have maintainability carefully assessed.</li>
+</ul>
+<p>While being:</p>
+<ul>
+<li>Fast, efficient, and perform well.</li>
+<li>Re-usable if possible.</li>
+<li>Not conflict with other code on a given page or sets of pages.</li>
+<li>Executed only when necessary on a given page or sets of pages.</li>
+</ul>
+<p>Likewise, the absence or failure of the code should be carefully considered:</p>
+<ul>
+<li>What happens if for some reason this code is missing or does not run?</li>
+<li>What happens if the code triggers an error?</li>
+</ul>
+
+
+				</section>
+
+
+				<section id="section-3-10-writing-and-formatting-javascript" name="section-3-10-writing-and-formatting-javascript" class="level-1">
+						<h5 class="section-heading">Writing and Formatting JavaScript</h5>
+
+					<span class="jumper">
+						[<a href="#section-3-10-writing-and-formatting-javascript" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-10-writing-and-formatting-javascript.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>The use of whitespace should follow long-standing English writing conventions, with blank lines between ideas and groups of code such as objects, functions, and new lines for new statements.</p>
+<p>Formatting the language statements and patterns should follow these basics:</p>
+<ul>
+<li>For named functions, do not insert a space character between the function name and the parentheses.</li>
+<li>For anonymous functions, do insert a space character between the function keyword and the parentheses. It’s a function definition; it’s not a function invocation. A space character helps to identify, and communicate, the difference between the use of functions.</li>
+<li>Open braces are preceded by a single space.</li>
+<li>Open braces should appear on the same line as their preceding argument.</li>
+<li>Close braces should appear at the same indentation as the statement preceding the opening brace</li>
+<li>There should be no space characters between parentheses and their contents.</li>
+<li>Use semicolons and do not rely on automatic semicolon insertion.</li>
+<li>Each comma and colon (and semi-colons that don&#39;t end a line) should be followed by a single space.</li>
+<li>Binary and ternary operators should have a single space on each side.</li>
+<li>Quoted values should be in &#39;single quotes&#39; so that double quotes may easily exist inside them.</li>
+<li>Comment JavaScript code thoroughly and consider using a pattern such as those described by JSDocs so that documentation may be generated automatically.</li>
+<li>Conditional statements go on a new line followed by the opening brace.</li>
+<li>Else/else go on the same line as the brace.</li>
+<li>Use type strict checks with === as opposed to == whenever possible.</li>
+<li>Use += and -= instead of ++ and --.</li>
+</ul>
+<pre><code class="language-javascript">var len = arr.length;
+for (var i = 0; i &lt; len; i += 1) {
+    var example = 1;
+    if (example === i) {
+        // we are looping
+    } else {
+        // this will never happen
+    }
+}
+</code></pre><ul>
+<li><a href="http://stackoverflow.com/questions/8452317/do-loops-check-the-array-length-every-time-when-comparing-i-against-array-length">StackOverflow: &quot;Do loops check the array.length every time when comparing i against array.length?&quot;</a></li>
+<li><a href="http://stackoverflow.com/questions/17989270/for-loop-performance-storing-array-length-in-a-variable">StackOverflow: &quot;For-loop performance: storing array length in a variable&quot;</a></li>
+</ul>
+<p>To maximize readability without worrying about which boolean operators bind more tightly than others, each segment of a boolean expression should be enclosed in parentheses.</p>
+<pre><code class="language-javascript">if ((allowUpdate) &amp;&amp; ((user.isAdmin) || (user.role === item.owner))) {
+    // do something
+}
+</code></pre>
+
+				</section>
+
+
+				<section id="section-3-11-variable-declaration" name="section-3-11-variable-declaration" class="level-1">
+						<h5 class="section-heading">Variable Declaration</h5>
+
+					<span class="jumper">
+						[<a href="#section-3-11-variable-declaration" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-11-variable-declaration.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>To avoid confusion between global and local variables, we declare each variable on its own line with the var keyword. We do not use a single var keyword and then chain several variable declarations onto it separated by a comma.</p>
+<pre><code class="language-javascript">var windowWidth;
+var windowHeight;
+var currentVal = $(this).val();
+var min = parseInt($(this).attr(&#x27;min&#x27;), 10);
+</code></pre><p>This has been <a href="http://benalman.com/news/2012/05/multiple-var-statements-javascript/">debated at length</a>, however we believe this is a better practice due to several technical reasons:</p>
+<ul>
+<li>Easier debugging with debuggers.</li>
+<li>Easier merges with version control and diff utilities.</li>
+<li>Most technical issues are resolved by &#39;use strict&#39;.</li>
+</ul>
+<p>Fallback values should also be considered when declaring variables whose values may be omitted or missing by the calling function.</p>
+<pre><code class="language-javascript">var subhead = $(&#x27;.thing&#x27;).val() || &#x27;&#x27;;
+</code></pre><p>The <code>||</code> syntax may not work in all situations, so it may be better to write a standard function that can do null-checking of values and pass all requests for data through that function.</p>
+
+
+				</section>
+
+
+				<section id="section-3-12-variable-scope" name="section-3-12-variable-scope" class="level-1">
+						<h5 class="section-heading">Variable Scope</h5>
+
+					<span class="jumper">
+						[<a href="#section-3-12-variable-scope" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-12-variable-scope.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Minimize the use of global or window level variables and name-spaces. Pollution of the global name-space is error prone and a bad practice.</p>
+<p>If referencing a window or global level variable that isn&#39;t obvious, please comment as such or explicitly state it.</p>
+<pre><code class="language-javascript">var window.thing = {};
+</code></pre>
+
+				</section>
+
+
+				<section id="section-3-13-variable-names-and-types" name="section-3-13-variable-names-and-types" class="level-1">
+						<h5 class="section-heading">Variable Names and Types</h5>
+
+					<span class="jumper">
+						[<a href="#section-3-13-variable-names-and-types" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-13-variable-names-and-types.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Always use meaningful variable names that can be read as words, not as silly abbreviations only you understand.</p>
+<ul>
+<li>Variable names should be camelCase.</li>
+<li>Objects, classes, and name-spaces should be TitleCase.</li>
+<li>Boolean values should be prefixed with is if at all possible.</li>
+<li>Cached jQuery objects can be prefixed with $.</li>
+<li>Use shorthand versions of empty Arrays and Objects.</li>
+</ul>
+<pre><code class="language-javascript">// some examples
+var exampleValue = &#x27;my example variable value&#x27;;
+var numberOfTimes = 3;
+// booleans
+var isThisWorking = true;
+var isNotWorking = 0;
+// cache a selector
+var $body = $(&#x27;body&#x27;);
+// short hand objects and arrays
+var newObject = {};
+var newArray = [];
+</code></pre>
+
+				</section>
+
+
+				<section id="section-3-14-settings-constants" name="section-3-14-settings-constants" class="level-1">
+						<h5 class="section-heading">Settings, Constants</h5>
+
+					<span class="jumper">
+						[<a href="#section-3-14-settings-constants" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-14-settings-constants.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Put settings together in obvious places such as an Object literal space inside your module. Make settings that are possibly to be considered &quot;constants&quot; to be obvious -- some developers like to use ALLCAPS.</p>
+<p><strong>Learn more:</strong></p>
+<p>Did you know that <a href="https://strongloop.com/strongblog/es6-variable-declarations/">ES6 now features</a> real life <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">constants</a>?</p>
+
+
+				</section>
+
+
+				<section id="section-3-15-feature-detection" name="section-3-15-feature-detection" class="level-1">
+						<h5 class="section-heading">Feature Detection</h5>
+
+					<span class="jumper">
+						[<a href="#section-3-15-feature-detection" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-15-feature-detection.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Always test for the existence of a browser API, function, or object property before you use it, and make sure the user experience is still functional (to the extent possible) if it&#39;s not found. We rely on JavaScript-based feature detection rather than server-side device detection because it&#39;s more robust, easily maintained, and future-proof.</p>
+<p><strong>Learn More:</strong></p>
+<p>The goto library for feature detection is of course <a href="http://modernizr.com/">Modernizr</a>.</p>
+
+
+				</section>
+
+
+				<section id="section-3-16-event-delegation" name="section-3-16-event-delegation" class="level-1">
+						<h5 class="section-heading">Limit Events - Use Event Delegation</h5>
+
+					<span class="jumper">
+						[<a href="#section-3-16-event-delegation" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-16-event-delegation.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>It is always preferable to use fewer events being bound to objects on a page as possible. Too many events bound on a page can mean memory leaks or just an accumulation of handlers bound to DOM elements which becomes less and less efficient over time. Additionally, event delegation has the added benefit of persisting events over dynamic page updates when items are added or removed from the DOM.</p>
+<p>With jQuery this is easy, simply use the on method with a selector:</p>
+<pre><code class="language-javascript">// jQuery
+$(‘body).on(‘click’, ‘.a.scrollbar’, function () {
+	// this only runs if the a.scrollbar is matched
+});
+
+// JavaScript
+document.body.addEventListener(‘click’, function (event) {
+	var event = event.target;
+	if (target &amp;&amp; target.nodeName.toLowerCase() === ‘a’) {
+		if (target.classList.contains(‘scrollbar’)) {
+			// this only runs if the a.scrollbar is matched
+		}
+	}
+}, false);
+</code></pre><p><strong>Learn more:</strong></p>
+<p>The jQuery API site has an excellent overview of the <a href="http://jqapi.com/#p=on">on method</a>.</p>
+
+
+				</section>
+
+
+				<section id="section-3-17-javascript-performance" name="section-3-17-javascript-performance" class="level-1">
+						<h5 class="section-heading">JavaScript Performance</h5>
+
+					<span class="jumper">
+						[<a href="#section-3-17-javascript-performance" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-17-javascript-performance.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>One of the most costly operations a browser can perform is updating the DOM in the page via inefficient JavaScript techniques. The most important thing to know is that the more you do on a Web page with JavaScript, the more work is being done, the more memory and the bigger the footprint it can generate. Additionally, updating a complex DOM structure over and over in JavaScript can cause re-flow, repainting, and jank.</p>
+<p>A book could be written on the subject, but here&#39;s a taste of various references:</p>
+<ul>
+<li><a href="http://jankfree.org/">What is Jank?</a></li>
+<li><a href="https://developers.google.com/speed/articles/reflow?hl=en">Minimizing browser re-flow</a></li>
+<li><a href="http://blog.letitialew.com/post/30425074101/repaints-and-reflows-manipulating-the-dom">Repaints and Reflows, Manipulating the DOM Responsibly</a></li>
+<li><a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/">Reflows &amp; Repaints: Css Performance Making Your Javascript Slow?</a></li>
+<li><a href="http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/">Rendering: repaint, reflow/relayout, restyle</a></li>
+<li><a href="http://www.nczonline.net/blog/2009/02/03/speed-up-your-javascript-part-4/">Speed Up Your JavaScript (part 4)</a></li>
+<li><a href="https://gist.github.com/dypsilon/4252079">Memory Management and Performance</a></li>
+<li><a href="http://www.smashingmagazine.com/2012/11/writing-fast-memory-efficient-javascript/">Writing Fast, Memory-Efficient JavaScript</a></li>
+<li><a href="http://www.punkchip.com/javascript-efficiency/">Front-end developer essentials – 5 tips for efficient jQuery</a></li>
+</ul>
+
+
+				</section>
+
+
+				<section id="section-3-18-basic-javascript-architecture" name="section-3-18-basic-javascript-architecture" class="level-1">
+						<h4 class="section-heading">Basic JavaScript Architecture</h4>
+
+					<span class="jumper">
+						[<a href="#section-3-18-basic-javascript-architecture" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-18-basic-javascript-architecture.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Today it is common for the JavaScript code on a site to be a vast collection of &quot;Modules&quot; brought together by build scripts, dependency tools, or even manually by the developer (not really recommended).</p>
+<p>Smaller sites can get away with more simple structures, but for longer term, JavaScript-heavy code bases the following rule is critical:</p>
+<ul>
+<li>For a complex site, never use a single JavaScript file for development, unless it is tiny and serves a very targeted purpose.</li>
+</ul>
+<p>This is so that the code is maintainable and scalable. Smaller files are easier to debug, swap in and out, and blocks of code should serve as small a purpose as possible (<a href="http://blog.codinghorror.com/curlys-law-do-one-thing/">single responsibility principle</a>).</p>
+<p>In most simple terms, most sites benefit from a basic structure similar to:</p>
+<ul>
+<li>Global site-wide JavaScript</li>
+<li>Specific modules for specific sections of the site</li>
+<li>Specific modules used for specific purposes / features</li>
+<li>Available vendor libraries</li>
+</ul>
+<p>With this in mind, for strict control over the code base it&#39;s best to consider:</p>
+<ul>
+<li>What is the central entry point, or the central point of execution? This is to say, what kicks off the JavaScript? This may be a simple jQuery document.ready() or some other mechanism to run the site&#39;s code, such as a router.</li>
+</ul>
+<p>Having explicit control over the page life-cycle is preferable to having a dozen jQuery <code>document.ready()</code> statements all competing for the first chance to execute on a page.</p>
+<p>Effectively the application core, it should kick off the rest of the code to run. Typically this has module-management baked in in some way.</p>
+<p><strong>Note:</strong></p>
+<p>One way to control which code runs on a page is through <a href="http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/">DOM-based routing</a>.</p>
+<p>Additional considerations:</p>
+<ul>
+<li>How are the modules going to communicate with each other?</li>
+<li>How tightly coupled are the modules in the code base?</li>
+<li>How much JavaScript code would need to be updated if/when the HTML / CSS changes on the project?</li>
+<li>Can individual parts call as few libraries or plugins as indirectly as possible, to facilitate changes later?</li>
+<li>Does the server need to provide the scripts dynamic values for JavaScript?</li>
+</ul>
+
+
+				</section>
+
+
+				<section id="section-3-19-about-javascript-modules" name="section-3-19-about-javascript-modules" class="level-1">
+						<h5 class="section-heading">About JavaScript Modules</h5>
+
+					<span class="jumper">
+						[<a href="#section-3-19-about-javascript-modules" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-19-about-javascript-modules.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>The term &quot;module&quot; in JavaScript has probably been over-used. It can refer to specific patterns used by specific tools and frameworks, or simple blocks of code following some typical <a href="http://www.slideshare.net/stoyan/javascript-patterns">JavaScript design patterns</a>.</p>
+<p>These days options for JavaScript modules include some of the following.</p>
+<p><strong>Vanilla JavaScript:</strong></p>
+<ul>
+<li><a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">Object literal notation</a></li>
+<li>The <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">Revealing Module Pattern</a></li>
+</ul>
+<p>Or, a <strong>common standard</strong>, used by many dependency tools:</p>
+<ul>
+<li><a href="http://requirejs.org/docs/whyamd.html">AMD modules</a> (most commonly used by require.js)</li>
+<li>CommonJS modules (most common used by node.js and browserify)</li>
+<li><a href="https://leanpub.com/understandinges6/read/#leanpub-auto-modules">ES6 modules</a></li>
+</ul>
+<p><strong>Frameworks</strong> will have their own unique set ups.</p>
+<p><strong>Learn more:</strong></p>
+<p>ES6 has just recently standardized how script loading, importing, and more about how modules <a href="https://leanpub.com/understandinges6/read/#leanpub-auto-modules">will be handled</a> as part of the standard spec going forward.</p>
+
+
+				</section>
+
+
+				<section id="section-3-2-getting-started" name="section-3-2-getting-started" class="level-1">
+						<h3 class="section-heading">Getting Started on JavaScript</h3>
+
+					<span class="jumper">
+						[<a href="#section-3-2-getting-started" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-2-getting-started.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>All too often a developer will solve a problem in a closed context and not consider the whole picture. &quot;Add another plugin&quot; is not always a good answer.</p>
+<p>It is well worth considering if parts or all of the code being added can be useful elsewhere. Centralized code is excellent because it can be updated once and re-used everywhere.</p>
+<p>For JavaScript, a Front-end developer should be thinking about:</p>
+<ul>
+<li>If there is code that does this task already?</li>
+<li>Code formatting rules, naming conventions, file locations, etc.</li>
+<li>Testing the code on various browsers and devices.</li>
+<li>If strings of text should be external for content management or translation.</li>
+<li>If code being added might be useful outside of the current problem.</li>
+</ul>
+<p>Examples of possible things to centralize:</p>
+<ul>
+<li>Code that modifies the DOM</li>
+<li>Ajax, validation, or other libraries</li>
+<li>Query string parsing utilities, router-type code</li>
+<li>Tests for global conditions (e.g. window size, feature support, etc.)</li>
+<li>Page, window, or document level events (e.g. Ajax, resize, etc.)</li>
+<li>UI controls (e.g. spinners, modals, tabs, etc.)</li>
+<li>Date handling utilities</li>
+<li>Files with strings of text in a given language</li>
+<li>Finally, settings and configuration options (e.g. paths to services, debug flags, duration settings, minimum or maximum values, etc.) are common things to set in a centralized, distinct place.</li>
+</ul>
+<p>Alternatively, if a problem can be solved with a custom module and not a third-party library or plugin, this solution is preferred, as it keeps the costs of the project down while not including any irrelevant or unused code.</p>
+<p>Bottom line, please understand what the JavaScript does and how it does it if you are including third party code.</p>
+<p><strong>Note:</strong></p>
+<p>Client buy-in may be necessary for the usage of JavaScript for some features. It may be a forgone conclusion but usage of libraries or custom code should be discussed with the team and client technical leads to be certain the teams are on the same page.</p>
+
+
+				</section>
+
+
+				<section id="section-3-20-javascript-deliverables" name="section-3-20-javascript-deliverables" class="level-1">
+						<h3 class="section-heading">JavaScript Deliverables</h3>
+
+					<span class="jumper">
+						[<a href="#section-3-20-javascript-deliverables" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-20-javascript-deliverables.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>The most obvious fact is you will need to provide working files that are error-free and will work in a variety of scenarios. We can&#39;t assume that clients will always leave scripts and pages as we leave them, though we can provide direction as to how scripts should be used.</p>
+<h4 id="understanding-the-code-s-place-in-the-project">Understanding the Code&#39;s Place in the Project</h4>
+<ul>
+<li>Understand where your code will live vs. any code introduced in a destination environment</li>
+<li>Understand if the code will need to coexist with other code.</li>
+</ul>
+<h4 id="clean-clear-organized-readable-code">Clean, Clear, Organized, Readable Code</h4>
+<ul>
+<li>As bug free as possible.</li>
+<li>Always remember we write code for other developers, not for a runtime or a browser.</li>
+<li>Remove code that is no longer used. Remove excess &quot;noise&quot; or distractions from source code such as large commented out blocks of unused code. Source control can solve problems like this.</li>
+<li>Have console and debugging statements be removed or a plan in place for suppression during the build or deployment.</li>
+</ul>
+<p><strong>Learn more:</strong></p>
+<p><a href="http://code.tutsplus.com/tutorials/the-essentials-of-writing-high-quality-javascript--net-15145">The Essentials of Writing High Quality JavaScript</a> is an older article but still holds up today.</p>
+<p>Delivery of a flat folder full of JavaScript files is not advised.</p>
+<pre><code class="language-bash">
+# Do not deliver the following
+
+├── web/
+│   ├── js/
+│   │   ├── main.js
+│   │   ├── home.js
+│   │   ├── ...
+│   │   ├── vendor
+│   │   │   ├── source01.js
+│   │   │   ├── source02.js
+│   │   │   ├── ...
+│   │   ├── modules
+│   │   │   ├── module01.js
+│   │   │   ├── module02.js
+│   │   │   ├── ...
+</code></pre>
+
+				</section>
+
+
+				<section id="section-3-21-next-steps" name="section-3-21-next-steps" class="level-1">
+						<h3 class="section-heading">Next Steps &amp; JavaScript Resources</h3>
+
+					<span class="jumper">
+						[<a href="#section-3-21-next-steps" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-21-next-steps.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>There is an enormous volume of JavaScript reference material out in the wild today. Here are various topics worth following up on:</p>
+<ul>
+<li>Debugging JavaScript</li>
+<li><a href="https://github.com/addyosmani/es6-equivalents-in-es5">Learning more about ES6</a></li>
+<li><a href="http://addyosmani.com/resources/essentialjsdesignpatterns">JavaScript Design Patterns</a></li>
+<li>Unit Testing JavaScript code</li>
+<li><a href="https://nodejs.org/">Node.js</a></li>
+<li>Compare <a href="http://todomvc.com/">JS Frameworks, Frameworks, and more Frameworks</a></li>
+<li><a href="http://rmurphey.com/blog/2012/04/12/a-baseline-for-front-end-developers/">Baseline For Front End Developers</a></li>
+<li><a href="http://addyosmani.com/blog/javascript-style-guides-and-beautifiers/">JavaScript Style Guides and Beautifiers</a></li>
+<li><a href="http://javascript.crockford.com/code.html">Douglas Crockford&#39;s JS Code Conventions</a></li>
+<li><a href="http://shop.oreilly.com/product/0636920025245.do">Maintainable JavaScript Book</a></li>
+<li><a href="http://www.slideshare.net/nzakas/maintainable-javascript-2012">Maintainable JavaScript Presentation</a></li>
+<li><a href="https://speakerdeck.com/addyosmani/large-scale-javascript-application-architecture">Large Scale JavaScript Applications</a></li>
+</ul>
+
+
+						<hr class="barkley"/>
+				</section>
+
+
+				<section id="section-3-3-libraries-frameworks-plugins" name="section-3-3-libraries-frameworks-plugins" class="level-1">
+						<h4 class="section-heading">JavaScript Libraries, Frameworks, and Plugins</h4>
+
+					<span class="jumper">
+						[<a href="#section-3-3-libraries-frameworks-plugins" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-3-libraries-frameworks-plugins.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Recent years have seen a virtual explosion in new JavaScript libraries sometimes calling themselves &quot;frameworks&quot;.</p>
+<p>Libraries and frameworks can be useful, especially when the client-side is become more responsible for larger parts of applications and websites.</p>
+<ul>
+<li>Libraries are code you use within your structure, featuring code that is available for you call upon.</li>
+<li>Frameworks are code collections that serve specific purposes in a particular way, and call your code that is included following their patterns.</li>
+</ul>
+<p><strong>Learn more:</strong></p>
+<p>The basic idea is an &quot;inversion of control&quot; in the code. This is debatable, but something like jQuery could be said to be a library, while Angular, React, or Backbone could be a framework.</p>
+<p>Either way, this is typically third party code that should be carefully considered when it is determined to be included in a project or not.</p>
+
+
+				</section>
+
+
+				<section id="section-3-4-third-party-code-selection" name="section-3-4-third-party-code-selection" class="level-1">
+						<h5 class="section-heading">Selection of Third Party Code</h5>
+
+					<span class="jumper">
+						[<a href="#section-3-4-third-party-code-selection" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-4-third-party-code-selection.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Selection of a library or framework is never an easy task. Things that should be considered include:</p>
+<ul>
+<li>Technical Requirements for the project.</li>
+<li>Quality and maturity of code in question.</li>
+<li>Future support for the code.</li>
+<li>Staffing skill sets required to support the code.</li>
+<li>How tightly coupled to the layers of the application the code may be.</li>
+<li>How actively supported its open source community may be.</li>
+<li>Be tested against various devices and platform requirements to verify it works for the project.</li>
+</ul>
+
+
+				</section>
+
+
+				<section id="section-3-5-third-party-code-usage" name="section-3-5-third-party-code-usage" class="level-1">
+						<h5 class="section-heading">Usage of Third Party Code</h5>
+
+					<span class="jumper">
+						[<a href="#section-3-5-third-party-code-usage" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-5-third-party-code-usage.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Third party code should be included as-is and:</p>
+<ul>
+<li>Treated as it may be updated (i.e. versions) at some point in the future.</li>
+<li>Should <strong>never be modified</strong> unless documented thoroughly for the project.</li>
+<li>As many conventions of its use followed in their recommended standard ways.</li>
+<li>Un-minified code should be included.</li>
+<li>Any required licenses should be included as specified by the library.</li>
+<li>Commercial code must be approved if necessary.</li>
+</ul>
+<p>A team may decide to write wrapper code around the third party library and provide a more simple API for the code.</p>
+
+
+				</section>
+
+
+				<section id="section-3-6-ecmascript-6" name="section-3-6-ecmascript-6" class="level-1">
+						<h4 class="section-heading">ECMAScript 6, ES6, ECMAScript 2015</h4>
+
+					<span class="jumper">
+						[<a href="#section-3-6-ecmascript-6" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-6-ecmascript-6.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Developers are encouraged to begin learning and using the <a href="https://leanpub.com/understandinges6/read/">latest version of JavaScript, ES6</a>. Please use appropriate transpilers and never release untested or unsupported code in the deliverables. Do <strong>not</strong> assume a feature <a href="https://kangax.github.io/compat-table/es6/">is supported</a> in a browser.</p>
+<p>BarkleyREI currently writes JavaScript using ECMAScript 5 standards.</p>
+
+
+				</section>
+
+
+				<section id="section-3-7-best-practices" name="section-3-7-best-practices" class="level-1">
+						<h4 class="section-heading">JavaScript Best Practices</h4>
+
+					<span class="jumper">
+						[<a href="#section-3-7-best-practices" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-7-best-practices.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>The following guidelines are general best practices for writing JavaScript at BarkleyREI.</p>
+<ul>
+<li>If possible, avoid user-agent sniffing and rely on feature detection instead. Browser detection is dangerous and error-prone.</li>
+<li>Avoid using document.write.</li>
+<li>Only run scripts on a page that are needed for that page.</li>
+<li>Don&#39;t repeat yourself (i.e. keep your code DRY)</li>
+<li>Do not modify JavaScript core objects .prototype unless you really know what you&#39;re doing.</li>
+<li>Use method names that make sense, such as init() or setup() for code that starts things off. Be consistent on your project.</li>
+</ul>
+
+
+				</section>
+
+
+				<section id="section-3-8-inclusion-of-code" name="section-3-8-inclusion-of-code" class="level-1">
+						<h5 class="section-heading">Inclusion of Code</h5>
+
+					<span class="jumper">
+						[<a href="#section-3-8-inclusion-of-code" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-8-inclusion-of-code.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Use external JavaScript files. <strong>Do NOT include JavaScript in-line in the page unless there is a good reason.</strong></p>
+<p>Use the <code>&lt;script&gt;&lt;/script&gt;</code> tag to include your JavaScript files at the bottom of your HTML document just before the closing <code>&lt;/body&gt;</code> tag. For optimal page performance, concatenate your JavaScript into as few files as possible.</p>
+<p>The only exception to script files being placed at the bottom of the document is Modernizr, which should be placed before the closing <code>&lt;/head&gt;</code> tag on the document.</p>
+<pre><code class="language-html">&lt;script src=&quot;bundle.js&quot;&gt;&lt;/script&gt;
+</code></pre><ul>
+<li>This should link to concatenated and minified, finalized JavaScript files.</li>
+<li>Enable source maps to assist with debugging and testing.</li>
+</ul>
+<p>In development environments, this may point at a non-optimized file, however having techniques in place to toggle optimized files on and off is often beneficial.</p>
+<p>A reference similar to this may need to include a build-specific file name based upon a hash or something along those lines for HTTP cache purposes.</p>
+<p><strong>Learn more:</strong></p>
+<p>For information about build tools that help with these techniques, please see the Appendix.</p>
+
+
+				</section>
+
+
+				<section id="section-3-9-loading-files-on-demand" name="section-3-9-loading-files-on-demand" class="level-1">
+						<h6 class="section-heading">Loading Files On Demand</h6>
+
+					<span class="jumper">
+						[<a href="#section-3-9-loading-files-on-demand" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/3-javascript/3-9-loading-files-on-demand.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>On some sites it may be appropriate to load a single JavaScript file with all dependencies bundled together, or it may be more appropriate (such as in a very large SPA) to load files on demand, as they are needed, asynchronously.</p>
+<p>BarkleyREI doesn not currently use asynchronous bundling methods to load JavaScript into the page.</p>
+
+
+				</section>
+
+
+				<section id="section-4-0-responsive-web-design" name="section-4-0-responsive-web-design" class="level-1">
+						<h2 class="section-heading">Responsive Web Design</h2>
+
+					<span class="jumper">
+						[<a href="#section-4-0-responsive-web-design" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/4-responsive-web-design/4-0-responsive-web-design.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Responsive Web Design (RWD) is the term used for the practice of creating page layouts and user experiences that work on a variety of devices and screen sizes.</p>
+<p>With the ever expanding mobile landscape and the evolution of the Internet of Things (IoT), the idea of a &quot;standard&quot; screen size has fallen by the wayside in favor of the rise of a device-agnostic approach. It is less and less common to launch two versions of a site, one for desktop and one for mobile.</p>
+<p>To this end a series of techniques have been put together for pages to adjust based off browser&#39;s&#39; current specs (e.g. width, height, pixel density, orientation, etc).</p>
+<p>The techniques are referred to as Responsive Web Design (RWD) and it is another technique in the toolbox of progressive enhancement and adaptive web design.</p>
+
+
+				</section>
+
+
+				<section id="section-4-1-goals" name="section-4-1-goals" class="level-1">
+						<h3 class="section-heading">Goals of Responsive Web Design</h3>
+
+					<span class="jumper">
+						[<a href="#section-4-1-goals" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/4-responsive-web-design/4-1-goals.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>The goals of RWD are:</p>
+<ul>
+<li>Offer an optimized user experience (UX),</li>
+<li>regardless of the user&#39;s screen size or features supported on their device.</li>
+</ul>
+<p>This is true whether it is a stadium jumbotron or the screen of a watch — and of course everything between.</p>
+<p>Despite this lofty ideal, on Web projects the term &quot;responsive web design&quot; has generally been used in reference to an optimized experience for a set of target devices, usually:</p>
+<ul>
+<li>A particular set of cell (smart) phones,</li>
+<li>various tablets,</li>
+<li>or desktop computer monitors (depending upon the target audience).</li>
+</ul>
+<p>Typically reasonable effort is applied to accommodate the ideal UX for devices with screen sizes that fall outside of and in between.</p>
+<p>Overall, critical content and features on a site should be:</p>
+<ul>
+<li>Adjustable to different types of user interaction (e.g. click, swipe, pinch)</li>
+<li>Realistically accessible based on the capabilities of different devices.</li>
+</ul>
+<p>If meeting desktop browsers&#39; feature sets and dealing with different platforms was difficult before, RWD introduces an almost infinite ecosystem of hardware and software that Web pages need to work on. The level of effort does often increase on projects featuring RWD.</p>
+
+
+				</section>
+
+
+				<section id="section-4-10-responsive-images" name="section-4-10-responsive-images" class="level-1">
+						<h4 class="section-heading">Responsive Images</h4>
+
+					<span class="jumper">
+						[<a href="#section-4-10-responsive-images" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/4-responsive-web-design/4-10-responsive-images.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>The picture element and img with srcset are valid standards now, and supported in many browsers. They can be freely pursued, though polyfills may be needed for some browsers.</p>
+<p>You can read about this element and the evolution and standard at <a href="http://responsiveimages.org/">ResponsiveImages.org</a>.</p>
+<p>At this time, the <code>&lt;picture&gt;</code> tag is supported in most modern browsers, with additional support using the <a href="https://scottjehl.github.io/picturefill/">Picturefill polyfill</a>.</p>
+<p>Some basic rules to follow:</p>
+<ul>
+<li><strong>Always</strong> optimize your images using a tool such as Adobe Photoshop to assure you have the ideal image size and right amount of lossy compression.</li>
+<li>Run all images though a lossless compressor like <a href="https://compressor.io/">Compressor.io</a>, <a href="https://smush.it/">Smush.it</a> or <a href="https://imageoptim.com/">ImageOptim</a> (which has related tools also available as build-time scripts).</li>
+</ul>
+<p>You can also consider “Compressive Images”, which are basically higher-resolution jpegs compressed at a higher percentage rate:</p>
+<ul>
+<li><a href="http://filamentgroup.com/lab/rwd_img_compression/">Compressive Images</a></li>
+<li><a href="http://blog.netvlies.nl/design-interactie/retina-revolution/">Retina Revolution</a></li>
+<li><a href="http://www.vanseodesign.com/web-design/compressive-image-tests/">Compressive Image Tests</a></li>
+</ul>
+<p>However, there are drawbacks:</p>
+<ul>
+<li>The browser tends to use significantly more memory when storing and resizing these higher resolution images than scaling them to fit a container.</li>
+</ul>
+<p>What&#39;s important to realize is that this is changing faster than we can develop. What you do now will be obsolete very soon, so be sure to stay on top of current trends.</p>
+
+
+				</section>
+
+
+				<section id="section-4-11-vector-graphics" name="section-4-11-vector-graphics" class="level-1">
+						<h4 class="section-heading">Vector Graphics (SVG)</h4>
+
+					<span class="jumper">
+						[<a href="#section-4-11-vector-graphics" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/4-responsive-web-design/4-11-vector-graphics.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>When working with an audience on unknown screen sizes and resolutions, as is the pretense in RWD, having graphics that can scale without degrading is a very appealing prospect. There are several vector implementation options.</p>
+<p>Web fonts: Fonts are vectors. With the exposure of custom web fonts as part of the CSS level 2 specification, many developers have turned to custom font packages as a solution for icons and simple vectors.</p>
+<ul>
+<li>Pros: this option allows for easy control of vector color, size and usage</li>
+<li>Cons: all of the vectors single color and must be grouped others in one file.</li>
+</ul>
+<p>SVG: SVG is an XML syntax for describing vector shapes.</p>
+<ul>
+<li>Pros: vectors can be manipulated by CSS and/or JavaScript and allows for complex filters, animations and transitions.</li>
+<li>Cons: SVG is only supported by IE9+</li>
+</ul>
+<p><a href="http://www.filamentgroup.com/lab/grumpicon-workflow.html">Grumpicon</a> is a script that will detect SVG support and server the appropriate CSS (or needed fall back CSS code to assure compatibility.</p>
+
+
+				</section>
+
+
+				<section id="section-4-12-other-categories" name="section-4-12-other-categories" class="level-1">
+						<h4 class="section-heading">Other Categories</h4>
+
+					<span class="jumper">
+						[<a href="#section-4-12-other-categories" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/4-responsive-web-design/4-12-other-categories.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Virtually everything can change when screen sizes change:</p>
+<ul>
+<li>Grids</li>
+<li>Typography</li>
+<li>Accessible forms / validation messages</li>
+<li>Main site navigation</li>
+<li>Header or Footer content</li>
+<li>In-page navigation, such as tabbed navigation, or accordions</li>
+<li>Images</li>
+<li>Data tables</li>
+<li>Interactions and animations</li>
+<li>Advertising types</li>
+<li>Performance metrics</li>
+</ul>
+<p>More thoughts and ideas: <a href="http://www.lukew.com/ff/entry.asp?1514">Multi-device Layout Patterns</a></p>
+
+
+				</section>
+
+
+				<section id="section-4-13-nagivation-changes" name="section-4-13-nagivation-changes" class="level-1">
+						<h4 class="section-heading">Navigation Changes</h4>
+
+					<span class="jumper">
+						[<a href="#section-4-13-nagivation-changes" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/4-responsive-web-design/4-13-nagivation-changes.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Large horizontal navigation and mega-drop downs are not always practical on smaller screens. Frequently this means off-canvas navigation, collapsing menus into select boxes, or other approaches such as a full-screen overlay.</p>
+<p><a href="http://www.smashingmagazine.com/2012/02/progressive-and-responsive-navigation/">Progressive and Responsive Navigation</a> is a great example of modifying the types of menu based on screen size.</p>
+<p><a href="http://bradfrost.com/blog/web/responsive-nav-patterns/">Responsive Navigation Patterns</a> and <a href="http://bradfrost.com/blog/web/complex-navigation-patterns-for-responsive-design/">Complex Navigation Patterns</a></p>
+<p>How navigation changes per screen size will depend entirely on the requirements and design for the project.</p>
+
+
+				</section>
+
+
+				<section id="section-4-15-next-steps" name="section-4-15-next-steps" class="level-1">
+						<h3 class="section-heading">Next Steps &amp; RWD Resources</h3>
+
+					<span class="jumper">
+						[<a href="#section-4-15-next-steps" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/4-responsive-web-design/4-15-next-steps.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Big collections:</p>
+<ul>
+<li><a href="https://bradfrost.github.io/this-is-responsive/resources.html">Responsive Design Resources</a></li>
+<li>(more) <a href="https://www.usertesting.com/blog/2015/02/03/responsive-web-design-resources/">Responsive Design Resources</a></li>
+<li><a href="http://www.smashingmagazine.com/responsive-web-design-guidelines-tutorials/">Responsive Design Guidelines and Tutorials</a></li>
+</ul>
+<p>Articles:</p>
+<ul>
+<li><a href="http://www.alistapart.com/articles/responsive-web-design/">Responsive Web Design</a></li>
+<li><a href="http://blog.teamtreehouse.com/responsive-design-patterns">Responsive Design Patterns</a></li>
+<li><a href="http://alistapart.com/column/what-we-mean-when-we-say-responsive">What We Mean When We Say Responsive</a></li>
+<li><a href="http://zomigi.com/blog/essential-considerations-for-crafting-quality-media-queries/">Essential Considerations for Crafting Quality Media Queries</a></li>
+</ul>
+<p>Blogs:</p>
+<ul>
+<li><a href="http://responsive.rga.com/">This Is Responsive</a></li>
+<li><a href="https://responsivedesign.is/">Responsive Web Design</a></li>
+</ul>
+
+
+						<hr class="barkley"/>
+				</section>
+
+
+				<section id="section-4-2-getting-started" name="section-4-2-getting-started" class="level-1">
+						<h3 class="section-heading">Getting Started with Mobile Development</h3>
+
+					<span class="jumper">
+						[<a href="#section-4-2-getting-started" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/4-responsive-web-design/4-2-getting-started.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>As the name of RWD implies, it all starts with a flexible design that features components having mutable characteristics based on the available screen canvas and varied types of user interactions. Careful consideration needs to be taken when innovating to derive a design that can respond to various screens.</p>
+<p>For a given project, always consider:</p>
+<ul>
+<li>The extent of the use cases for each feature on the site.</li>
+<li>The target audience and likelihood they may be using an alternative device to conduct certain activities on the site.</li>
+<li>If all target devices will support all the technologies required.</li>
+<li>That the UX will <strong>not</strong> be 100% the same across all devices, browsers and screens — nor should it be!</li>
+<li>What happens to the design when the screen gets smaller <strong>and larger</strong> than the static canvas size it is being designed on.</li>
+<li>For placement of content and decorative elements, are there patterns or rules that can describe where it falls and adjust with screen sizes?</li>
+<li>Will some components be better suited as vector graphics (SVG or fonts) instead of raster files to allow for distortion free scaling?</li>
+<li>Will assets need to be produced in different formats for different devices (e.g. HTML5 video, lower resolution artwork vs. high resolution artwork, smaller file sizes vs. larger sizes).</li>
+<li>If a device offers a superior UX for some types of interaction (e.g. native date-pickers vs. traditional browser controls, or swiping instead of clicking on dots).</li>
+<li>What happens when a feature is not supported by a device, or if a feature were to fail in a given device?</li>
+<li>What if a device went off-line during usage of a feature?</li>
+<li>The best ways to detect support for various features (e.g. Modernizr, etc.).</li>
+</ul>
+<p>Brad Frost&#39;s <a href="https://bradfrost.github.io/this-is-responsive/patterns.html">Responsive Design Patterns</a> and <a href="https://bradfrost.github.io/this-is-responsive/resources.html">Responsive Design Resources</a> are two great resources that continue to grow due to user contributions.</p>
+
+
+				</section>
+
+
+				<section id="section-4-3-prebuilt-grids" name="section-4-3-prebuilt-grids" class="level-1">
+						<h4 class="section-heading">To Use a Prebuilt Grid Or Not?</h4>
+
+					<span class="jumper">
+						[<a href="#section-4-3-prebuilt-grids" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/4-responsive-web-design/4-3-prebuilt-grids.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Sometimes CSS grid frameworks are a good place to start ... but sometimes not.</p>
+<p>They must match the design in terms of flexibility.</p>
+<p>It&#39;s critical a developer learn the basics of how grid systems.</p>
+<p>It may be beneficial to learn the coming Flexbox techniques as well.</p>
+<p>While using a Framework isn&#39;t always the way to go, there is much to be learned from examining how they work and how they are put together.</p>
+<p>BarkleyREI uses Foundation as a grid system, but it is not a requirement to build layout.</p>
+
+
+				</section>
+
+
+				<section id="section-4-4-progressive-enhancement" name="section-4-4-progressive-enhancement" class="level-1">
+						<h4 class="section-heading">Progressive Enhancement</h4>
+
+					<span class="jumper">
+						[<a href="#section-4-4-progressive-enhancement" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/4-responsive-web-design/4-4-progressive-enhancement.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Since mobile phones and tablets are frequently the lower end in terms of capabilities, it is recommended to start with building the mobile experience first, and gradually add features. With this in mind, RWD could be considered a type of Progressive Enhancement, whereby users with basic devices can access basic content and features, however care is taken to layer on more sophisticated features for more powerful devices and desktop users.</p>
+<p>With these techniques, users only get what their device or browser can handle, and feature detection can be used to add more features when appropriate — without breaking on less capable devices.</p>
+
+
+				</section>
+
+
+				<section id="section-4-6-best-practices" name="section-4-6-best-practices" class="level-1">
+						<h3 class="section-heading">Responsive Design Best Practices</h3>
+
+					<span class="jumper">
+						[<a href="#section-4-6-best-practices" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/4-responsive-web-design/4-6-best-practices.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>RWD is frequently said to be achieved through the use of:</p>
+<ol>
+<li>Percentage-based grids,</li>
+<li>flexible images that scale,</li>
+<li>and <strong>CSS media queries.</strong></li>
+</ol>
+<p>These are the core ideas behind RWD, though other techniques are often employed as the term grows in popularity and the use cases evolve.</p>
+<p>Like all programming and creative processes there is flexibility in how you go about achieving these, so long as there is consistency within your team.</p>
+<p>Some core guidelines:</p>
+<ul>
+<li>Always design and develop the mobile UX first (thus start with small defaults and scale upwards; please see <a href="#section-408-mobile-first">Mobile First</a>)</li>
+<li>Set the baseline Media Queries as a team for various types of devices, and try to stick to them as much as possible.</li>
+<li>Add additional Media Queries — as necessary — for less than ideal experiences at the sizes in between, as appropriate for different types of content and components.</li>
+<li>Build for speed (load time and interaction) and the minimum viable product for slower connection speeds and less able devices.</li>
+<li>Be careful of images. Do not render a 5GB image at 100px by 100px. This does not change the bandwidth needed to download the file! Similarly if you are hiding an image with display: none, visibility: hidden or similar, the image may still be downloaded.</li>
+<li>Test on real hardware. Actual testing on actual devices cannot be substituted with resizing a browser window, or even an &quot;emulation&quot; mode offered by a desktop browser.</li>
+<li>A mobile browser is not a small desktop browser. Mobile versions of desktop browsers are frequently woefully different (or a totally different product) than their desktop counterparts, so do not assume that just because it works on Chrome desktop that it will work on an Android device.</li>
+</ul>
+<p>Initial work, and first pass tests of media queries, may be performed in desktop browsers by resizing the screen or using a browser&#39;s developer tools that may feature an emulation mode (e.g. Chrome DevTools).</p>
+<p>However, this is never a substitution for actual testing on actual devices with various Operating System versions.</p>
+
+
+				</section>
+
+
+				<section id="section-4-7-media-queries" name="section-4-7-media-queries" class="level-1">
+						<h4 class="section-heading">Media Queries and CSS Breakpoints</h4>
+
+					<span class="jumper">
+						[<a href="#section-4-7-media-queries" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/4-responsive-web-design/4-7-media-queries.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Added as part of the CSS3 specification, <strong>media queries</strong> consist of a media type and at least one expression of a media feature (such as height, width and orientation) that describe the conditions under which a set of CSS rules apply.</p>
+<p>For example:</p>
+<pre><code class="language-css">@media screen (min-width: 300px) and (max-width: 800px) {
+  .some-selector{
+    /* CSS declarations go here */
+  }
+}
+</code></pre><p>These widths are referred to as breakpoints as they are the point at which layout behavior breaks with the design at the prior size. This is typically screen size, and sometimes other conditions such as pixel density or even screen orientation (e.g. landscape or portrait; although this isn&#39;t that useful).</p>
+<p>These are applied with CSS Media Queries test the device or browsers current feature set for various conditions and feature support. The most common example is screen size.</p>
+<p>The golden rule is:</p>
+<ul>
+<li>Don&#39;t specify vendor- or device-specific widths</li>
+</ul>
+<p>Let the content and the design dictate the breakpoints.</p>
+<ul>
+<li>For instance, targeting an ipad in portrait or an ipad landscape.</li>
+<li>Popular devices will come and go and even within devices the specifications will change over time.</li>
+<li>Avoid orientation/resolution based specifications in favor of width based ones (remember you are not targeting devices!).</li>
+</ul>
+<p><a href="https://bradfrost.github.io/this-is-responsive/resources.html#media-queries">Media Query Resources</a></p>
+<p><a href="http://www.smashingmagazine.com/2012/03/device-agnostic-approach-to-responsive-web-design/">A Device Agnostic Approach to Responsive Web Design</a> is a great read on responsive techniques that do not favor one device over another, and are driven by content elements.</p>
+<p>If you are placing breakpoints every 50-100px you are doing something wrong. While there is not a correct number of breakpoints there must be a balance between the control of the design and a manageable code base.</p>
+<p>While working with media queries here are a few things to consider:</p>
+<ul>
+<li>All modern browsers support CSS3 Media Queries (including browsers as far back as the stock Android 2.1 browser)</li>
+<li>IE8 and below do not support Media Queries.<ul>
+<li><a href="https://github.com/scottjehl/Respond">Respond.js</a> (and similar JavaScript libraries) can be used to enable support for Media Queries in these older browsers (if needed).</li>
+<li>Attempting to polyfill Media Query behavior in older browsers is usually not advisable. This is because the JS needed will cause an additional performance hit to the already slow JavaScript and rendering engine.</li>
+</ul>
+</li>
+</ul>
+<p>Instead, you are better off forcing older browsers to experience the site through a desktop experience (optionally tailored specifically for these older browsers).</p>
+<ul>
+<li>This can be done either through feature detection (with the likes of Modernizr) or with IE conditional statements and optionally including additional CSS style sheets.</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><a href="http://foundation.zurb.com/sites/docs/media-queries.html">Media Queries in Foundation 6</a></li>
+</ul>
+
+
+				</section>
+
+
+				<section id="section-4-8-mobile-first" name="section-4-8-mobile-first" class="level-1">
+						<h4 class="section-heading">Mobile First</h4>
+
+					<span class="jumper">
+						[<a href="#section-4-8-mobile-first" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/4-responsive-web-design/4-8-mobile-first.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>The &quot;Mobile First&quot; techniques consider the lowest common denominator first, which is likely to be your mobile devices due to bandwidth limitations, loading times (not just screen size!), and even CPU speed of the devices.</p>
+<p>Key considerations and techniques include:</p>
+<ul>
+<li>Starting small, and work upwards. Use min-width, not max-width breakpoint definitions).</li>
+<li>Begin with global content styles that apply across all breakpoints.</li>
+<li>Next, add the styles that are seen below the smallest break point -- remember that using the min-width approach means that the &quot;first breakpoint&quot; will not be for small screens (like mobile size screens) but rather for larger ones (like mobile landscape or phablet size screens).</li>
+<li>From here add additional styles at successive breakpoints using min-width media queries leveraging the CSS cascade to progressively add additional styles.</li>
+<li>As the queries increase in minimum sizes, add the markup and styles necessary to lay components out differently on larger screens.</li>
+<li>Examine site features for mobile-specific JavaScript events (e.g. touch, pointer, vs. mouse) and interactions (e.g. swipe).</li>
+</ul>
+<p>Generally speaking smaller screen designs are a bit less complex (fewer images, effects, etc). Thus as the screens get larger the complexity tends to increase, conveniently lending to an additive approach to styling, very much in line with a mobile first pattern.</p>
+<p>An example of working upwards in a CSS file might be:</p>
+<pre><code class="language-css">/* GENERAL STYLES */
+.example {...}
+
+/* SECTION SPECIFIC STYLES - aimed at the smallest devices*/
+.hero {...}
+
+@media(min-width: 600px) {
+  .hero {
+    /* just the new stuff here, no need to be repetitive... */
+  }
+}
+
+@media(min-width: 800px) {
+  .hero {
+    /* just the new stuff here, no need to be repetitive... */
+  }
+}
+
+@media(min-width: 1400px) {
+  .hero {
+    /* might need larger font sizes at largest screen sizes */
+  }
+}
+</code></pre><p>Note: the breakpoints specified above are not intended to be recommended breakpoints, but rather just illustrative of this general concept.</p>
+<p>Another way of thinking about a mobile first pattern (from a design and development standpoint) is to:</p>
+<ul>
+<li>Innovate for your smallest reasonable target device.</li>
+<li>Then start &quot;sizing your window up&quot; until the user experience or the design degrades.</li>
+<li>Add in a breakpoint and make some design modifications to fix the degradation.</li>
+<li>Resume sizing up your view port until you reach a similar breakdown in design and repeat this exercise.</li>
+</ul>
+<p>Recurse on this until you reach your largest reasonable target device - this is the mobile first pattern.</p>
+
+
+				</section>
+
+
+				<section id="section-4-9-speed-is-a-feature" name="section-4-9-speed-is-a-feature" class="level-1">
+						<h4 class="section-heading">Speed is a feature</h4>
+
+					<span class="jumper">
+						[<a href="#section-4-9-speed-is-a-feature" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/4-responsive-web-design/4-9-speed-is-a-feature.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>People expect page load time to be as fast if not faster on their mobile phones in comparison to a desktop experience.</p>
+<ul>
+<li>Try to keep your Web site&#39;s footprint as small as possible (this is a general best practice).</li>
+<li>Start with global styles that apply across all breakpoints<ul>
+<li>Optionally in-line these vital styles for faster initial render time</li>
+</ul>
+</li>
+<li>Consider every HTTP request<ul>
+<li>The request itself may end up taking as much if not more time then the transfer of the data and could block downstream actions or more vital downloads.</li>
+</ul>
+</li>
+<li>Concatenate, gzip and minified your production CSS/JS where possible as this will lower page load size and time</li>
+<li>Load the least amount of JavaScript that is needed.<ul>
+<li>Wherever possible include script files at the end of your HTML document just before the <code>&lt;/body&gt;</code> tag.</li>
+</ul>
+</li>
+</ul>
+<p>Advanced CSS3 techniques are easy to implement, but when you start combining them, rendering and scrolling performance can be affected.</p>
+<p>Be careful of images!</p>
+<ul>
+<li>Use a responsive image pattern that starts by serving a mobile optimized (and thus smaller file size) image first.</li>
+</ul>
+
+
+				</section>
+
+
+				<section id="section-5-0-appendix" name="section-5-0-appendix" class="level-1">
+						<h2 class="section-heading">Appendix</h2>
+
+					<span class="jumper">
+						[<a href="#section-5-0-appendix" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/5-appendix/5-0-appendix.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>Being a Front-end developer these days covers an enormous spectrum of technologies and techniques.</p>
+<p>We hope to add more content, edit, and revise the content above with more information, samples, and resources.</p>
+<h3 id="advanced-topics">Advanced Topics</h3>
+<h4 id="on-the-server">On the Server</h4>
+<ul>
+<li><a href="http://nodejs.org/">Node.js</a></li>
+<li><a href="http://phantomjs.org/">Phantom.js</a></li>
+</ul>
+<h4 id="front-end-developer-tool-chain-workflow">Front-end Developer Tool Chain | Workflow</h4>
+<ul>
+<li><a href="https://developer.chrome.com/devtools">Chrome DevTools</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Tools">Firefox Developer Tools</a></li>
+<li><a href="https://msdn.microsoft.com/library/bg182326">MSIE F12 Developer Tools</a></li>
+<li><a href="http://dev.modern.ie/">On and About MSIE 11 / Edge etc.</a></li>
+<li><a href="http://www.browserstack.com/">BrowserStack</a></li>
+<li><a href="http://www.jslint.com/">JSLint</a></li>
+<li><a href="http://jshint.com/">JSHint</a></li>
+<li><a href="http://gruntjs.com/">Grunt.js</a></li>
+<li><a href="http://gulpjs.com/">Gulp.js</a></li>
+<li><a href="http://webpack.github.io/">Webpack</a></li>
+<li><a href="http://requirejs.org/">Require.js</a></li>
+<li><a href="http://browserify.org/">Browserify</a></li>
+</ul>
+<h4 id="css-preprocessors-post-processors">CSS Preprocessors / Post-processors</h4>
+<ul>
+<li><a href="http://sass-lang.com/">SASS / SCSS</a></li>
+<li><a href="http://lesscss.org/">LESS CSS</a></li>
+<li><a href="http://css-tricks.com/sass-vs-less/">SASS vs. LESS</a></li>
+</ul>
+<h4 id="performance">Performance</h4>
+<ul>
+<li><a href="https://developers.google.com/speed/docs/best-practices/rules_intro">Google&#39;s Front End Performance Rules</a></li>
+<li><a href="http://developer.yahoo.com/performance/">Yahoo! Exceptional Performance Rules</a></li>
+<li><a href="http://www.webpagetest.org/">Web Page Test.org</a></li>
+<li><a href="http://jsperf.com/">JS Perf</a></li>
+<li><a href="https://developers.google.com/web-toolkit/speedtracer/">Google Chrome Speed Tracer</a></li>
+<li><a href="http://www.compuware.com/application-performance-management/ajax-performance-testing.html">DynaTrace Ajax Edition</a></li>
+<li><a href="https://addons.mozilla.org/en-us/firefox/addon/yslow/">YSlow!</a></li>
+<li><a href="http://www.html5rocks.com/en/tutorials/webperformance/basics/">Measuring Page Load Speed With Navigation Timing</a></li>
+<li><a href="https://gist.github.com/3086328">JavaScript Performance</a></li>
+</ul>
+<h4 id="accessibility">Accessibility</h4>
+<ul>
+<li><a href="http://www.w3.org/WAI/intro/aria">ARIA</a></li>
+<li><a href="http://www.w3.org/WAI/Resources/Overview">WAI Resources</a></li>
+<li><a href="http://simplyaccessible.com/">Simply Accessible</a></li>
+<li><a href="http://a11yproject.com/">A11Y Project</a></li>
+<li><a href="http://www.a11ymatters.com/">A11Y Matters</a></li>
+<li><a href="http://karlgroves-sandbox.com/CheatSheets/ARIA-Cheatsheet.html">ARIA Cheat Sheet</a></li>
+<li><a href="https://a11y-style-guide.com/style-guide/">A11Y Style Guide</a></li>
+</ul>
+<h3 id="links-for-more-resources">Links for More Resources</h3>
+<h4 id="help-and-reference">Help and Reference</h4>
+<ul>
+<li><a href="http://html5weekly.com/archive/">HTML5 Weekly</a></li>
+<li><a href="http://javascriptweekly.com/archive/">JavaScript Weekly</a></li>
+<li><a href="http://responsivedesignweekly.com/">Responsive Design Weekly</a></li>
+<li><a href="http://movethewebforward.org/">Move the Web Forward</a></li>
+<li><a href="http://caniuse.com/">Can I Use ... ?</a></li>
+<li><a href="http://html5please.com/">HTML5 Please</a></li>
+<li><a href="http://css3please.com/">CSS3 Please Syntax Generator</a></li>
+<li><a href="http://diveintohtml5.info/">Dive Into HTML5</a></li>
+<li><a href="http://www.html5rocks.com/">HTML5 Rocks</a></li>
+</ul>
+<h4 id="additional-guides">Additional Guides</h4>
+<ul>
+<li><a href="http://isobar-idev.github.io/code-standards/">Guide by ISOBAR</a></li>
+<li><a href="http://mdo.github.io/code-guide/">Code Guide by @mdo</a></li>
+<li><a href="http://joemorgan.github.io/Developer-Docs/">Interactive Development Best Practices</a></li>
+<li><a href="https://github.com/greypants/FED-docs/tree/patch-1">Viget&#39;s old FED Docs</a></li>
+<li><a href="http://ff0000.github.io/Front-End-Development-Guidelines/">FF0000 (red) Front-end Development Guides</a></li>
+<li><a href="http://www.starbucks.com/static/reference/styleguide/">Starbucks Style Guide</a></li>
+<li><a href="https://make.wordpress.org/core/handbook/best-practices/coding-standards/html/">WordPress Core Contributors HTML Guide</a></li>
+</ul>
+<h5 id="css-guides">CSS Guides</h5>
+<ul>
+<li><a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml">Google HTML and CSS Style Guide</a></li>
+<li><a href="http://css-tricks.com/">CSS Tricks</a> especially the <a href="http://css-tricks.com/snippets/">Snippets</a></li>
+<li><a href="https://github.com/stubbornella/oocss/wiki/">Object Oriented CSS</a></li>
+<li><a href="http://smacss.com/">SMACSS</a></li>
+<li><a href="https://github.com/necolas/idiomatic-css/">Idiomatic CSS</a></li>
+<li><a href="http://primercss.io/">Github CSS Primer</a></li>
+<li><a href="https://css-tricks.com/css-style-guides/">CSS Tricks Style Guides</a></li>
+<li><a href="https://make.wordpress.org/core/handbook/best-practices/coding-standards/css/">WordPress Core Contributors CSS Guide</a></li>
+</ul>
+<h5 id="javascript-guides">JavaScript Guides</h5>
+<ul>
+<li><a href="https://github.com/rwldrn/idiomatic.js">Idiomatic JavaScript</a></li>
+<li><a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google&#39;s JavaScript Style Guide</a></li>
+<li><a href="http://docs.jquery.com/JQuery_Core_Style_Guidelines">jQuery Core Style Guidelines</a></li>
+<li><a href="http://addyosmani.com/blog/javascript-style-guides-and-beautifiers/">JavaScript Style Guides and Beautifiers</a></li>
+<li><a href="http://www.alohaeditor.org/guides/style_guide.html">Aloha Editor Guides - JavaScript</a></li>
+<li><a href="http://javascript.crockford.com/code.html">Douglas Crockford&#39;s JavaScript Conventions</a></li>
+<li><a href="https://github.com/styleguide/javascript">Github JS Styleguide</a></li>
+<li><a href="https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/">WordPress Core Contributors JS Guide</a></li>
+</ul>
+
+
+						<hr class="barkley"/>
+				</section>
+
+
+				<section id="section-5-1-acknowledgments" name="section-5-1-acknowledgments" class="level-1">
+						<h3 class="section-heading">Acknowledgments</h3>
+
+					<span class="jumper">
+						[<a href="#section-5-1-acknowledgments" class="">#</a>]
+						[<a href="https://www.github.com/BarkleyREI/Front-End-Coding-Standards/edit/master/app/assemble/partials/5-appendix/5-1-acknowledgments.hbs" class="" target="blank">Edit on Github</a>]
+					</span>
+
+					
+<p>And acknowledgments...</p>
+<p>Dozens of folks have contributed to this guide either directly, through project experience, or have served as prior art that has inspired ideas in this document.</p>
+<p>Special thanks to:</p>
+<ul>
+<li>ISOBAR for inspiring this guide</li>
+<li>Adam McIntyre</li>
+<li>Addy Osmani</li>
+<li>Brad Frost</li>
+<li>Chris Coyier</li>
+<li>Doug Crockford</li>
+<li>Nicholas C. Zakas</li>
+<li>Nicolas Gallagher</li>
+<li>Nicole Sullivan</li>
+<li>Paul Irish</li>
+<li>Riccardo La Rosa</li>
+<li>Rick Waldron</li>
+<li>Rob Larsen</li>
+<li>Tim Berners-Lee</li>
+</ul>
+<p><strong> All content licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 Unported License</a>. </strong></p>
+<p><strong> This document is based on the original by ISOBAR, 2015, and was modified by BarkleyREI, 2017 </strong></p>
+
+
+				</section>
+
+	</section>
+
+</main>
+
+
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
