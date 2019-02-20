@@ -13,13 +13,13 @@ layout: index.hbs
 		<nav>
 			<ul>
 				{{#each section }}
-					{{#withSort pages "data.weight" dir="asc"}}
+					{{#withSectionSort pages "data.weight" dir="asc"}}
 
 						{{#if data.title}}
 							{{levelListLink data.options data.title basename}}
 						{{/if}}
 
-					{{/withSort}}
+					{{/withSectionSort}}
 				{{/each}}
 			</ul>
 		</nav>

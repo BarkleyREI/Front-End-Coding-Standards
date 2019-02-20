@@ -1,0 +1,61 @@
+---
+title: "Formatting CSS"
+section: true
+weight: '2.8' # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+The majority of CSS produced by BarkleyREI will be compiled from SCSS, but in the odd occasion that we must write normal CSS for a project, please adhere to the following rules.
+
+Basic rules for formatting CSS files:
+
+* Use a new line for every selector and every declaration.
+* Use a single space before the opening brace in a set of rules.
+* Use lowercase for elements and longform hex values, e.g., #aaaaaa.
+* Hyphenate class selector names; avoid underscores and camelCase.
+* Quote attribute values in selectors.
+* Use one level of indentation for each declaration.
+* The closing brace of declaration goes in the same column as the first character of the set of rules.
+* Use a single blank line between sets of rules.
+
+Inside sets of rules or style declarations:
+
+* Add a single space between the property and value, for example:
+    * `prop: value;` and not `prop:value;`
+* Use double quotes for quoted values.
+* Always include a semicolon at the end of the last declaration.
+* Use shorthand if you can, like:
+    * `padding: 15px 0;` and not `padding: 15px 0px 15px 0px;`
+* When allowed, use 0 without units.
+* All font families must have fallbacks to web safe fonts (e.g. serif, sans-serif).
+
+Putting each selector on its own line and each property on its own line is great for readability and so version control systems can clearly show which parts have changed in a diff.
+
+The attributes within a selector can be alphabetized for easy scanning and so that compression algorithms like gzip have a greater chance of finding repeatable patterns.
+
+Some examples:
+{{/markdown}}
+{{#code "css"}}
+.content {
+    margin-left: -2%;
+}
+
+.twitter-popular,
+.twitter-favorites,
+.twitter-feed {
+	background-image: url("/img/bg.png");
+    float: left;
+	padding: 15px 0;
+    width: 33.33%;
+}
+{{/code}}
+{{#markdown}}
+**Do not indent child styles** underneath their parent styles; this is important for a number of reasons:
+
+* Some CSS preprocessors heavily use indentation.
+* Various levels of indentation hinders maintainability.
+* HTML and CSS structure can change frequently over the course of a project, quickly rendering obsolete the parent-child relationship the indentation used to represent.
+{{/markdown}}

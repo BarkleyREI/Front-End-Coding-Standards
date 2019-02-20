@@ -1,0 +1,31 @@
+---
+title: "Variable Names and Types"
+section: true
+weight: '3.13' # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 4 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+Always use meaningful variable names that can be read as words, not as silly abbreviations only you understand.
+
+* Variable names should be camelCase.
+* Objects, classes, and name-spaces should be TitleCase.
+* Boolean values should be prefixed with is if at all possible.
+* Cached jQuery objects can be prefixed with $.
+* Use shorthand versions of empty Arrays and Objects.
+{{/markdown}}
+{{#code "javascript"}}
+// some examples
+var exampleValue = 'my example variable value';
+var numberOfTimes = 3;
+// booleans
+var isThisWorking = true;
+var isNotWorking = 0;
+// cache a selector
+var $body = $('body');
+// short hand objects and arrays
+var newObject = {};
+var newArray = [];
+{{/code}}

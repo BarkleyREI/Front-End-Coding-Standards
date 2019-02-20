@@ -1,0 +1,33 @@
+---
+title: "Variable Declaration"
+section: true
+weight: '3.11' # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 4 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+To avoid confusion between global and local variables, we declare each variable on its own line with the var keyword. We do not use a single var keyword and then chain several variable declarations onto it separated by a comma.
+{{/markdown}}
+{{#code "javascript"}}
+var windowWidth;
+var windowHeight;
+var currentVal = $(this).val();
+var min = parseInt($(this).attr('min'), 10);
+{{/code}}
+{{#markdown}}
+This has been [debated at length](http://benalman.com/news/2012/05/multiple-var-statements-javascript/), however we believe this is a better practice due to several technical reasons:
+
+* Easier debugging with debuggers.
+* Easier merges with version control and diff utilities.
+* Most technical issues are resolved by 'use strict'.
+
+Fallback values should also be considered when declaring variables whose values may be omitted or missing by the calling function.
+{{/markdown}}
+{{#code "javascript"}}
+var subhead = $('.thing').val() || '';
+{{/code}}
+{{#markdown}}
+The `||` syntax may not work in all situations, so it may be better to write a standard function that can do null-checking of values and pass all requests for data through that function.
+{{/markdown}}

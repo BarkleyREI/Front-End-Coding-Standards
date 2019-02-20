@@ -1,0 +1,17 @@
+---
+title: "Inline Styling"
+section: true
+weight: '2.15' # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+Do not hard code style information into your HTML markup directly, either with the style attribute that accepts CSS or with deprecated attributes such as align, border, or width. These are difficult to maintain and make it harder to track down what is causing an element to appear as it does.
+
+There are a few exceptions to this:
+
+* Background images that are changeable by the client.
+* Positioning of captions in mastheads using percentages or pixels via top/left/right/bottom.
+{{/markdown}}

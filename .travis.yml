@@ -16,8 +16,3 @@ deploy:
   local_dir: docs
   on:
     branch: master
-notifications:
-  hipchat:
-    rooms:
-      secure: bfpky2EKlmBqVhNzB5AhOWyq0amicbk7bTCPbUrjbVRdvB76qacm+7QZouUT3ry2C/jIo6o01sypiY/B+M3EiIyYh8IaVWKfdfyX+scZ1xkzv3Xhrfy5msbv11PEt/3ARKQNDUMDa1XlA6x/23EwYLJ5fqIrzfkB3OwVEJxdC9I=
-    notify: true
