@@ -1,0 +1,52 @@
+---
+title: "Writing and Formatting JavaScript"
+section: true
+weight: '3.10' # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 4 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+The use of whitespace should follow long-standing English writing conventions, with blank lines between ideas and groups of code such as objects, functions, and new lines for new statements.
+
+Formatting the language statements and patterns should follow these basics:
+
+* For named functions, do not insert a space character between the function name and the parentheses.
+* For anonymous functions, do insert a space character between the function keyword and the parentheses. It’s a function definition; it’s not a function invocation. A space character helps to identify, and communicate, the difference between the use of functions.
+* Open braces are preceded by a single space.
+* Open braces should appear on the same line as their preceding argument.
+* Close braces should appear at the same indentation as the statement preceding the opening brace
+* There should be no space characters between parentheses and their contents.
+* Use semicolons and do not rely on automatic semicolon insertion.
+* Each comma and colon (and semi-colons that don't end a line) should be followed by a single space.
+* Binary and ternary operators should have a single space on each side.
+* Quoted values should be in 'single quotes' so that double quotes may easily exist inside them.
+* Comment JavaScript code thoroughly and consider using a pattern such as those described by JSDocs so that documentation may be generated automatically.
+* Conditional statements go on a new line followed by the opening brace.
+* Else/else go on the same line as the brace.
+* Use type strict checks with === as opposed to == whenever possible.
+* Use += and -= instead of ++ and --.
+{{/markdown}}
+{{#code "javascript"}}
+var len = arr.length;
+for (var i = 0; i < len; i += 1) {
+    var example = 1;
+    if (example === i) {
+        // we are looping
+    } else {
+        // this will never happen
+    }
+}
+{{/code}}
+{{#markdown}}
+* [StackOverflow: "Do loops check the array.length every time when comparing i against array.length?"](http://stackoverflow.com/questions/8452317/do-loops-check-the-array-length-every-time-when-comparing-i-against-array-length)
+* [StackOverflow: "For-loop performance: storing array length in a variable"](http://stackoverflow.com/questions/17989270/for-loop-performance-storing-array-length-in-a-variable)
+
+To maximize readability without worrying about which boolean operators bind more tightly than others, each segment of a boolean expression should be enclosed in parentheses.
+{{/markdown}}
+{{#code "javascript"}}
+if ((allowUpdate) && ((user.isAdmin) || (user.role === item.owner))) {
+    // do something
+}
+{{/code}}

@@ -1,0 +1,29 @@
+---
+title: "JavaScript Behavior Prefixes and Classes"
+section: true
+weight: '2.25' # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 4 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+The usage of a js- prefix is present in the markup but should never really appear in the CSS file itself. If the styles are being set, then use modifiers or state type classes.
+{{/markdown}}
+{{#code "html"}}
+<button class="component-button js-execute">...</button>
+{{/code}}
+{{#markdown}}
+The js-execute rule should not appear in the CSS file, but only in JS files they are tied to behavior. These are events, verbs, or action related, and are access points for JavaScript not a toggle or state changer. It's best to think of these classes as closer to and ID attribute in the HTML.
+
+The `.no-js` class can be used to add behavior to a component when JavaScript is disabled or otherwise unavailable to the page. This class is added by default to the `<html>` tag and is removed by Modernizr when the page loads.
+
+Special attention should be paid to components that are enhanced with JavaScript to ensure that their behavior is reasonable when JavaScript is not available. Some examples include:
+
+1. Showing a rendered slide of a carousel without the paging functionality.
+2. Opening all accordions by default.
+3. AJAX driven functionality is linked so that it will click through to a query-string enabled page that supports the same functionality that was implemented using AJAX.
+    * For example, on a faceted search, a user may be able to click on a category and will be taken to /results?category=1 where the results will be filtered to the category they selected.
+4. Result sets can be filtered and paged using query strings.
+5. Functionality that cannot exist without JavaScript at all should have an explanatory message shown to the end user to explain the issue.
+{{/markdown}}

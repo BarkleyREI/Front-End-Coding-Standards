@@ -1,6 +1,9 @@
 module.exports.register = function(Handlebars, options) {
 	'use strict';
 
+	var _          = require('lodash');
+	var semver = require('semver');
+
 	Handlebars.registerHelper('replaceStr', function(haystack, needle, replacement) {
 		if (haystack && needle) {
 			return haystack.replace(needle, replacement);
@@ -232,6 +235,121 @@ module.exports.register = function(Handlebars, options) {
 
    		return slug.toLowerCase();
 
+	});
+
+	Handlebars.registerHelper('withSectionSort', function (array, field, options) {
+		array = _.cloneDeep(array);
+		var getDescendantProp = function (obj, desc) {
+			var arr = desc.split('.');
+			while (arr.length && (obj = obj[arr.shift()])) {
+				continue;
+			}
+			return obj;
+		};
+		var result = '';
+		var item;
+		var i;
+		var len;
+
+		// console.log(array);
+
+		if (typeof field === 'undefined') {
+			options = field;
+			array = array.sort();
+			if (options.hash && options.hash.dir === 'desc') {
+				array = array.reverse();
+			}
+			for (i = 0, len = array.length; i < len; i++) {
+				item = array[i];
+				result += options.fn(item);
+			}
+		} else {
+
+			// var weights = array.map(d => getDescendantProp(d, field));
+			//
+			// weights = weights.map(function (x) {
+			// 	return x.split('.').map(function (x) {
+			// 		return parseInt(x)
+			// 	})
+			// }).sort(function (a, b) {
+			// 	var i = 0, m = a.length, n = b.length, o, d;
+			// 	o = m < n ? n : m;
+			// 	for (; i < o; ++i) {
+			// 		d = (a[i] || 0) - (b[i] || 0);
+			// 		if (d) return d
+			// 	}
+			// 	return 0
+			// }).map(function (x) {
+			// 	return x.join('.')
+			// });
+			//
+			// console.log(weights);
+
+			array = array.sort(function (a, b) {
+				var aProp = getDescendantProp(a, field);
+				var bProp = getDescendantProp(b, field);
+
+				// if (semver.gt(aProp, bProp)) {
+				// 	return 1;
+				// } else {
+				// 	if (semver.lt(aProp, bProp)) {
+				// 		return -1;
+				// 	}
+				// }
+
+				function compare(a, b) {
+					if (a === b) {
+						return 0;
+					}
+
+					var a_components = a.split(".");
+					var b_components = b.split(".");
+
+					var len = Math.min(a_components.length, b_components.length);
+
+					// loop while the components are equal
+					for (var i = 0; i < len; i++) {
+						// A bigger than B
+						if (parseInt(a_components[i]) > parseInt(b_components[i])) {
+							return 1;
+						}
+
+						// B bigger than A
+						if (parseInt(a_components[i]) < parseInt(b_components[i])) {
+							return -1;
+						}
+					}
+
+					// If one's a prefix of the other, the longer one is greater.
+					if (a_components.length > b_components.length) {
+						return 1;
+					}
+
+					if (a_components.length < b_components.length) {
+						return -1;
+					}
+
+					// Otherwise they are the same.
+					return 0;
+				}
+
+				// if (aProp > bProp) {
+				// 	return 1;
+				// } else {
+				// 	if (aProp < bProp) {
+				// 		return -1;
+				// 	}
+				// }
+				return compare(aProp, bProp);
+			});
+			if (options.hash && options.hash.dir === 'desc') {
+				array = array.reverse();
+			}
+			for (item in array) {
+				result += options.fn(array[item]);
+			}
+		}
+		return result;
 	});
 
 };

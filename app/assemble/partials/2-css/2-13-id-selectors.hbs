@@ -1,0 +1,16 @@
+---
+title: "ID Selectors"
+section: true
+weight: '2.13' # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+As noted above, use the lowest level of specificity necessary to get the desired results. This means the use of the ID selector should be minimized. Often creating a new class is preferable to using inheritance or additional specificity to target an element or elements.
+
+ID selectors, if used, should be used mainly as access points for JavaScript or if a very particular use case surfaces. Styles and classes can be applied via the same element with a className.
+
+SCSS Lint will flag the use of IDs, so if they are absolutely required, they must be excluded via `scss-lint:disable` statements.
+{{/markdown}}

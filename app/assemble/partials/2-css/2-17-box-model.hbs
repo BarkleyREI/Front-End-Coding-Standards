@@ -1,0 +1,24 @@
+---
+title: "Box Model"
+section: true
+weight: '2.17' # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+To simplify CSS authoring, we set the box-sizing attribute to border-box for all page elements. This enables us to use round numbers for width like 50% and then apply a padding or border to that same element without needing to
+
+1. adjust the width accordingly using calc (since borders use pixels rather than percents) or
+2. create an element inside it to take the padding and border. This is the only case where we use the inefficient universal selector (*).
+
+Example:
+{{/markdown}}
+{{#code "css"}}
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+{{/code}}

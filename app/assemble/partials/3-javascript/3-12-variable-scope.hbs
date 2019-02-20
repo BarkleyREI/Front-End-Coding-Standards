@@ -1,0 +1,17 @@
+---
+title: "Variable Scope"
+section: true
+weight: '3.12' # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 4 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+Minimize the use of global or window level variables and name-spaces. Pollution of the global name-space is error prone and a bad practice.
+
+If referencing a window or global level variable that isn't obvious, please comment as such or explicitly state it.
+{{/markdown}}
+{{#code "javascript"}}
+var window.thing = {};
+{{/code}}

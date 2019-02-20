@@ -1,0 +1,42 @@
+---
+title: "Getting Started on JavaScript"
+section: true
+weight: '3.2' # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 2 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+All too often a developer will solve a problem in a closed context and not consider the whole picture. "Add another plugin" is not always a good answer.
+
+It is well worth considering if parts or all of the code being added can be useful elsewhere. Centralized code is excellent because it can be updated once and re-used everywhere.
+
+For JavaScript, a Front-end developer should be thinking about:
+
+* If there is code that does this task already?
+* Code formatting rules, naming conventions, file locations, etc.
+* Testing the code on various browsers and devices.
+* If strings of text should be external for content management or translation.
+* If code being added might be useful outside of the current problem.
+
+Examples of possible things to centralize:
+
+* Code that modifies the DOM
+* Ajax, validation, or other libraries
+* Query string parsing utilities, router-type code
+* Tests for global conditions (e.g. window size, feature support, etc.)
+* Page, window, or document level events (e.g. Ajax, resize, etc.)
+* UI controls (e.g. spinners, modals, tabs, etc.)
+* Date handling utilities
+* Files with strings of text in a given language
+* Finally, settings and configuration options (e.g. paths to services, debug flags, duration settings, minimum or maximum values, etc.) are common things to set in a centralized, distinct place.
+
+Alternatively, if a problem can be solved with a custom module and not a third-party library or plugin, this solution is preferred, as it keeps the costs of the project down while not including any irrelevant or unused code.
+
+Bottom line, please understand what the JavaScript does and how it does it if you are including third party code.
+
+**Note:**
+
+Client buy-in may be necessary for the usage of JavaScript for some features. It may be a forgone conclusion but usage of libraries or custom code should be discussed with the team and client technical leads to be certain the teams are on the same page.
+{{/markdown}}

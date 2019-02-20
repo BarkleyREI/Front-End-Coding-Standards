@@ -1,0 +1,16 @@
+---
+title: "Frameworks"
+section: true
+weight: '2.3' # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+Unless specified otherwise, all projects should use Zurb's Foundation framework. The grid system, reset, and default styles will be included by default.
+
+Only use components and features from Foundation as they are needed. Do not include anything unnecessarily, as this adds to overall bloat.
+
+If other frameworks are desired by the client or management, best care should be taken to minimize the total size of the final CSS file. This can be accomplished by separating out the bulk of the framework into a separate or CDN-hosted CSS file that is referred to before the main styles.
+{{/markdown}}

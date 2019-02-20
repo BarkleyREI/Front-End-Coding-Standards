@@ -1,0 +1,30 @@
+---
+title: "Optional and Self-closing Tags"
+section: true
+weight: '1.8' # increase or decrease to change order of sections
+options:
+- end-with-rule: false # true
+- level: 3 # 2, 3, 4, 5
+published: true
+---
+{{#markdown}}
+Include slashes in all self closing tags for compatibility in older, XML based CMS's. Include all closing tags, even if they are technically optional.
+{{/markdown}}
+{{#code "html"}}
+<!-- closing "/" is not necessary but should be included for compatibility -->
+<img src="/logo.png" alt="ISOBAR" />
+
+<!-- include closing tags always -->
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit:</p>
+<ul>
+    <li>Vero sunt veritatis magni sit odit,</li>
+    <li>voluptatum ratione suscipit.</li>
+</ul>
+{{/code}}
+{{#markdown}}
+Unusual markup (or indeed, invalid) can lead to bugs in page rendering, DOM interpretation, or even how styles are applied, so it should be avoided whenever possible.
+
+**Note:**
+
+While a library like jQuery might recognize tags that are not typically self closed (e.g. `<div />`), it is recommended to avoid this usage directly in your markup, as some browsers choke on it.
+{{/markdown}}
