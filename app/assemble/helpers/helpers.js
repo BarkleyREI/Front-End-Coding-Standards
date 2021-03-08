@@ -1,10 +1,10 @@
-module.exports.register = function(Handlebars, options) {
+module.exports.register = function (Handlebars, options) {
 	'use strict';
 
-	var _          = require('lodash');
+	var _ = require('lodash');
 	var semver = require('semver');
 
-	Handlebars.registerHelper('replaceStr', function(haystack, needle, replacement) {
+	Handlebars.registerHelper('replaceStr', function (haystack, needle, replacement) {
 		if (haystack && needle) {
 			return haystack.replace(needle, replacement);
 		} else {
@@ -18,8 +18,10 @@ module.exports.register = function(Handlebars, options) {
 	 *
 	 */
 
-	Handlebars.registerHelper('parseFixture', function(path, options) {
-		if (!path || typeof path !== 'string') { return false; }
+	Handlebars.registerHelper('parseFixture', function (path, options) {
+		if (!path || typeof path !== 'string') {
+			return false;
+		}
 
 		var fs = require('fs');
 		var nodePath = require('path');
@@ -38,56 +40,56 @@ module.exports.register = function(Handlebars, options) {
 		return options.fn(fixture);
 	});
 
-	Handlebars.registerHelper('log', function(data) {
+	Handlebars.registerHelper('log', function (data) {
 		return console.log(data);
 	});
 
-	Handlebars.registerHelper('stringCompare', function(a, b, opts) {
-		if (a == b) {
+	Handlebars.registerHelper('stringCompare', function (a, b, opts) {
+		if (a === b) {
 			return opts.fn(this);
 		} else {
 			return opts.inverse(this);
 		}
 	});
 
-	Handlebars.registerHelper('toLowerCase', function(str) {
+	Handlebars.registerHelper('toLowerCase', function (str) {
 		return str.toLowerCase();
 	});
 
-	Handlebars.registerHelper('math', function(lvalue, operator, rvalue, options) {
+	Handlebars.registerHelper('math', function (lvalue, operator, rvalue, options) {
 		lvalue = parseFloat(lvalue);
 		rvalue = parseFloat(rvalue);
 
 		return {
-			"+": lvalue + rvalue,
-			"-": lvalue - rvalue,
-			"*": lvalue * rvalue,
-			"/": lvalue / rvalue,
-			"%": lvalue % rvalue
+			'+': lvalue + rvalue,
+			'-': lvalue - rvalue,
+			'*': lvalue * rvalue,
+			'/': lvalue / rvalue,
+			'%': lvalue % rvalue
 		}[operator];
 	});
 
-	Handlebars.registerHelper('ifOr', function(a, b, opts) {
-	    if (a || b) {
-	        return opts.fn(this);
-	    } else {
-	        return opts.inverse(this);
-	    }
+	Handlebars.registerHelper('ifOr', function (a, b, opts) {
+		if (a || b) {
+			return opts.fn(this);
+		} else {
+			return opts.inverse(this);
+		}
 	});
 
-	Handlebars.registerHelper('ifAnd', function(a, b, opts) {
-	    if (a && b) {
-	        return opts.fn(this);
-	    } else {
-	        return opts.inverse(this);
-	    }
+	Handlebars.registerHelper('ifAnd', function (a, b, opts) {
+		if (a && b) {
+			return opts.fn(this);
+		} else {
+			return opts.inverse(this);
+		}
 	});
 
-	Handlebars.registerHelper('svg', function(name) {
-		return new Handlebars.SafeString("<svg class='icon icon-" + name + "'><use xlink:href='#icon-" + name + "'></use></svg>");
+	Handlebars.registerHelper('svg', function (name) {
+		return new Handlebars.SafeString('<svg class=\'icon icon-' + name + '\'><use xlink:href=\'#icon-' + name + '\'></use></svg>');
 	});
 
-	Handlebars.registerHelper('link', function(link) {
+	Handlebars.registerHelper('link', function (link) {
 		var url = (Handlebars.Utils.isEmpty(link.url)) ? link.url : '#';
 		var icon = (Handlebars.Utils.isEmpty(link.icon)) ? '{{svg "' + link.icon + '"}}' : '';
 		var title = (Handlebars.Utils.isEmpty(link.title)) ? link.title : '';
@@ -106,14 +108,14 @@ module.exports.register = function(Handlebars, options) {
 		return new Handlebars.SafeString(link);
 	});
 
-	Handlebars.registerHelper('place', function(w, h, text) {
+	Handlebars.registerHelper('place', function (w, h, text) {
 		var width = (Handlebars.Utils.isEmpty(w)) ? w : '300';
 		var height = (Handlebars.Utils.isEmpty(h)) ? 'x' + h : '';
 		var text = (Handlebars.Utils.isEmpty(text)) ? '?text=' + encodeURI(text) : '';
 
 		var url = 'http://placehold.it/' + width + height + text;
 
-		return new Handlebars.SafeString("<img src='" + url + "' alt='Placeholder Image' />");
+		return new Handlebars.SafeString('<img src=\'' + url + '\' alt=\'Placeholder Image\' />');
 	});
 
 	function getOption(option, key) {
@@ -129,21 +131,21 @@ module.exports.register = function(Handlebars, options) {
 	Handlebars.registerHelper('optionNotEmpty', function (option, key, opts) {
 		var value = getOption(option, key);
 
-		if (typeof value !== "undefined") {
-	        return opts.fn(this);
-	    } else {
-	        return opts.inverse(this);
-	    }
+		if (typeof value !== 'undefined') {
+			return opts.fn(this);
+		} else {
+			return opts.inverse(this);
+		}
 	});
 
 	Handlebars.registerHelper('optionEquals', function (option, key, val, opts) {
 		var value = getOption(option, key);
 
 		if (value === val) {
-	        return opts.fn(this);
-	    } else {
-	        return opts.inverse(this);
-	    }
+			return opts.fn(this);
+		} else {
+			return opts.inverse(this);
+		}
 	});
 
 	Handlebars.registerHelper('option', function (option, key) {
@@ -155,10 +157,10 @@ module.exports.register = function(Handlebars, options) {
 	Handlebars.registerHelper('levelHeading', function (option, title) {
 		var level = getOption(option, 'level');
 
-		if (typeof level !== "undefined") {
-			return new Handlebars.SafeString("<h" + (parseInt(level, 10) + 1) + " class=\"section-heading\">" + title + "</h" + (parseInt(level, 10) + 1) + ">");
+		if (typeof level !== 'undefined') {
+			return new Handlebars.SafeString('<h' + (parseInt(level, 10) + 1) + ' class="section-heading">' + title + '</h' + (parseInt(level, 10) + 1) + '>');
 		} else {
-			return new Handlebars.SafeString("<h2 class=\"section-heading\">" + title + "</h2>");
+			return new Handlebars.SafeString('<h2 class="section-heading">' + title + '</h2>');
 		}
 	});
 
@@ -168,9 +170,9 @@ module.exports.register = function(Handlebars, options) {
 		var style = (Handlebars.Utils.isEmpty(style)) ? ' class="' + style + '"' : '';
 
 		if (typeof level !== 'undefined') {
-			return new Handlebars.SafeString("<a href=\"#section-" + basename + "\"" + style + ">" + title + "</a>");
+			return new Handlebars.SafeString('<a href="#section-' + basename + '"' + style + '>' + title + '</a>');
 		} else {
-			return new Handlebars.SafeString("<a href=\"#section-" + basename + "\"" + style + ">" + title + "</a>");
+			return new Handlebars.SafeString('<a href="#section-' + basename + '"' + style + '>' + title + '</a>');
 		}
 	});
 
@@ -179,7 +181,7 @@ module.exports.register = function(Handlebars, options) {
 
 		var directory = dirname.replace('app/', 'app/assemble/');
 
-		return new Handlebars.SafeString("<a href=\"https://www.github.com/" + repo + "/edit/master/" + directory + "/" + basename + ".hbs\"" + style + " target=\"blank\">Edit on Github</a>");
+		return new Handlebars.SafeString('<a href="https://www.github.com/' + repo + '/edit/master/' + directory + '/' + basename + '.hbs"' + style + ' target="blank">Edit on Github</a>');
 		// return new Handlebars.SafeString("<a href=\"https://www.github.com/" + repo + "/issues/new?title=Issue+regarding+Section+" + basename + "\"" + style + " target=\"blank\">Open Issue on Github</a>");
 	});
 
@@ -187,26 +189,27 @@ module.exports.register = function(Handlebars, options) {
 		var level = getOption(option, 'level');
 
 		if (typeof level !== 'undefined') {
-			return new Handlebars.SafeString("<li class=\"level-" + level + "\"><a href=\"#section-" + basename + "\">" + title + "</a></li>");
+			return new Handlebars.SafeString('<li class="level-' + level + '"><a href="#section-' + basename + '">' + title + '</a></li>');
 		} else {
-			return new Handlebars.SafeString("<li class=\"level-1\"><a href=\"#section-" + basename + "\">" + title + "</a></li>");
+			return new Handlebars.SafeString('<li class="level-1"><a href="#section-' + basename + '">' + title + '</a></li>');
 		}
 	});
 
 	Handlebars.registerHelper('sectionClass', function (option) {
+		console.log(option);
 		var level = getOption(option, 'level');
 
 		if (typeof option[0]['level'] !== 'undefined') {
-			return "level-" + option[0]['level'];
+			return 'level-' + option[0]['level'];
 		} else {
-			return "level-1";
+			return 'level-1';
 		}
 	});
 
 	Handlebars.registerHelper('code', function (lang, options) {
 		return new Handlebars.SafeString('<pre><code class="language-' + lang + '">'
-		+ Handlebars.Utils.escapeExpression(options.fn(this))
-		+ '</code></pre>');
+			+ Handlebars.Utils.escapeExpression(options.fn(this))
+			+ '</code></pre>');
 	});
 
 	Handlebars.registerHelper('render', function (hbs) {
@@ -222,18 +225,18 @@ module.exports.register = function(Handlebars, options) {
 	 */
 	Handlebars.registerHelper('slugify', function (component, options) {
 		/**
-		* Return a slug for a DOM id or class.
-		* @function slugify
-		* @memberof Handlebars.helpers
-		* @param {string} component - string to slugify.
-		* @example
-		* // returns stuff-in-the-title-lots-more
-		* Handlebars.helpers.slugify('Stuff in the TiTlE & Lots More');
-		* @returns {string} slug
-		*/
-   		var slug = component.replace(/[^\w\s]+/gi, '').replace(/ +/gi, '-');
+		 * Return a slug for a DOM id or class.
+		 * @function slugify
+		 * @memberof Handlebars.helpers
+		 * @param {string} component - string to slugify.
+		 * @example
+		 * // returns stuff-in-the-title-lots-more
+		 * Handlebars.helpers.slugify('Stuff in the TiTlE & Lots More');
+		 * @returns {string} slug
+		 */
+		var slug = component.replace(/[^\w\s]+/gi, '').replace(/ +/gi, '-');
 
-   		return slug.toLowerCase();
+		return slug.toLowerCase();
 
 	});
 
@@ -302,8 +305,8 @@ module.exports.register = function(Handlebars, options) {
 						return 0;
 					}
 
-					var a_components = a.split(".");
-					var b_components = b.split(".");
+					var a_components = a.split('.');
+					var b_components = b.split('.');
 
 					var len = Math.min(a_components.length, b_components.length);
 

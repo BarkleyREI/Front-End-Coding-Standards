@@ -32,14 +32,14 @@ layout: index.hbs
 		{{#each section }}
 			{{#withSort pages "data.weight" dir="asc"}}
 
-				<section id="section-{{basename}}" name="section-{{basename}}" class="{{sectionClass data.options}}">
+				<section id="section-{{this.basename}}" name="section-{{this.basename}}" class="{{sectionClass data.options}}">
 					{{#if data.title}}
 						{{levelHeading data.options data.title}}
 					{{/if}}
 
 					<span class="jumper">
-						[{{levelLink data.options "#" basename ""}}]
-						[{{githubLink "BarkleyREI/Front-End-Coding-Standards" dirname basename ""}}]
+						[{{levelLink data.options "#" this.basename ""}}]
+						[{{githubLink "BarkleyREI/Front-End-Coding-Standards" dirname this.basename ""}}]
 					</span>
 
 					{{render page }}
